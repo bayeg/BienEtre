@@ -9,7 +9,13 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ *
+ * @Entity
+ * @InheritanceType("SINGLE_TABLE")
+ * @DiscriminatorColumn(name="userType", type="string")
+ * @DiscriminatorMap({"user" = "User", "provider" = "Provider", "internaut" = "Internaut"})
  */
+
 class User
 {
     /**
@@ -56,12 +62,6 @@ class User
      */
     private $registrationDate;
 
-//    /**
-//     * @var string
-//     *
-//     * @ORM\Column(name="userType", type="string", length=255)
-//     */
-//    private $userType;
 
     /**
      * @var int
@@ -215,29 +215,6 @@ class User
         return $this->registrationDate;
     }
 
-//    /**
-//     * Set userType
-//     *
-//     * @param string $userType
-//     *
-//     * @return User
-//     */
-//    public function setUserType($userType)
-//    {
-//        $this->userType = $userType;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Get userType
-//     *
-//     * @return string
-//     */
-//    public function getUserType()
-//    {
-//        return $this->userType;
-//    }
 
     /**
      * Set loginAttempts
