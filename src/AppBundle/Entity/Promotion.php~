@@ -70,15 +70,6 @@ class Promotion
      */
     private $promotionShowEnd;
 
-    /**
-     *@var Provider
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="providerPromotions")
-     */
-    private $promotionProvider;
-
-
-
-
 
     /**
      * Get id
@@ -258,3 +249,4 @@ class Promotion
         return $this->promotionShowEnd;
     }
 }
+

@@ -48,14 +48,6 @@ class Internaut extends User
      */
     private $internautImage;
 
-    /**
-     *@var ArrayCollection
-     *@ORM\ManyToMany(targetEntity="AppBundle\Entity\Provider")
-     */
-    private $internautProviders;
-
-
-
 
     /**
      * Get id
@@ -138,28 +130,5 @@ class Internaut extends User
     {
         return $this->newsletter;
     }
-
-    /**
-     * Set internautImage
-     *
-     * @param \AppBundle\Entity\Image $internautImage
-     *
-     * @return Internaut
-     */
-    public function setInternautImage(\AppBundle\Entity\Image $internautImage = null)
-    {
-        $this->internautImage = $internautImage;
-
-        return $this;
-    }
-
-    /**
-     * Get internautImage
-     *
-     * @return \AppBundle\Entity\Image
-     */
-    public function getInternautImage()
-    {
-        return $this->internautImage;
-    }
 }
+

@@ -94,3 +94,4 @@ class Abuse
         return $this->abuseDate;
     }
 }
+

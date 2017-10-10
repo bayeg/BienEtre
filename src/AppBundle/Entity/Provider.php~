@@ -69,41 +69,6 @@ class Provider extends User
     private $providerPhotos;
 
     /**
-     *@var ArrayCollection
-     *@ORM\ManyToMany(targetEntity="AppBundle\Entity\ServiceCategory")
-     */
-    private $providerServiceCategories;
-
-    /**
-     *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Course", mappedBy="courseProvider")
-     */
-    private $providerCourses;
-
-    /**
-     *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Promotion", mappedBy="promotionProvider")
-     */
-    private $providerPromotions;
-
-    /**
-     *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="commentProvider")
-     */
-    private $providerComments;
-
-
-
-
-
-
-
-
-
-
-
-
-    /**
      * Get id
      *
      * @return int
@@ -232,80 +197,5 @@ class Provider extends User
     {
         return $this->providerVAT;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->providerLogos = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->providerPhotos = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add providerLogo
-     *
-     * @param \AppBundle\Entity\Image $providerLogo
-     *
-     * @return Provider
-     */
-    public function addProviderLogo(\AppBundle\Entity\Image $providerLogo)
-    {
-        $this->providerLogos[] = $providerLogo;
-
-        return $this;
-    }
-
-    /**
-     * Remove providerLogo
-     *
-     * @param \AppBundle\Entity\Image $providerLogo
-     */
-    public function removeProviderLogo(\AppBundle\Entity\Image $providerLogo)
-    {
-        $this->providerLogos->removeElement($providerLogo);
-    }
-
-    /**
-     * Get providerLogos
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getProviderLogos()
-    {
-        return $this->providerLogos;
-    }
-
-    /**
-     * Add providerPhoto
-     *
-     * @param \AppBundle\Entity\Image $providerPhoto
-     *
-     * @return Provider
-     */
-    public function addProviderPhoto(\AppBundle\Entity\Image $providerPhoto)
-    {
-        $this->providerPhotos[] = $providerPhoto;
-
-        return $this;
-    }
-
-    /**
-     * Remove providerPhoto
-     *
-     * @param \AppBundle\Entity\Image $providerPhoto
-     */
-    public function removeProviderPhoto(\AppBundle\Entity\Image $providerPhoto)
-    {
-        $this->providerPhotos->removeElement($providerPhoto);
-    }
-
-    /**
-     * Get providerPhotos
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getProviderPhotos()
-    {
-        return $this->providerPhotos;
-    }
 }
+

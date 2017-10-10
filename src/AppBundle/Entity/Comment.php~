@@ -49,18 +49,6 @@ class Comment
      */
     private $commentDate;
 
-    /**
-     *@var Provider
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="providerComments")
-     */
-    private $commentProvider;
-
-
-
-
-
-
-
 
     /**
      * Get id
@@ -168,3 +156,4 @@ class Comment
         return $this->commentDate;
     }
 }
+

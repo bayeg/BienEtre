@@ -94,3 +94,4 @@ class Block
         return $this->blockDescription;
     }
 }
+

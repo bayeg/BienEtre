@@ -77,14 +77,6 @@ class Course
      */
     private $courseShowEnd;
 
-    /**
-     *@var Auteur
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="providerCourses")
-     */
-    private $courseProvider;
-
-
-
 
     /**
      * Get id
@@ -288,3 +280,4 @@ class Course
         return $this->courseShowEnd;
     }
 }
+
