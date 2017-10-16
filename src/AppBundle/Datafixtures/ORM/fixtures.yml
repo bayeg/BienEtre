@@ -1,0 +1,49 @@
+
+#AppBundle\Entity\Abuse:
+#    abuse_{1..10}:
+#      abuse_description: <text(500)>
+#      abuse_date: <dateTime($max = 'now', $timezone = date_default_timezone_get())>
+#      abuse_comment_id:
+
+
+
+AppBundle\Entity\Block:
+    block_{1..10}:
+        blockName: <text(20)>
+        blockDescription: <text(100)>
+
+AppBundle\Entity\Comment:
+    comment_{1..10}:
+        commentRating: <numberBetween(1,5)>
+        commentTitle: <text(25)>
+        commentContent: <text(255)>
+        commentDate: <dateTime()>
+        commentProvider: '@provider_*'
+        commentInternaut: '@internaut_*'
+
+#AppBundle\Entity\Commune:
+#AppBundle\Entity\Course:
+#AppBundle\Entity\Image:
+AppBundle\Entity\Internaut:
+    internaut_{1..10}:
+        internautLastName: <lastName()>
+        internautLastName: <firstName()>
+        newsletter: <boolean(0.5)>
+
+#AppBundle\Entity\Locality:
+#AppBundle\Entity\Newsletter:
+#AppBundle\Entity\Position:
+##AppBundle\Entity\PostCode:
+##    xxxxx_{1..1000}:
+##        xxxxx: <numberBetween(1000, 9999)>
+#AppBundle\Entity\Promotion:
+AppBundle\Entity\Provider:
+      provider_{1..10}:
+      providerName: <company()>
+      providerWebsite: <url()>
+      providerEmail: <email()>
+      providerPhone: <phoneNumber()>
+      providerVAT: <vat()>
+#AppBundle\Entity\ServiceCategory:
+#AppBundle\Entity\User:
+

@@ -31,14 +31,14 @@ class Comment
     /**
      * @var string
      *
-     * @ORM\Column(name="comment_title", type="string", length=255)
+     * @ORM\Column(name="comment_title", type="string", length=25)
      */
     private $commentTitle;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="comment_content", type="string", length=500)
+     * @ORM\Column(name="comment_content", type="string", length=255)
      */
     private $commentContent;
 
