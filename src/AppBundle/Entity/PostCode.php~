@@ -24,7 +24,7 @@ class PostCode
     /**
      * @var string
      *
-     * @ORM\Column(name="postCode", type="string", length=255)
+     * @ORM\Column(name="post_code", type="string", length=255)
      */
     private $postCode;
 
@@ -67,5 +67,45 @@ class PostCode
     {
         return $this->postCode;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->postCodeUsers = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add postCodeUser
+     *
+     * @param \AppBundle\Entity\User $postCodeUser
+     *
+     * @return PostCode
+     */
+    public function addPostCodeUser(\AppBundle\Entity\User $postCodeUser)
+    {
+        $this->postCodeUsers[] = $postCodeUser;
+
+        return $this;
+    }
+
+    /**
+     * Remove postCodeUser
+     *
+     * @param \AppBundle\Entity\User $postCodeUser
+     */
+    public function removePostCodeUser(\AppBundle\Entity\User $postCodeUser)
+    {
+        $this->postCodeUsers->removeElement($postCodeUser);
+    }
+
+    /**
+     * Get postCodeUsers
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPostCodeUsers()
+    {
+        return $this->postCodeUsers;
+    }
+}

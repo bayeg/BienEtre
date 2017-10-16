@@ -24,49 +24,49 @@ class Promotion
     /**
      * @var string
      *
-     * @ORM\Column(name="promotionName", type="string", length=255)
+     * @ORM\Column(name="promotion_name", type="string", length=255)
      */
     private $promotionName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="promotionDescription", type="string", length=255)
+     * @ORM\Column(name="promotion_description", type="string", length=255)
      */
     private $promotionDescription;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="promotionPDF", type="string", length=255)
+     * @ORM\Column(name="promotion_pdf", type="string", length=255)
      */
     private $promotionPDF;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="promotionStart", type="date")
+     * @ORM\Column(name="promotion_start", type="date")
      */
     private $promotionStart;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="promotionEnd", type="date")
+     * @ORM\Column(name="promotion_end", type="date")
      */
     private $promotionEnd;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="promotionShowStart", type="date")
+     * @ORM\Column(name="promotion_show_start", type="date")
      */
     private $promotionShowStart;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="promotionShowEnd", type="date")
+     * @ORM\Column(name="promotion_show_end", type="date")
      */
     private $promotionShowEnd;
 
@@ -76,7 +76,11 @@ class Promotion
      */
     private $promotionProvider;
 
-
+    /**
+     *@var ServiceCategory
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\ServiceCategory", inversedBy="serviceCategoryPromotions")
+     */
+    private $promotionServiceCategory;
 
 
 
@@ -256,5 +260,53 @@ class Promotion
     public function getPromotionShowEnd()
     {
         return $this->promotionShowEnd;
+    }
+
+    /**
+     * Set promotionProvider
+     *
+     * @param \AppBundle\Entity\Provider $promotionProvider
+     *
+     * @return Promotion
+     */
+    public function setPromotionProvider(\AppBundle\Entity\Provider $promotionProvider = null)
+    {
+        $this->promotionProvider = $promotionProvider;
+
+        return $this;
+    }
+
+    /**
+     * Get promotionProvider
+     *
+     * @return \AppBundle\Entity\Provider
+     */
+    public function getPromotionProvider()
+    {
+        return $this->promotionProvider;
+    }
+
+    /**
+     * Set promotionServiceCategory
+     *
+     * @param \AppBundle\Entity\ServiceCategory $promotionServiceCategory
+     *
+     * @return Promotion
+     */
+    public function setPromotionServiceCategory(\AppBundle\Entity\ServiceCategory $promotionServiceCategory = null)
+    {
+        $this->promotionServiceCategory = $promotionServiceCategory;
+
+        return $this;
+    }
+
+    /**
+     * Get promotionServiceCategory
+     *
+     * @return \AppBundle\Entity\ServiceCategory
+     */
+    public function getPromotionServiceCategory()
+    {
+        return $this->promotionServiceCategory;
     }
 }

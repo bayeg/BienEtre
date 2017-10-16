@@ -24,16 +24,34 @@ class Abuse
     /**
      * @var string
      *
-     * @ORM\Column(name="abuseDescription", type="string", length=500)
+     * @ORM\Column(name="abuse_description", type="string", length=500)
      */
     private $abuseDescription;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="abuseDate", type="date")
+     * @ORM\Column(name="abuse_date", type="date")
      */
     private $abuseDate;
+
+
+    /**
+     *@var Comment
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Comment", inversedBy="commentAbuses")
+     */
+    private $abuseComment;
+
+
+    /**
+     *@var Internaut
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Internaut", inversedBy="internautAbuses")
+     */
+    private $abuseInternaut;
+
+
+
+
 
 
     /**
@@ -92,5 +110,53 @@ class Abuse
     public function getAbuseDate()
     {
         return $this->abuseDate;
+    }
+
+    /**
+     * Set abuseComment
+     *
+     * @param \AppBundle\Entity\Comment $abuseComment
+     *
+     * @return Abuse
+     */
+    public function setAbuseComment(\AppBundle\Entity\Comment $abuseComment = null)
+    {
+        $this->abuseComment = $abuseComment;
+
+        return $this;
+    }
+
+    /**
+     * Get abuseComment
+     *
+     * @return \AppBundle\Entity\Comment
+     */
+    public function getAbuseComment()
+    {
+        return $this->abuseComment;
+    }
+
+    /**
+     * Set abuseInternaut
+     *
+     * @param \AppBundle\Entity\Internaut $abuseInternaut
+     *
+     * @return Abuse
+     */
+    public function setAbuseInternaut(\AppBundle\Entity\Internaut $abuseInternaut = null)
+    {
+        $this->abuseInternaut = $abuseInternaut;
+
+        return $this;
+    }
+
+    /**
+     * Get abuseInternaut
+     *
+     * @return \AppBundle\Entity\Internaut
+     */
+    public function getAbuseInternaut()
+    {
+        return $this->abuseInternaut;
     }
 }

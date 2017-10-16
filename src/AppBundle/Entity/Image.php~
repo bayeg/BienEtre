@@ -24,14 +24,14 @@ class Image
     /**
      * @var int
      *
-     * @ORM\Column(name="imageOrder", type="integer")
+     * @ORM\Column(name="image_order", type="integer")
      */
     private $imageOrder;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="imageURL", type="string", length=255)
+     * @ORM\Column(name="image_url", type="string", length=255)
      */
     private $imageURL;
 
@@ -104,5 +104,52 @@ class Image
     {
         return $this->imageURL;
     }
-}
 
+    /**
+     * Set providerLogos
+     *
+     * @param \AppBundle\Entity\Provider $providerLogos
+     *
+     * @return Image
+     */
+    public function setProviderLogos(\AppBundle\Entity\Provider $providerLogos = null)
+    {
+        $this->providerLogos = $providerLogos;
+
+        return $this;
+    }
+
+    /**
+     * Get providerLogos
+     *
+     * @return \AppBundle\Entity\Provider
+     */
+    public function getProviderLogos()
+    {
+        return $this->providerLogos;
+    }
+
+    /**
+     * Set providerPhotos
+     *
+     * @param \AppBundle\Entity\Provider $providerPhotos
+     *
+     * @return Image
+     */
+    public function setProviderPhotos(\AppBundle\Entity\Provider $providerPhotos = null)
+    {
+        $this->providerPhotos = $providerPhotos;
+
+        return $this;
+    }
+
+    /**
+     * Get providerPhotos
+     *
+     * @return \AppBundle\Entity\Provider
+     */
+    public function getProviderPhotos()
+    {
+        return $this->providerPhotos;
+    }
+}

@@ -24,7 +24,7 @@ class Position
     /**
      * @var int
      *
-     * @ORM\Column(name="positionOrder", type="integer")
+     * @ORM\Column(name="position_order", type="integer")
      */
     private $positionOrder;
 

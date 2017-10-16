@@ -24,28 +24,28 @@ class Comment
     /**
      * @var int
      *
-     * @ORM\Column(name="commentRating", type="integer")
+     * @ORM\Column(name="comment_rating", type="integer")
      */
     private $commentRating;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="commentTitle", type="string", length=255)
+     * @ORM\Column(name="comment_title", type="string", length=255)
      */
     private $commentTitle;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="commentContent", type="string", length=500)
+     * @ORM\Column(name="comment_content", type="string", length=500)
      */
     private $commentContent;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="commentDate", type="date")
+     * @ORM\Column(name="comment_date", type="date")
      */
     private $commentDate;
 
@@ -55,11 +55,17 @@ class Comment
      */
     private $commentProvider;
 
+    /**
+     *@var ArrayCollection
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Abuse", mappedBy="abuseComment")
+     */
+    private $commentAbuses;
 
-
-
-
-
+    /**
+     *@var Internaut
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Internaut", inversedBy="internautComments")
+     */
+    private $commentInternaut;
 
 
     /**
@@ -166,5 +172,94 @@ class Comment
     public function getCommentDate()
     {
         return $this->commentDate;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->commentAbuses = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set commentProvider
+     *
+     * @param \AppBundle\Entity\Provider $commentProvider
+     *
+     * @return Comment
+     */
+    public function setCommentProvider(\AppBundle\Entity\Provider $commentProvider = null)
+    {
+        $this->commentProvider = $commentProvider;
+
+        return $this;
+    }
+
+    /**
+     * Get commentProvider
+     *
+     * @return \AppBundle\Entity\Provider
+     */
+    public function getCommentProvider()
+    {
+        return $this->commentProvider;
+    }
+
+    /**
+     * Add commentAbus
+     *
+     * @param \AppBundle\Entity\Abuse $commentAbus
+     *
+     * @return Comment
+     */
+    public function addCommentAbus(\AppBundle\Entity\Abuse $commentAbus)
+    {
+        $this->commentAbuses[] = $commentAbus;
+
+        return $this;
+    }
+
+    /**
+     * Remove commentAbus
+     *
+     * @param \AppBundle\Entity\Abuse $commentAbus
+     */
+    public function removeCommentAbus(\AppBundle\Entity\Abuse $commentAbus)
+    {
+        $this->commentAbuses->removeElement($commentAbus);
+    }
+
+    /**
+     * Get commentAbuses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommentAbuses()
+    {
+        return $this->commentAbuses;
+    }
+
+    /**
+     * Set commentInternaut
+     *
+     * @param \AppBundle\Entity\Internaut $commentInternaut
+     *
+     * @return Comment
+     */
+    public function setCommentInternaut(\AppBundle\Entity\Internaut $commentInternaut = null)
+    {
+        $this->commentInternaut = $commentInternaut;
+
+        return $this;
+    }
+
+    /**
+     * Get commentInternaut
+     *
+     * @return \AppBundle\Entity\Internaut
+     */
+    public function getCommentInternaut()
+    {
+        return $this->commentInternaut;
     }
 }

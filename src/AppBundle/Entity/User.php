@@ -44,21 +44,21 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="addressNumber", type="string", length=255)
+     * @ORM\Column(name="address_number", type="string", length=255)
      */
     private $addressNumber;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="addressStreet", type="string", length=255)
+     * @ORM\Column(name="address_street", type="string", length=255)
      */
     private $addressStreet;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="registrationDate", type="date")
+     * @ORM\Column(name="registration_date", type="date")
      */
     private $registrationDate;
 
@@ -66,7 +66,7 @@ class User
     /**
      * @var int
      *
-     * @ORM\Column(name="loginAttempts", type="integer")
+     * @ORM\Column(name="login_attempts", type="integer")
      */
     private $loginAttempts;
 
@@ -80,7 +80,7 @@ class User
     /**
      * @var bool
      *
-     * @ORM\Column(name="registrationConfirmed", type="boolean")
+     * @ORM\Column(name="registration_confirmed", type="boolean")
      */
     private $registrationConfirmed;
 

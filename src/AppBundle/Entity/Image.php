@@ -24,14 +24,14 @@ class Image
     /**
      * @var int
      *
-     * @ORM\Column(name="imageOrder", type="integer")
+     * @ORM\Column(name="image_order", type="integer")
      */
     private $imageOrder;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="imageURL", type="string", length=255)
+     * @ORM\Column(name="image_url", type="string", length=255)
      */
     private $imageURL;
 

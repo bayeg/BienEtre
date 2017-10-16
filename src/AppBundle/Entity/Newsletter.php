@@ -24,21 +24,21 @@ class Newsletter
     /**
      * @var string
      *
-     * @ORM\Column(name="newsletterTitle", type="string", length=255)
+     * @ORM\Column(name="newsletter_title", type="string", length=255)
      */
     private $newsletterTitle;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="newsletterDate", type="date")
+     * @ORM\Column(name="newsletter_date", type="date")
      */
     private $newsletterDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="newsletterPDF", type="string", length=255)
+     * @ORM\Column(name="newsletter_pdf", type="string", length=255)
      */
     private $newsletterPDF;
 

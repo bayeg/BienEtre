@@ -24,35 +24,35 @@ class Provider extends User
     /**
      * @var string
      *
-     * @ORM\Column(name="providerName", type="string", length=255)
+     * @ORM\Column(name="provider_name", type="string", length=255)
      */
     private $providerName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="providerWebsite", type="string", length=255)
+     * @ORM\Column(name="provider_website", type="string", length=255)
      */
     private $providerWebsite;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="providerEmail", type="string", length=255)
+     * @ORM\Column(name="provider_email", type="string", length=255)
      */
     private $providerEmail;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="providerPhone", type="string", length=255)
+     * @ORM\Column(name="provider_phone", type="string", length=255)
      */
     private $providerPhone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="providerVAT", type="string", length=255)
+     * @ORM\Column(name="provider_vat", type="string", length=255)
      */
     private $providerVAT;
 
@@ -93,12 +93,11 @@ class Provider extends User
     private $providerComments;
 
 
-
-
-
-
-
-
+    /**
+     *@var ArrayCollection
+     *@ORM\ManyToMany(targetEntity="AppBundle\Entity\Internaut")
+     */
+    private $providerInternauts;
 
 
 
@@ -307,5 +306,175 @@ class Provider extends User
     public function getProviderPhotos()
     {
         return $this->providerPhotos;
+    }
+
+    /**
+     * Add providerServiceCategory
+     *
+     * @param \AppBundle\Entity\ServiceCategory $providerServiceCategory
+     *
+     * @return Provider
+     */
+    public function addProviderServiceCategory(\AppBundle\Entity\ServiceCategory $providerServiceCategory)
+    {
+        $this->providerServiceCategories[] = $providerServiceCategory;
+
+        return $this;
+    }
+
+    /**
+     * Remove providerServiceCategory
+     *
+     * @param \AppBundle\Entity\ServiceCategory $providerServiceCategory
+     */
+    public function removeProviderServiceCategory(\AppBundle\Entity\ServiceCategory $providerServiceCategory)
+    {
+        $this->providerServiceCategories->removeElement($providerServiceCategory);
+    }
+
+    /**
+     * Get providerServiceCategories
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProviderServiceCategories()
+    {
+        return $this->providerServiceCategories;
+    }
+
+    /**
+     * Add providerCourse
+     *
+     * @param \AppBundle\Entity\Course $providerCourse
+     *
+     * @return Provider
+     */
+    public function addProviderCourse(\AppBundle\Entity\Course $providerCourse)
+    {
+        $this->providerCourses[] = $providerCourse;
+
+        return $this;
+    }
+
+    /**
+     * Remove providerCourse
+     *
+     * @param \AppBundle\Entity\Course $providerCourse
+     */
+    public function removeProviderCourse(\AppBundle\Entity\Course $providerCourse)
+    {
+        $this->providerCourses->removeElement($providerCourse);
+    }
+
+    /**
+     * Get providerCourses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProviderCourses()
+    {
+        return $this->providerCourses;
+    }
+
+    /**
+     * Add providerPromotion
+     *
+     * @param \AppBundle\Entity\Promotion $providerPromotion
+     *
+     * @return Provider
+     */
+    public function addProviderPromotion(\AppBundle\Entity\Promotion $providerPromotion)
+    {
+        $this->providerPromotions[] = $providerPromotion;
+
+        return $this;
+    }
+
+    /**
+     * Remove providerPromotion
+     *
+     * @param \AppBundle\Entity\Promotion $providerPromotion
+     */
+    public function removeProviderPromotion(\AppBundle\Entity\Promotion $providerPromotion)
+    {
+        $this->providerPromotions->removeElement($providerPromotion);
+    }
+
+    /**
+     * Get providerPromotions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProviderPromotions()
+    {
+        return $this->providerPromotions;
+    }
+
+    /**
+     * Add providerComment
+     *
+     * @param \AppBundle\Entity\Comment $providerComment
+     *
+     * @return Provider
+     */
+    public function addProviderComment(\AppBundle\Entity\Comment $providerComment)
+    {
+        $this->providerComments[] = $providerComment;
+
+        return $this;
+    }
+
+    /**
+     * Remove providerComment
+     *
+     * @param \AppBundle\Entity\Comment $providerComment
+     */
+    public function removeProviderComment(\AppBundle\Entity\Comment $providerComment)
+    {
+        $this->providerComments->removeElement($providerComment);
+    }
+
+    /**
+     * Get providerComments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProviderComments()
+    {
+        return $this->providerComments;
+    }
+
+    /**
+     * Add providerInternaut
+     *
+     * @param \AppBundle\Entity\Internaut $providerInternaut
+     *
+     * @return Provider
+     */
+    public function addProviderInternaut(\AppBundle\Entity\Internaut $providerInternaut)
+    {
+        $this->providerInternauts[] = $providerInternaut;
+
+        return $this;
+    }
+
+    /**
+     * Remove providerInternaut
+     *
+     * @param \AppBundle\Entity\Internaut $providerInternaut
+     */
+    public function removeProviderInternaut(\AppBundle\Entity\Internaut $providerInternaut)
+    {
+        $this->providerInternauts->removeElement($providerInternaut);
+    }
+
+    /**
+     * Get providerInternauts
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProviderInternauts()
+    {
+        return $this->providerInternauts;
     }
 }

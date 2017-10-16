@@ -44,21 +44,21 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="addressNumber", type="string", length=255)
+     * @ORM\Column(name="address_number", type="string", length=255)
      */
     private $addressNumber;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="addressStreet", type="string", length=255)
+     * @ORM\Column(name="address_street", type="string", length=255)
      */
     private $addressStreet;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="registrationDate", type="date")
+     * @ORM\Column(name="registration_date", type="date")
      */
     private $registrationDate;
 
@@ -66,7 +66,7 @@ class User
     /**
      * @var int
      *
-     * @ORM\Column(name="loginAttempts", type="integer")
+     * @ORM\Column(name="login_attempts", type="integer")
      */
     private $loginAttempts;
 
@@ -80,7 +80,7 @@ class User
     /**
      * @var bool
      *
-     * @ORM\Column(name="registrationConfirmed", type="boolean")
+     * @ORM\Column(name="registration_confirmed", type="boolean")
      */
     private $registrationConfirmed;
 
@@ -101,6 +101,8 @@ class User
      *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Commune", inversedBy="communeUsers")
      */
     private $userCommune;
+
+
 
     /**
      * Get id
@@ -304,5 +306,76 @@ class User
     {
         return $this->registrationConfirmed;
     }
-}
 
+    /**
+     * Set userPostCode
+     *
+     * @param \AppBundle\Entity\PostCode $userPostCode
+     *
+     * @return User
+     */
+    public function setUserPostCode(\AppBundle\Entity\PostCode $userPostCode = null)
+    {
+        $this->userPostCode = $userPostCode;
+
+        return $this;
+    }
+
+    /**
+     * Get userPostCode
+     *
+     * @return \AppBundle\Entity\PostCode
+     */
+    public function getUserPostCode()
+    {
+        return $this->userPostCode;
+    }
+
+    /**
+     * Set userLocality
+     *
+     * @param \AppBundle\Entity\Locality $userLocality
+     *
+     * @return User
+     */
+    public function setUserLocality(\AppBundle\Entity\Locality $userLocality = null)
+    {
+        $this->userLocality = $userLocality;
+
+        return $this;
+    }
+
+    /**
+     * Get userLocality
+     *
+     * @return \AppBundle\Entity\Locality
+     */
+    public function getUserLocality()
+    {
+        return $this->userLocality;
+    }
+
+    /**
+     * Set userCommune
+     *
+     * @param \AppBundle\Entity\Commune $userCommune
+     *
+     * @return User
+     */
+    public function setUserCommune(\AppBundle\Entity\Commune $userCommune = null)
+    {
+        $this->userCommune = $userCommune;
+
+        return $this;
+    }
+
+    /**
+     * Get userCommune
+     *
+     * @return \AppBundle\Entity\Commune
+     */
+    public function getUserCommune()
+    {
+        return $this->userCommune;
+    }
+}

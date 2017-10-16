@@ -24,28 +24,28 @@ class ServiceCategory
     /**
      * @var string
      *
-     * @ORM\Column(name="serviceName", type="string", length=255)
+     * @ORM\Column(name="service_name", type="string", length=255)
      */
     private $serviceName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="serviceDescription", type="string", length=500)
+     * @ORM\Column(name="service_description", type="string", length=500)
      */
     private $serviceDescription;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="serviceFeatured", type="boolean")
+     * @ORM\Column(name="service_featured", type="boolean")
      */
     private $serviceFeatured;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="serviceValidity", type="boolean")
+     * @ORM\Column(name="service_validity", type="boolean")
      */
     private $serviceValidity;
 
@@ -55,8 +55,21 @@ class ServiceCategory
      */
     private $image;
 
+    /**
+     *@var ArrayCollection
+     *@ORM\ManyToMany(targetEntity="AppBundle\Entity\Provider")
+     */
+    private $serviceCategoryProviders;
 
 
+    /**
+     *@var ArrayCollection
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Promotion", mappedBy="promotionServiceCategory")
+     */
+    private $serviceCategoryPromotions;
+
+
+    
 
     /**
      * Get id
@@ -186,5 +199,81 @@ class ServiceCategory
     public function getImage()
     {
         return $this->image;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->serviceCategoryProviders = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->serviceCategoryPromotions = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add serviceCategoryProvider
+     *
+     * @param \AppBundle\Entity\Provider $serviceCategoryProvider
+     *
+     * @return ServiceCategory
+     */
+    public function addServiceCategoryProvider(\AppBundle\Entity\Provider $serviceCategoryProvider)
+    {
+        $this->serviceCategoryProviders[] = $serviceCategoryProvider;
+
+        return $this;
+    }
+
+    /**
+     * Remove serviceCategoryProvider
+     *
+     * @param \AppBundle\Entity\Provider $serviceCategoryProvider
+     */
+    public function removeServiceCategoryProvider(\AppBundle\Entity\Provider $serviceCategoryProvider)
+    {
+        $this->serviceCategoryProviders->removeElement($serviceCategoryProvider);
+    }
+
+    /**
+     * Get serviceCategoryProviders
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getServiceCategoryProviders()
+    {
+        return $this->serviceCategoryProviders;
+    }
+
+    /**
+     * Add serviceCategoryPromotion
+     *
+     * @param \AppBundle\Entity\Promotion $serviceCategoryPromotion
+     *
+     * @return ServiceCategory
+     */
+    public function addServiceCategoryPromotion(\AppBundle\Entity\Promotion $serviceCategoryPromotion)
+    {
+        $this->serviceCategoryPromotions[] = $serviceCategoryPromotion;
+
+        return $this;
+    }
+
+    /**
+     * Remove serviceCategoryPromotion
+     *
+     * @param \AppBundle\Entity\Promotion $serviceCategoryPromotion
+     */
+    public function removeServiceCategoryPromotion(\AppBundle\Entity\Promotion $serviceCategoryPromotion)
+    {
+        $this->serviceCategoryPromotions->removeElement($serviceCategoryPromotion);
+    }
+
+    /**
+     * Get serviceCategoryPromotions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getServiceCategoryPromotions()
+    {
+        return $this->serviceCategoryPromotions;
     }
 }

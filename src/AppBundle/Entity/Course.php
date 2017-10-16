@@ -24,56 +24,56 @@ class Course
     /**
      * @var string
      *
-     * @ORM\Column(name="courseName", type="string", length=255)
+     * @ORM\Column(name="course_name", type="string", length=255)
      */
     private $courseName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="courseDescription", type="string", length=500)
+     * @ORM\Column(name="course_description", type="string", length=500)
      */
     private $courseDescription;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="courseTariff", type="string", length=255)
+     * @ORM\Column(name="course_tariff", type="string", length=255)
      */
     private $courseTariff;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="courseInfo", type="string", length=500)
+     * @ORM\Column(name="course_info", type="string", length=500)
      */
     private $courseInfo;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="courseStart", type="date")
+     * @ORM\Column(name="course_start", type="date")
      */
     private $courseStart;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="courseEnd", type="date")
+     * @ORM\Column(name="course_end", type="date")
      */
     private $courseEnd;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="courseShowStart", type="date")
+     * @ORM\Column(name="course_show_start", type="date")
      */
     private $courseShowStart;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="courseShowEnd", type="date")
+     * @ORM\Column(name="course_show_end", type="date")
      */
     private $courseShowEnd;
 
@@ -286,5 +286,29 @@ class Course
     public function getCourseShowEnd()
     {
         return $this->courseShowEnd;
+    }
+
+    /**
+     * Set courseProvider
+     *
+     * @param \AppBundle\Entity\Provider $courseProvider
+     *
+     * @return Course
+     */
+    public function setCourseProvider(\AppBundle\Entity\Provider $courseProvider = null)
+    {
+        $this->courseProvider = $courseProvider;
+
+        return $this;
+    }
+
+    /**
+     * Get courseProvider
+     *
+     * @return \AppBundle\Entity\Provider
+     */
+    public function getCourseProvider()
+    {
+        return $this->courseProvider;
     }
 }
