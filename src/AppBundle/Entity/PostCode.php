@@ -30,9 +30,12 @@ class PostCode
 
     /**
      *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="userPostCode")
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="postCode")
      */
-    private $postCodeUsers;
+    private $users;
+
+
+
 
     /**
      * Get id
@@ -107,5 +110,39 @@ class PostCode
     public function getPostCodeUsers()
     {
         return $this->postCodeUsers;
+    }
+
+    /**
+     * Add user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return PostCode
+     */
+    public function addUser(\AppBundle\Entity\User $user)
+    {
+        $this->users[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \AppBundle\Entity\User $user
+     */
+    public function removeUser(\AppBundle\Entity\User $user)
+    {
+        $this->users->removeElement($user);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }

@@ -30,9 +30,13 @@ class Commune
 
     /**
      *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="userCommune")
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="commune")
      */
-    private $communeUsers;
+    private $users;
+
+
+
+
 
     /**
      * Get id
@@ -107,5 +111,39 @@ class Commune
     public function getCommuneUsers()
     {
         return $this->communeUsers;
+    }
+
+    /**
+     * Add user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Commune
+     */
+    public function addUser(\AppBundle\Entity\User $user)
+    {
+        $this->users[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \AppBundle\Entity\User $user
+     */
+    public function removeUser(\AppBundle\Entity\User $user)
+    {
+        $this->users->removeElement($user);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }

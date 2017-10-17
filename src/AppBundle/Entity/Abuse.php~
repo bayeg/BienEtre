@@ -24,30 +24,30 @@ class Abuse
     /**
      * @var string
      *
-     * @ORM\Column(name="abuse_description", type="string", length=500)
+     * @ORM\Column(name="description", type="string", length=500)
      */
-    private $abuseDescription;
+    private $description;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="abuse_date", type="date")
+     * @ORM\Column(name="date", type="date")
      */
-    private $abuseDate;
+    private $date;
 
 
     /**
      *@var Comment
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Comment", inversedBy="commentAbuses")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Comment", inversedBy="abuses")
      */
-    private $abuseComment;
+    private $comment;
 
 
     /**
      *@var Internaut
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Internaut", inversedBy="internautAbuses")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Internaut", inversedBy="abuses")
      */
-    private $abuseInternaut;
+    private $internaut;
 
 
 
@@ -158,5 +158,101 @@ class Abuse
     public function getAbuseInternaut()
     {
         return $this->abuseInternaut;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Abuse
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Abuse
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set comment
+     *
+     * @param \AppBundle\Entity\Comment $comment
+     *
+     * @return Abuse
+     */
+    public function setComment(\AppBundle\Entity\Comment $comment = null)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return \AppBundle\Entity\Comment
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Set internaut
+     *
+     * @param \AppBundle\Entity\Internaut $internaut
+     *
+     * @return Abuse
+     */
+    public function setInternaut(\AppBundle\Entity\Internaut $internaut = null)
+    {
+        $this->internaut = $internaut;
+
+        return $this;
+    }
+
+    /**
+     * Get internaut
+     *
+     * @return \AppBundle\Entity\Internaut
+     */
+    public function getInternaut()
+    {
+        return $this->internaut;
     }
 }

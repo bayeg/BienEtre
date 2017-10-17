@@ -24,22 +24,23 @@ class Block
     /**
      * @var string
      *
-     * @ORM\Column(name="block_name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $blockName;
+    private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="block_description", type="string", length=500)
+     * @ORM\Column(name="description", type="string", length=500)
      */
-    private $blockDescription;
+    private $description;
+
 
     /**
      *@var ArrayCollection
-     *@ORM\ManyToMany(targetEntity="AppBundle\Entity\Internaut")
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Position", mappedBy="block")
      */
-    private $blockInternauts;
+    private $positions;
 
 
 
@@ -55,53 +56,7 @@ class Block
         return $this->id;
     }
 
-    /**
-     * Set blockName
-     *
-     * @param string $blockName
-     *
-     * @return Block
-     */
-    public function setBlockName($blockName)
-    {
-        $this->blockName = $blockName;
 
-        return $this;
-    }
-
-    /**
-     * Get blockName
-     *
-     * @return string
-     */
-    public function getBlockName()
-    {
-        return $this->blockName;
-    }
-
-    /**
-     * Set blockDescription
-     *
-     * @param string $blockDescription
-     *
-     * @return Block
-     */
-    public function setBlockDescription($blockDescription)
-    {
-        $this->blockDescription = $blockDescription;
-
-        return $this;
-    }
-
-    /**
-     * Get blockDescription
-     *
-     * @return string
-     */
-    public function getBlockDescription()
-    {
-        return $this->blockDescription;
-    }
     /**
      * Constructor
      */
@@ -142,5 +97,121 @@ class Block
     public function getBlockInternauts()
     {
         return $this->blockInternauts;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Block
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Add blockPosition
+     *
+     * @param \AppBundle\Entity\Position $blockPosition
+     *
+     * @return Block
+     */
+    public function addBlockPosition(\AppBundle\Entity\Position $blockPosition)
+    {
+        $this->blockPositions[] = $blockPosition;
+
+        return $this;
+    }
+
+    /**
+     * Remove blockPosition
+     *
+     * @param \AppBundle\Entity\Position $blockPosition
+     */
+    public function removeBlockPosition(\AppBundle\Entity\Position $blockPosition)
+    {
+        $this->blockPositions->removeElement($blockPosition);
+    }
+
+    /**
+     * Get blockPositions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBlockPositions()
+    {
+        return $this->blockPositions;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Block
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Add position
+     *
+     * @param \AppBundle\Entity\Position $position
+     *
+     * @return Block
+     */
+    public function addPosition(\AppBundle\Entity\Position $position)
+    {
+        $this->positions[] = $position;
+
+        return $this;
+    }
+
+    /**
+     * Remove position
+     *
+     * @param \AppBundle\Entity\Position $position
+     */
+    public function removePosition(\AppBundle\Entity\Position $position)
+    {
+        $this->positions->removeElement($position);
+    }
+
+    /**
+     * Get positions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPositions()
+    {
+        return $this->positions;
     }
 }

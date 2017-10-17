@@ -24,82 +24,80 @@ class Provider extends User
     /**
      * @var string
      *
-     * @ORM\Column(name="provider_name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $providerName;
+    private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="provider_website", type="string", length=255)
+     * @ORM\Column(name="website", type="string", length=255)
      */
-    private $providerWebsite;
+    private $website;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="provider_email", type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255)
      */
-    private $providerEmail;
+    private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="provider_phone", type="string", length=255)
+     * @ORM\Column(name="phone", type="string", length=255)
      */
-    private $providerPhone;
+    private $phone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="provider_vat", type="string", length=255)
+     * @ORM\Column(name="vat", type="string", length=255)
      */
-    private $providerVAT;
+    private $vat;
 
     /**
-     *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Image", mappedBy="providerLogos")
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Image", mappedBy="logoProvider")
      */
-    private $providerLogos;
+    private $logos;
 
     /**
-     *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Image", mappedBy="providerPhotos")
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Image", mappedBy="photoProvider")
      */
-    private $providerPhotos;
+    private $photos;
 
     /**
-     *@var ArrayCollection
-     *@ORM\ManyToMany(targetEntity="AppBundle\Entity\ServiceCategory")
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\ServiceCategory", inversedBy="providers")
      */
-    private $providerServiceCategories;
+    private $serviceCategories;
 
     /**
-     *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Course", mappedBy="courseProvider")
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Course", mappedBy="provider")
      */
-    private $providerCourses;
+    private $courses;
 
     /**
-     *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Promotion", mappedBy="promotionProvider")
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Promotion", mappedBy="provider")
      */
-    private $providerPromotions;
+    private $promotions;
 
     /**
-     *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="commentProvider")
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="provider")
      */
-    private $providerComments;
+    private $comments;
 
 
     /**
-     *@var ArrayCollection
-     *@ORM\ManyToMany(targetEntity="AppBundle\Entity\Internaut")
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Internaut", inversedBy="providers")
      */
-    private $providerInternauts;
-
-
+    private $internauts;
 
 
     /**
@@ -231,6 +229,7 @@ class Provider extends User
     {
         return $this->providerVAT;
     }
+
     /**
      * Constructor
      */
@@ -476,5 +475,339 @@ class Provider extends User
     public function getProviderInternauts()
     {
         return $this->providerInternauts;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Provider
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set website
+     *
+     * @param string $website
+     *
+     * @return Provider
+     */
+    public function setWebsite($website)
+    {
+        $this->website = $website;
+
+        return $this;
+    }
+
+    /**
+     * Get website
+     *
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->website;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     *
+     * @return Provider
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set vat
+     *
+     * @param string $vat
+     *
+     * @return Provider
+     */
+    public function setVat($vat)
+    {
+        $this->vat = $vat;
+
+        return $this;
+    }
+
+    /**
+     * Get vat
+     *
+     * @return string
+     */
+    public function getVat()
+    {
+        return $this->vat;
+    }
+
+    /**
+     * Add logo
+     *
+     * @param \AppBundle\Entity\Image $logo
+     *
+     * @return Provider
+     */
+    public function addLogo(\AppBundle\Entity\Image $logo)
+    {
+        $this->logos[] = $logo;
+
+        return $this;
+    }
+
+    /**
+     * Remove logo
+     *
+     * @param \AppBundle\Entity\Image $logo
+     */
+    public function removeLogo(\AppBundle\Entity\Image $logo)
+    {
+        $this->logos->removeElement($logo);
+    }
+
+    /**
+     * Get logos
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLogos()
+    {
+        return $this->logos;
+    }
+
+    /**
+     * Add photo
+     *
+     * @param \AppBundle\Entity\Image $photo
+     *
+     * @return Provider
+     */
+    public function addPhoto(\AppBundle\Entity\Image $photo)
+    {
+        $this->photos[] = $photo;
+
+        return $this;
+    }
+
+    /**
+     * Remove photo
+     *
+     * @param \AppBundle\Entity\Image $photo
+     */
+    public function removePhoto(\AppBundle\Entity\Image $photo)
+    {
+        $this->photos->removeElement($photo);
+    }
+
+    /**
+     * Get photos
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPhotos()
+    {
+        return $this->photos;
+    }
+
+    /**
+     * Add serviceCategory
+     *
+     * @param \AppBundle\Entity\ServiceCategory $serviceCategory
+     *
+     * @return Provider
+     */
+    public function addServiceCategory(\AppBundle\Entity\ServiceCategory $serviceCategory)
+    {
+        $this->serviceCategories[] = $serviceCategory;
+
+        return $this;
+    }
+
+    /**
+     * Remove serviceCategory
+     *
+     * @param \AppBundle\Entity\ServiceCategory $serviceCategory
+     */
+    public function removeServiceCategory(\AppBundle\Entity\ServiceCategory $serviceCategory)
+    {
+        $this->serviceCategories->removeElement($serviceCategory);
+    }
+
+    /**
+     * Get serviceCategories
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getServiceCategories()
+    {
+        return $this->serviceCategories;
+    }
+
+    /**
+     * Add course
+     *
+     * @param \AppBundle\Entity\Course $course
+     *
+     * @return Provider
+     */
+    public function addCourse(\AppBundle\Entity\Course $course)
+    {
+        $this->courses[] = $course;
+
+        return $this;
+    }
+
+    /**
+     * Remove course
+     *
+     * @param \AppBundle\Entity\Course $course
+     */
+    public function removeCourse(\AppBundle\Entity\Course $course)
+    {
+        $this->courses->removeElement($course);
+    }
+
+    /**
+     * Get courses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCourses()
+    {
+        return $this->courses;
+    }
+
+    /**
+     * Add promotion
+     *
+     * @param \AppBundle\Entity\Promotion $promotion
+     *
+     * @return Provider
+     */
+    public function addPromotion(\AppBundle\Entity\Promotion $promotion)
+    {
+        $this->promotions[] = $promotion;
+
+        return $this;
+    }
+
+    /**
+     * Remove promotion
+     *
+     * @param \AppBundle\Entity\Promotion $promotion
+     */
+    public function removePromotion(\AppBundle\Entity\Promotion $promotion)
+    {
+        $this->promotions->removeElement($promotion);
+    }
+
+    /**
+     * Get promotions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPromotions()
+    {
+        return $this->promotions;
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \AppBundle\Entity\Comment $comment
+     *
+     * @return Provider
+     */
+    public function addComment(\AppBundle\Entity\Comment $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \AppBundle\Entity\Comment $comment
+     */
+    public function removeComment(\AppBundle\Entity\Comment $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * Add internaut
+     *
+     * @param \AppBundle\Entity\Internaut $internaut
+     *
+     * @return Provider
+     */
+    public function addInternaut(\AppBundle\Entity\Internaut $internaut)
+    {
+        $this->internauts[] = $internaut;
+
+        return $this;
+    }
+
+    /**
+     * Remove internaut
+     *
+     * @param \AppBundle\Entity\Internaut $internaut
+     */
+    public function removeInternaut(\AppBundle\Entity\Internaut $internaut)
+    {
+        $this->internauts->removeElement($internaut);
+    }
+
+    /**
+     * Get internauts
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInternauts()
+    {
+        return $this->internauts;
     }
 }

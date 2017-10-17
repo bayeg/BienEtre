@@ -24,30 +24,30 @@ class ServiceCategory
     /**
      * @var string
      *
-     * @ORM\Column(name="service_name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $serviceName;
+    private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="service_description", type="string", length=500)
+     * @ORM\Column(name="description", type="string", length=500)
      */
-    private $serviceDescription;
+    private $description;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="service_featured", type="boolean")
+     * @ORM\Column(name="featured", type="boolean")
      */
-    private $serviceFeatured;
+    private $featured;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="service_validity", type="boolean")
+     * @ORM\Column(name="validity", type="boolean")
      */
-    private $serviceValidity;
+    private $validity;
 
     /**
      * @var Image
@@ -57,16 +57,16 @@ class ServiceCategory
 
     /**
      *@var ArrayCollection
-     *@ORM\ManyToMany(targetEntity="AppBundle\Entity\Provider")
+     *@ORM\ManyToMany(targetEntity="AppBundle\Entity\Provider", mappedBy="serviceCategories")
      */
-    private $serviceCategoryProviders;
+    private $providers;
 
 
     /**
      *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Promotion", mappedBy="promotionServiceCategory")
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Promotion", mappedBy="serviceCategory")
      */
-    private $serviceCategoryPromotions;
+    private $promotions;
 
 
     
@@ -275,5 +275,169 @@ class ServiceCategory
     public function getServiceCategoryPromotions()
     {
         return $this->serviceCategoryPromotions;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return ServiceCategory
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return ServiceCategory
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set featured
+     *
+     * @param boolean $featured
+     *
+     * @return ServiceCategory
+     */
+    public function setFeatured($featured)
+    {
+        $this->featured = $featured;
+
+        return $this;
+    }
+
+    /**
+     * Get featured
+     *
+     * @return boolean
+     */
+    public function getFeatured()
+    {
+        return $this->featured;
+    }
+
+    /**
+     * Set validity
+     *
+     * @param boolean $validity
+     *
+     * @return ServiceCategory
+     */
+    public function setValidity($validity)
+    {
+        $this->validity = $validity;
+
+        return $this;
+    }
+
+    /**
+     * Get validity
+     *
+     * @return boolean
+     */
+    public function getValidity()
+    {
+        return $this->validity;
+    }
+
+    /**
+     * Add provider
+     *
+     * @param \AppBundle\Entity\Provider $provider
+     *
+     * @return ServiceCategory
+     */
+    public function addProvider(\AppBundle\Entity\Provider $provider)
+    {
+        $this->providers[] = $provider;
+
+        return $this;
+    }
+
+    /**
+     * Remove provider
+     *
+     * @param \AppBundle\Entity\Provider $provider
+     */
+    public function removeProvider(\AppBundle\Entity\Provider $provider)
+    {
+        $this->providers->removeElement($provider);
+    }
+
+    /**
+     * Get providers
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProviders()
+    {
+        return $this->providers;
+    }
+
+    /**
+     * Add promotion
+     *
+     * @param \AppBundle\Entity\Promotion $promotion
+     *
+     * @return ServiceCategory
+     */
+    public function addPromotion(\AppBundle\Entity\Promotion $promotion)
+    {
+        $this->promotions[] = $promotion;
+
+        return $this;
+    }
+
+    /**
+     * Remove promotion
+     *
+     * @param \AppBundle\Entity\Promotion $promotion
+     */
+    public function removePromotion(\AppBundle\Entity\Promotion $promotion)
+    {
+        $this->promotions->removeElement($promotion);
+    }
+
+    /**
+     * Get promotions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPromotions()
+    {
+        return $this->promotions;
     }
 }

@@ -24,63 +24,63 @@ class Promotion
     /**
      * @var string
      *
-     * @ORM\Column(name="promotion_name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $promotionName;
+    private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="promotion_description", type="string", length=255)
+     * @ORM\Column(name="description", type="string", length=255)
      */
-    private $promotionDescription;
+    private $description;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="promotion_pdf", type="string", length=255)
+     * @ORM\Column(name="pdf", type="string", length=255)
      */
-    private $promotionPDF;
+    private $pdf;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="promotion_start", type="date")
+     * @ORM\Column(name="start", type="date")
      */
-    private $promotionStart;
+    private $start;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="promotion_end", type="date")
+     * @ORM\Column(name="end", type="date")
      */
-    private $promotionEnd;
+    private $end;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="promotion_show_start", type="date")
+     * @ORM\Column(name="show_start", type="date")
      */
-    private $promotionShowStart;
+    private $showStart;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="promotion_show_end", type="date")
+     * @ORM\Column(name="show_end", type="date")
      */
-    private $promotionShowEnd;
+    private $showEnd;
 
     /**
      *@var Provider
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="providerPromotions")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="promotions")
      */
-    private $promotionProvider;
+    private $provider;
 
     /**
      *@var ServiceCategory
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\ServiceCategory", inversedBy="serviceCategoryPromotions")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\ServiceCategory", inversedBy="promotions")
      */
-    private $promotionServiceCategory;
+    private $serviceCategory;
 
 
 
@@ -308,5 +308,221 @@ class Promotion
     public function getPromotionServiceCategory()
     {
         return $this->promotionServiceCategory;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Promotion
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Promotion
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set pdf
+     *
+     * @param string $pdf
+     *
+     * @return Promotion
+     */
+    public function setPdf($pdf)
+    {
+        $this->pdf = $pdf;
+
+        return $this;
+    }
+
+    /**
+     * Get pdf
+     *
+     * @return string
+     */
+    public function getPdf()
+    {
+        return $this->pdf;
+    }
+
+    /**
+     * Set start
+     *
+     * @param \DateTime $start
+     *
+     * @return Promotion
+     */
+    public function setStart($start)
+    {
+        $this->start = $start;
+
+        return $this;
+    }
+
+    /**
+     * Get start
+     *
+     * @return \DateTime
+     */
+    public function getStart()
+    {
+        return $this->start;
+    }
+
+    /**
+     * Set end
+     *
+     * @param \DateTime $end
+     *
+     * @return Promotion
+     */
+    public function setEnd($end)
+    {
+        $this->end = $end;
+
+        return $this;
+    }
+
+    /**
+     * Get end
+     *
+     * @return \DateTime
+     */
+    public function getEnd()
+    {
+        return $this->end;
+    }
+
+    /**
+     * Set showStart
+     *
+     * @param \DateTime $showStart
+     *
+     * @return Promotion
+     */
+    public function setShowStart($showStart)
+    {
+        $this->showStart = $showStart;
+
+        return $this;
+    }
+
+    /**
+     * Get showStart
+     *
+     * @return \DateTime
+     */
+    public function getShowStart()
+    {
+        return $this->showStart;
+    }
+
+    /**
+     * Set showEnd
+     *
+     * @param \DateTime $showEnd
+     *
+     * @return Promotion
+     */
+    public function setShowEnd($showEnd)
+    {
+        $this->showEnd = $showEnd;
+
+        return $this;
+    }
+
+    /**
+     * Get showEnd
+     *
+     * @return \DateTime
+     */
+    public function getShowEnd()
+    {
+        return $this->showEnd;
+    }
+
+    /**
+     * Set provider
+     *
+     * @param \AppBundle\Entity\Provider $provider
+     *
+     * @return Promotion
+     */
+    public function setProvider(\AppBundle\Entity\Provider $provider = null)
+    {
+        $this->provider = $provider;
+
+        return $this;
+    }
+
+    /**
+     * Get provider
+     *
+     * @return \AppBundle\Entity\Provider
+     */
+    public function getProvider()
+    {
+        return $this->provider;
+    }
+
+    /**
+     * Set serviceCategory
+     *
+     * @param \AppBundle\Entity\ServiceCategory $serviceCategory
+     *
+     * @return Promotion
+     */
+    public function setServiceCategory(\AppBundle\Entity\ServiceCategory $serviceCategory = null)
+    {
+        $this->serviceCategory = $serviceCategory;
+
+        return $this;
+    }
+
+    /**
+     * Get serviceCategory
+     *
+     * @return \AppBundle\Entity\ServiceCategory
+     */
+    public function getServiceCategory()
+    {
+        return $this->serviceCategory;
     }
 }

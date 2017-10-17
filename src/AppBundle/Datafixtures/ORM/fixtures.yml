@@ -1,49 +1,98 @@
 
-#AppBundle\Entity\Abuse:
-#    abuse_{1..10}:
-#      abuse_description: <text(500)>
-#      abuse_date: <dateTime($max = 'now', $timezone = date_default_timezone_get())>
-#      abuse_comment_id:
-
+AppBundle\Entity\Abuse:
+    abuse_{1..10}:
+      description: <text(500)>
+      date: <dateTime()>
+#      comment: '@comment_*'
+#      internaut: '@internaut_*'
 
 
 AppBundle\Entity\Block:
     block_{1..10}:
-        blockName: <text(20)>
-        blockDescription: <text(100)>
+        name: <text(20)>
+        description: <text(100)>
 
 AppBundle\Entity\Comment:
     comment_{1..10}:
-        commentRating: <numberBetween(1,5)>
-        commentTitle: <text(25)>
-        commentContent: <text(255)>
-        commentDate: <dateTime()>
-        commentProvider: '@provider_*'
-        commentInternaut: '@internaut_*'
+        rating: <numberBetween(1,5)>
+        title: <text(25)>
+        content: <text(255)>
+        date: <dateTime()>
+##        provider: '@provider_*'
+##        internaut: '@internaut_*'
+#
+AppBundle\Entity\Commune:
+    commune_{1..100}:
+        commune: <city()>
 
-#AppBundle\Entity\Commune:
-#AppBundle\Entity\Course:
+AppBundle\Entity\Course:
+    course_{1..10}:
+        name: <text(25)>
+        description: <text(255)>
+        tariff: <randomNumber(3)>
+        info: <text(500)>
+        start: <dateTime()>
+        end: <dateTime()>
+        showStart: <dateTimeThisMonth()>
+        showEnd: <dateTimeThisMonth()>
+##        provider: '@provider_*'
+
 #AppBundle\Entity\Image:
-AppBundle\Entity\Internaut:
-    internaut_{1..10}:
-        internautLastName: <lastName()>
-        internautLastName: <firstName()>
-        newsletter: <boolean(0.5)>
+#    image_{1..25}:
+#        order: <randomNumber()>
+#        url: <imageUrl()>
+##        logoProvider
+##        photoProvider
+#
+#
+#AppBundle\Entity\Internaut:
+#    internaut_{1..10}:
+#        lastName: <lastName()>
+#        firstName: <firstName()>
+#        newsletter: <boolean(0.5)>
+#
+AppBundle\Entity\Locality:
+      locality_{1..100}:
+          locality: <city()>
+#          users
+#
+AppBundle\Entity\Newsletter:
+    newsletter_{1..10}:
+         title: <text(25)>
+         date: <dateTime()>
+         pdf: <url>
+#
+##AppBundle\Entity\Position:
 
-#AppBundle\Entity\Locality:
-#AppBundle\Entity\Newsletter:
-#AppBundle\Entity\Position:
-##AppBundle\Entity\PostCode:
-##    xxxxx_{1..1000}:
-##        xxxxx: <numberBetween(1000, 9999)>
-#AppBundle\Entity\Promotion:
-AppBundle\Entity\Provider:
-      provider_{1..10}:
-      providerName: <company()>
-      providerWebsite: <url()>
-      providerEmail: <email()>
-      providerPhone: <phoneNumber()>
-      providerVAT: <vat()>
-#AppBundle\Entity\ServiceCategory:
+AppBundle\Entity\PostCode:
+    postCode_{1..1000}:
+        postCode: <numberBetween(1000, 9999)>
+#        users
+
+
+##AppBundle\Entity\Promotion:
+
+#AppBundle\Entity\Provider:
+#      provider_{1..10}:
+#      name: <company()>
+#      website: <url()>
+#      email: <email()>
+#      phone: <phoneNumber()>
+#      vat: <vat()>
+
+##AppBundle\Entity\ServiceCategory:
+
 #AppBundle\Entity\User:
+#    user_{1..10}:
+#        email: <email()>
+#        password: <password()>
+#          addressNumber: <numberBetween(1, 100)>
+#          addressStreet: <street()>
+#          registrationDate: <dateTime()>
+#          loginAttempts: <numberBetween(1, 3)>
+#          banned: <boolean()>
+#          registrationConfirmed: <boolean()>
+#          postCode: '@postcode_*'
+#          locality: '@locality_*'
+#          commune: '@commune_*'
 

@@ -30,9 +30,17 @@ class Locality
 
     /**
      *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="userLocality")
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="locality")
      */
-    private $localityUsers;
+    private $users;
+
+
+
+
+
+
+
+
 
     /**
      * Get id
@@ -107,5 +115,39 @@ class Locality
     public function getLocalityUsers()
     {
         return $this->localityUsers;
+    }
+
+    /**
+     * Add user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Locality
+     */
+    public function addUser(\AppBundle\Entity\User $user)
+    {
+        $this->users[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \AppBundle\Entity\User $user
+     */
+    public function removeUser(\AppBundle\Entity\User $user)
+    {
+        $this->users->removeElement($user);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }

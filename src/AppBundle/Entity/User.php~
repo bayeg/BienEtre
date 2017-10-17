@@ -86,21 +86,21 @@ class User
 
     /**
      *@var PostCode
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\PostCode", inversedBy="postCodeUsers")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\PostCode", inversedBy="users")
      */
-    private $userPostCode;
+    private $postCode;
 
     /**
      *@var Locality
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Locality", inversedBy="localityUsers")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Locality", inversedBy="users")
      */
-    private $userLocality;
+    private $locality;
 
     /**
      *@var Commune
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Commune", inversedBy="communeUsers")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Commune", inversedBy="users")
      */
-    private $userCommune;
+    private $commune;
 
 
 
@@ -377,5 +377,77 @@ class User
     public function getUserCommune()
     {
         return $this->userCommune;
+    }
+
+    /**
+     * Set postCode
+     *
+     * @param \AppBundle\Entity\PostCode $postCode
+     *
+     * @return User
+     */
+    public function setPostCode(\AppBundle\Entity\PostCode $postCode = null)
+    {
+        $this->postCode = $postCode;
+
+        return $this;
+    }
+
+    /**
+     * Get postCode
+     *
+     * @return \AppBundle\Entity\PostCode
+     */
+    public function getPostCode()
+    {
+        return $this->postCode;
+    }
+
+    /**
+     * Set locality
+     *
+     * @param \AppBundle\Entity\Locality $locality
+     *
+     * @return User
+     */
+    public function setLocality(\AppBundle\Entity\Locality $locality = null)
+    {
+        $this->locality = $locality;
+
+        return $this;
+    }
+
+    /**
+     * Get locality
+     *
+     * @return \AppBundle\Entity\Locality
+     */
+    public function getLocality()
+    {
+        return $this->locality;
+    }
+
+    /**
+     * Set commune
+     *
+     * @param \AppBundle\Entity\Commune $commune
+     *
+     * @return User
+     */
+    public function setCommune(\AppBundle\Entity\Commune $commune = null)
+    {
+        $this->commune = $commune;
+
+        return $this;
+    }
+
+    /**
+     * Get commune
+     *
+     * @return \AppBundle\Entity\Commune
+     */
+    public function getCommune()
+    {
+        return $this->commune;
     }
 }

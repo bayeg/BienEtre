@@ -24,23 +24,24 @@ class Newsletter
     /**
      * @var string
      *
-     * @ORM\Column(name="newsletter_title", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    private $newsletterTitle;
+    private $title;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="newsletter_date", type="date")
+     * @ORM\Column(name="date", type="date")
      */
-    private $newsletterDate;
+    private $date;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="newsletter_pdf", type="string", length=255)
+     * @ORM\Column(name="pdf", type="string", length=255)
      */
-    private $newsletterPDF;
+    private $pdf;
+
 
 
     /**
@@ -123,5 +124,77 @@ class Newsletter
     public function getNewsletterPDF()
     {
         return $this->newsletterPDF;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Newsletter
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Newsletter
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set pdf
+     *
+     * @param string $pdf
+     *
+     * @return Newsletter
+     */
+    public function setPdf($pdf)
+    {
+        $this->pdf = $pdf;
+
+        return $this;
+    }
+
+    /**
+     * Get pdf
+     *
+     * @return string
+     */
+    public function getPdf()
+    {
+        return $this->pdf;
     }
 }

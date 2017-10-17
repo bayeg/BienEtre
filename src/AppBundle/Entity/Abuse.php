@@ -24,30 +24,30 @@ class Abuse
     /**
      * @var string
      *
-     * @ORM\Column(name="abuse_description", type="string", length=500)
+     * @ORM\Column(name="description", type="string", length=500)
      */
-    private $abuseDescription;
+    private $description;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="abuse_date", type="date")
+     * @ORM\Column(name="date", type="date")
      */
-    private $abuseDate;
+    private $date;
 
 
     /**
      *@var Comment
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Comment", inversedBy="commentAbuses")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Comment", inversedBy="abuses")
      */
-    private $abuseComment;
+    private $comment;
 
 
     /**
      *@var Internaut
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Internaut", inversedBy="internautAbuses")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Internaut", inversedBy="abuses")
      */
-    private $abuseInternaut;
+    private $internaut;
 
 
 
@@ -64,99 +64,100 @@ class Abuse
         return $this->id;
     }
 
+
     /**
-     * Set abuseDescription
+     * Set description
      *
-     * @param string $abuseDescription
+     * @param string $description
      *
      * @return Abuse
      */
-    public function setAbuseDescription($abuseDescription)
+    public function setDescription($description)
     {
-        $this->abuseDescription = $abuseDescription;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get abuseDescription
+     * Get description
      *
      * @return string
      */
-    public function getAbuseDescription()
+    public function getDescription()
     {
-        return $this->abuseDescription;
+        return $this->description;
     }
 
     /**
-     * Set abuseDate
+     * Set date
      *
-     * @param \DateTime $abuseDate
+     * @param \DateTime $date
      *
      * @return Abuse
      */
-    public function setAbuseDate($abuseDate)
+    public function setDate($date)
     {
-        $this->abuseDate = $abuseDate;
+        $this->date = $date;
 
         return $this;
     }
 
     /**
-     * Get abuseDate
+     * Get date
      *
      * @return \DateTime
      */
-    public function getAbuseDate()
+    public function getDate()
     {
-        return $this->abuseDate;
+        return $this->date;
     }
 
     /**
-     * Set abuseComment
+     * Set comment
      *
-     * @param \AppBundle\Entity\Comment $abuseComment
+     * @param \AppBundle\Entity\Comment $comment
      *
      * @return Abuse
      */
-    public function setAbuseComment(\AppBundle\Entity\Comment $abuseComment = null)
+    public function setComment(\AppBundle\Entity\Comment $comment = null)
     {
-        $this->abuseComment = $abuseComment;
+        $this->comment = $comment;
 
         return $this;
     }
 
     /**
-     * Get abuseComment
+     * Get comment
      *
      * @return \AppBundle\Entity\Comment
      */
-    public function getAbuseComment()
+    public function getComment()
     {
-        return $this->abuseComment;
+        return $this->comment;
     }
 
     /**
-     * Set abuseInternaut
+     * Set internaut
      *
-     * @param \AppBundle\Entity\Internaut $abuseInternaut
+     * @param \AppBundle\Entity\Internaut $internaut
      *
      * @return Abuse
      */
-    public function setAbuseInternaut(\AppBundle\Entity\Internaut $abuseInternaut = null)
+    public function setInternaut(\AppBundle\Entity\Internaut $internaut = null)
     {
-        $this->abuseInternaut = $abuseInternaut;
+        $this->internaut = $internaut;
 
         return $this;
     }
 
     /**
-     * Get abuseInternaut
+     * Get internaut
      *
      * @return \AppBundle\Entity\Internaut
      */
-    public function getAbuseInternaut()
+    public function getInternaut()
     {
-        return $this->abuseInternaut;
+        return $this->internaut;
     }
 }

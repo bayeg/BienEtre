@@ -24,16 +24,16 @@ class Internaut extends User
     /**
      * @var string
      *
-     * @ORM\Column(name="internaut_last_name", type="string", length=255)
+     * @ORM\Column(name="last_name", type="string", length=255)
      */
-    private $internautLastName;
+    private $lastName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="internaut_first_name", type="string", length=255)
+     * @ORM\Column(name="first_name", type="string", length=255)
      */
-    private $internautFirstName;
+    private $firstName;
 
     /**
      * @var bool
@@ -46,32 +46,31 @@ class Internaut extends User
      * @var Image
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\Image")
      */
-    private $internautImage;
+    private $image;
 
     /**
      *@var ArrayCollection
-     *@ORM\ManyToMany(targetEntity="AppBundle\Entity\Provider")
+     *@ORM\ManyToMany(targetEntity="AppBundle\Entity\Provider", mappedBy="internauts")
      */
-    private $internautProviders;
+    private $providers;
 
     /**
      *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Abuse", mappedBy="abuseInternaut")
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Abuse", mappedBy="internaut")
      */
-    private $internautAbuses;
+    private $abuses;
 
     /**
      *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="commentInternaut")
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="internaut")
      */
-    private $internautComments;
+    private $comments;
 
     /**
      *@var ArrayCollection
-     *@ORM\ManyToMany(targetEntity="AppBundle\Entity\Block")
+     *@ORM\OneToMany(targetEntity="AppBundle\Entity\Position", mappedBy="internaut")
      */
-    private $internautBlocks;
-
+    private $positions;
 
 
 
@@ -327,5 +326,247 @@ class Internaut extends User
     public function getInternautBlocks()
     {
         return $this->internautBlocks;
+    }
+
+    /**
+     * Add internautPosition
+     *
+     * @param \AppBundle\Entity\Position $internautPosition
+     *
+     * @return Internaut
+     */
+    public function addInternautPosition(\AppBundle\Entity\Position $internautPosition)
+    {
+        $this->internautPositions[] = $internautPosition;
+
+        return $this;
+    }
+
+    /**
+     * Remove internautPosition
+     *
+     * @param \AppBundle\Entity\Position $internautPosition
+     */
+    public function removeInternautPosition(\AppBundle\Entity\Position $internautPosition)
+    {
+        $this->internautPositions->removeElement($internautPosition);
+    }
+
+    /**
+     * Get internautPositions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInternautPositions()
+    {
+        return $this->internautPositions;
+    }
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     *
+     * @return Internaut
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get lastName
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * Set firstName
+     *
+     * @param string $firstName
+     *
+     * @return Internaut
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Get firstName
+     *
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \AppBundle\Entity\Image $image
+     *
+     * @return Internaut
+     */
+    public function setImage(\AppBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \AppBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Add provider
+     *
+     * @param \AppBundle\Entity\Provider $provider
+     *
+     * @return Internaut
+     */
+    public function addProvider(\AppBundle\Entity\Provider $provider)
+    {
+        $this->providers[] = $provider;
+
+        return $this;
+    }
+
+    /**
+     * Remove provider
+     *
+     * @param \AppBundle\Entity\Provider $provider
+     */
+    public function removeProvider(\AppBundle\Entity\Provider $provider)
+    {
+        $this->providers->removeElement($provider);
+    }
+
+    /**
+     * Get providers
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProviders()
+    {
+        return $this->providers;
+    }
+
+    /**
+     * Add abus
+     *
+     * @param \AppBundle\Entity\Abuse $abus
+     *
+     * @return Internaut
+     */
+    public function addAbus(\AppBundle\Entity\Abuse $abus)
+    {
+        $this->abuses[] = $abus;
+
+        return $this;
+    }
+
+    /**
+     * Remove abus
+     *
+     * @param \AppBundle\Entity\Abuse $abus
+     */
+    public function removeAbus(\AppBundle\Entity\Abuse $abus)
+    {
+        $this->abuses->removeElement($abus);
+    }
+
+    /**
+     * Get abuses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAbuses()
+    {
+        return $this->abuses;
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \AppBundle\Entity\Comment $comment
+     *
+     * @return Internaut
+     */
+    public function addComment(\AppBundle\Entity\Comment $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \AppBundle\Entity\Comment $comment
+     */
+    public function removeComment(\AppBundle\Entity\Comment $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * Add position
+     *
+     * @param \AppBundle\Entity\Position $position
+     *
+     * @return Internaut
+     */
+    public function addPosition(\AppBundle\Entity\Position $position)
+    {
+        $this->positions[] = $position;
+
+        return $this;
+    }
+
+    /**
+     * Remove position
+     *
+     * @param \AppBundle\Entity\Position $position
+     */
+    public function removePosition(\AppBundle\Entity\Position $position)
+    {
+        $this->positions->removeElement($position);
+    }
+
+    /**
+     * Get positions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPositions()
+    {
+        return $this->positions;
     }
 }

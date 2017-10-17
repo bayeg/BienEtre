@@ -24,28 +24,30 @@ class Image
     /**
      * @var int
      *
-     * @ORM\Column(name="image_order", type="integer")
+     * @ORM\Column(name="order", type="integer")
      */
-    private $imageOrder;
+    private $order;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="image_url", type="string", length=255)
+     * @ORM\Column(name="url", type="string", length=255)
      */
-    private $imageURL;
+    private $url;
 
     /**
      *@var Provider
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="providerLogos")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="logos")
      */
-    private $providerLogos;
+    private $logoProvider;
 
     /**
      *@var Provider
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="providerPhotos")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="photos")
      */
-    private $providerPhotos;
+    private $photoProvider;
+
+
 
     /**
      * Get id
@@ -151,5 +153,101 @@ class Image
     public function getProviderPhotos()
     {
         return $this->providerPhotos;
+    }
+
+    /**
+     * Set order
+     *
+     * @param integer $order
+     *
+     * @return Image
+     */
+    public function setOrder($order)
+    {
+        $this->order = $order;
+
+        return $this;
+    }
+
+    /**
+     * Get order
+     *
+     * @return integer
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     *
+     * @return Image
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Set logoProvider
+     *
+     * @param \AppBundle\Entity\Provider $logoProvider
+     *
+     * @return Image
+     */
+    public function setLogoProvider(\AppBundle\Entity\Provider $logoProvider = null)
+    {
+        $this->logoProvider = $logoProvider;
+
+        return $this;
+    }
+
+    /**
+     * Get logoProvider
+     *
+     * @return \AppBundle\Entity\Provider
+     */
+    public function getLogoProvider()
+    {
+        return $this->logoProvider;
+    }
+
+    /**
+     * Set photoProvider
+     *
+     * @param \AppBundle\Entity\Provider $photoProvider
+     *
+     * @return Image
+     */
+    public function setPhotoProvider(\AppBundle\Entity\Provider $photoProvider = null)
+    {
+        $this->photoProvider = $photoProvider;
+
+        return $this;
+    }
+
+    /**
+     * Get photoProvider
+     *
+     * @return \AppBundle\Entity\Provider
+     */
+    public function getPhotoProvider()
+    {
+        return $this->photoProvider;
     }
 }
