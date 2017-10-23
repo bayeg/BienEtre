@@ -38,10 +38,6 @@ class Locality
 
 
 
-
-
-
-
     /**
      * Get id
      *

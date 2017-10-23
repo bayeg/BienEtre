@@ -57,6 +57,13 @@ class Provider extends User
     private $vat;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255)
+     */
+    private $slug;
+
+    /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Image", mappedBy="logoProvider")
      */
@@ -98,6 +105,9 @@ class Provider extends User
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Internaut", inversedBy="providers")
      */
     private $internauts;
+
+
+
 
 
     /**

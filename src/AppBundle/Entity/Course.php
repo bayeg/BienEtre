@@ -78,7 +78,7 @@ class Course
     private $showEnd;
 
     /**
-     *@var Auteur
+     *@var Provider
      *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="courses")
      */
     private $provider;

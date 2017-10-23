@@ -56,53 +56,7 @@ class Block
         return $this->id;
     }
 
-    /**
-     * Set blockName
-     *
-     * @param string $blockName
-     *
-     * @return Block
-     */
-    public function setBlockName($blockName)
-    {
-        $this->blockName = $blockName;
 
-        return $this;
-    }
-
-    /**
-     * Get blockName
-     *
-     * @return string
-     */
-    public function getBlockName()
-    {
-        return $this->blockName;
-    }
-
-    /**
-     * Set blockDescription
-     *
-     * @param string $blockDescription
-     *
-     * @return Block
-     */
-    public function setBlockDescription($blockDescription)
-    {
-        $this->blockDescription = $blockDescription;
-
-        return $this;
-    }
-
-    /**
-     * Get blockDescription
-     *
-     * @return string
-     */
-    public function getBlockDescription()
-    {
-        return $this->blockDescription;
-    }
     /**
      * Constructor
      */

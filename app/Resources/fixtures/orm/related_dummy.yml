@@ -1,0 +1,5 @@
+# app/Resources/fixtures/orm/related_dummy.yml
+
+AppBundle\Entity\RelatedDummy:
+    related_dummy_{1..10}:
+        name: <name()>
