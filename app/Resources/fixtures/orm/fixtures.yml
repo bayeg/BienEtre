@@ -1,0 +1,162 @@
+# app/Resources/fixtures/orm/fixtures.yml
+
+AppBundle\Entity\Abuse:
+    abuse_{1..10}:
+      description: <text(500)>
+      date: <dateTime()>
+      comment: '@comment_*'
+#      internaut: '@internaut_*'
+
+
+AppBundle\Entity\Block:
+    block_{1..10}:
+        name: <text(25)>
+        description: <text(255)>
+        positions: '@position_*'
+
+AppBundle\Entity\Comment:
+    comment_{1..10}:
+        rating: <numberBetween(1,5)>
+        title: <text(25)>
+        content: <text(255)>
+        date: <dateTime()>
+##        provider: '@provider_*'
+#       abuses: '@abuse_*'
+##        internaut: '@internaut_*'
+#
+AppBundle\Entity\Commune:
+    commune_{1..100}:
+        commune: <city()>
+#        user: '@user_*'
+
+AppBundle\Entity\Course:
+    course_{1..10}:
+        name: <text(255)>
+        description: <text(500)>
+        tariff: <randomNumber(3)>
+        info: <text(500)>
+        start: <dateTime()>
+        end: <dateTime()>
+        showStart: <dateTimeThisMonth()>
+        showEnd: <dateTimeThisMonth()>
+##        provider: '@provider_*'
+
+#AppBundle\Entity\Image:
+#    image_{1..25}:
+#        order: <randomNumber()>
+#        url: <imageUrl()>
+##        logoProvider: '@provider_*'
+##        photoProvider: '@provider_*'
+#
+#
+AppBundle\Entity\Internaut:
+    internaut_{1..10}:
+        email: <email()>
+        password: <password()>
+        addressNumber: <numberBetween(1, 100)>
+        addressStreet: <streetName()>
+        registrationDate: <dateTime()>
+        loginAttempts: <numberBetween(1, 3)>
+        banned: <boolean()>
+        registrationConfirmed: <boolean()>
+#        postCode: '@postcode_*'
+        locality: '@locality_*'
+        commune: '@commune_*'
+        lastName: <lastName()>
+        firstName: <firstName()>
+        newsletter: <boolean()>
+#        image: '@image_*'
+#        providers: '@provider_*'
+#        abuses: '@abuse_*'
+#        comments: '@comment_*'
+#        positions: '@position_*'
+
+AppBundle\Entity\Locality:
+      locality_{1..100}:
+          locality: <city()>
+#          users: '@user_*'
+#
+AppBundle\Entity\Newsletter:
+    newsletter_{1..10}:
+         title: <text(25)>
+         date: <dateTime()>
+         pdf: <url()>
+
+AppBundle\Entity\Position:
+    position_{1..10}:
+        order: <randomNumber()>
+        block: '@block_*'
+        internaut: '@internaut_*'
+
+AppBundle\Entity\PostCode:
+    postCode_{1..1000}:
+        postCode: <numberBetween(1000, 9999)>
+#        users: '@user_*'
+
+
+##AppBundle\Entity\Promotion:
+#    promotion_{1..100}:
+#        name: <text(25)>
+#        description: <text(225)>
+#        pdf: <text(225)>
+#        start: <dateTime()>
+#        end: <dateTime()>
+#        showStart: <dateTime()>
+#        showEnd: <dateTime()>
+#        provider: '@provider_*'
+#        serviceCategory: '@service_category_*'
+
+AppBundle\Entity\Provider:
+      provider_{1..10}:
+        email: <email()>
+        password: <password()>
+        addressNumber: <numberBetween(1, 100)>
+        addressStreet: <streetName()>
+        registrationDate: <dateTime()>
+        loginAttempts: <numberBetween(1, 3)>
+        banned: <boolean()>
+        registrationConfirmed: <boolean()>
+#        postCode: '@postcode_*'
+        locality: '@locality_*'
+        commune: '@commune_*'
+        name: <company()>
+        website: <url()>
+        email: <email()>
+        phone: <phoneNumber()>
+        vat: <vat()>
+        slug: <slug()>
+#      logos: '@image_*'
+#      photos: '@image_*'
+#       serviceCategories: '@service_category_*'
+ #      courses: '@course_*'
+ #      promotions: '@promotion_*'
+ #      comments: '@comment_*'
+ #      internauts: '@internaut_*'
+
+
+#AppBundle\Entity\ServiceCategory:
+#      service_category_{1..10}:
+#          name: <text(25)>
+#          description: <text(255)>
+#          featured: <boolean()>
+#          validity: <boolean()>
+#          image: '@image_*'
+#          providers: '@provider_*'
+#          promotions: '@promotion_*'
+
+
+
+#AppBundle\Entity\User:
+#    user_{1..10}:
+#        email: <email()>
+#        password: <password()>
+#          addressNumber: <numberBetween(1, 100)>
+#          addressStreet: <street()>
+#          registrationDate: <dateTime()>
+#          loginAttempts: <numberBetween(1, 3)>
+#          banned: <boolean()>
+#          registrationConfirmed: <boolean()>
+#          postCode: '@postcode_*'
+#          locality: '@locality_*'
+#          commune: '@commune_*'
+

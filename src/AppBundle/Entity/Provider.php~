@@ -57,6 +57,13 @@ class Provider extends User
     private $vat;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=25)
+     */
+    private $slug;
+
+    /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Image", mappedBy="logoProvider")
      */
@@ -98,6 +105,9 @@ class Provider extends User
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Internaut", inversedBy="providers")
      */
     private $internauts;
+
+
+
 
 
     /**
@@ -809,5 +819,29 @@ class Provider extends User
     public function getInternauts()
     {
         return $this->internauts;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Provider
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }
