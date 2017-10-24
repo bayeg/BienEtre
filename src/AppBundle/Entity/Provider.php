@@ -59,7 +59,7 @@ class Provider extends User
     /**
      * @var string
      *
-     * @ORM\Column(name="slug", type="string", length=25)
+     * @ORM\Column(name="slug", type="string", length=225)
      */
     private $slug;
 

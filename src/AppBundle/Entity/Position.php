@@ -34,11 +34,11 @@ class Position
      */
     private $block;
 
-    /**
-     *@var Internaut
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Internaut", inversedBy="positions")
-     */
-    private $internaut;
+//    /**
+//     *@var Internaut
+//     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Internaut", inversedBy="positions")
+//     */
+//    private $internaut;
 
 
 
@@ -101,29 +101,29 @@ class Position
         return $this->positionBlock;
     }
 
-    /**
-     * Set positionInternaut
-     *
-     * @param \AppBundle\Entity\Internaut $positionInternaut
-     *
-     * @return Position
-     */
-    public function setPositionInternaut(\AppBundle\Entity\Internaut $positionInternaut = null)
-    {
-        $this->positionInternaut = $positionInternaut;
-
-        return $this;
-    }
-
-    /**
-     * Get positionInternaut
-     *
-     * @return \AppBundle\Entity\Internaut
-     */
-    public function getPositionInternaut()
-    {
-        return $this->positionInternaut;
-    }
+//    /**
+//     * Set positionInternaut
+//     *
+//     * @param \AppBundle\Entity\Internaut $positionInternaut
+//     *
+//     * @return Position
+//     */
+//    public function setPositionInternaut(\AppBundle\Entity\Internaut $positionInternaut = null)
+//    {
+//        $this->positionInternaut = $positionInternaut;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get positionInternaut
+//     *
+//     * @return \AppBundle\Entity\Internaut
+//     */
+//    public function getPositionInternaut()
+//    {
+//        return $this->positionInternaut;
+//    }
 
     /**
      * Set order
@@ -173,27 +173,27 @@ class Position
         return $this->block;
     }
 
-    /**
-     * Set internaut
-     *
-     * @param \AppBundle\Entity\Internaut $internaut
-     *
-     * @return Position
-     */
-    public function setInternaut(\AppBundle\Entity\Internaut $internaut = null)
-    {
-        $this->internaut = $internaut;
-
-        return $this;
-    }
-
-    /**
-     * Get internaut
-     *
-     * @return \AppBundle\Entity\Internaut
-     */
-    public function getInternaut()
-    {
-        return $this->internaut;
-    }
+//    /**
+//     * Set internaut
+//     *
+//     * @param \AppBundle\Entity\Internaut $internaut
+//     *
+//     * @return Position
+//     */
+//    public function setInternaut(\AppBundle\Entity\Internaut $internaut = null)
+//    {
+//        $this->internaut = $internaut;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get internaut
+//     *
+//     * @return \AppBundle\Entity\Internaut
+//     */
+//    public function getInternaut()
+//    {
+//        return $this->internaut;
+//    }
 }
