@@ -72,209 +72,22 @@ class ServiceCategory
     
 
     /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set serviceName
-     *
-     * @param string $serviceName
-     *
-     * @return ServiceCategory
-     */
-    public function setServiceName($serviceName)
-    {
-        $this->serviceName = $serviceName;
-
-        return $this;
-    }
-
-    /**
-     * Get serviceName
-     *
-     * @return string
-     */
-    public function getServiceName()
-    {
-        return $this->serviceName;
-    }
-
-    /**
-     * Set serviceDescription
-     *
-     * @param string $serviceDescription
-     *
-     * @return ServiceCategory
-     */
-    public function setServiceDescription($serviceDescription)
-    {
-        $this->serviceDescription = $serviceDescription;
-
-        return $this;
-    }
-
-    /**
-     * Get serviceDescription
-     *
-     * @return string
-     */
-    public function getServiceDescription()
-    {
-        return $this->serviceDescription;
-    }
-
-    /**
-     * Set serviceFeatured
-     *
-     * @param boolean $serviceFeatured
-     *
-     * @return ServiceCategory
-     */
-    public function setServiceFeatured($serviceFeatured)
-    {
-        $this->serviceFeatured = $serviceFeatured;
-
-        return $this;
-    }
-
-    /**
-     * Get serviceFeatured
-     *
-     * @return bool
-     */
-    public function getServiceFeatured()
-    {
-        return $this->serviceFeatured;
-    }
-
-    /**
-     * Set serviceValidity
-     *
-     * @param boolean $serviceValidity
-     *
-     * @return ServiceCategory
-     */
-    public function setServiceValidity($serviceValidity)
-    {
-        $this->serviceValidity = $serviceValidity;
-
-        return $this;
-    }
-
-    /**
-     * Get serviceValidity
-     *
-     * @return bool
-     */
-    public function getServiceValidity()
-    {
-        return $this->serviceValidity;
-    }
-
-    /**
-     * Set image
-     *
-     * @param \AppBundle\Entity\Image $image
-     *
-     * @return ServiceCategory
-     */
-    public function setImage(\AppBundle\Entity\Image $image = null)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return \AppBundle\Entity\Image
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-    /**
      * Constructor
      */
     public function __construct()
     {
-        $this->serviceCategoryProviders = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->serviceCategoryPromotions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->providers = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->promotions = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add serviceCategoryProvider
+     * Get id
      *
-     * @param \AppBundle\Entity\Provider $serviceCategoryProvider
-     *
-     * @return ServiceCategory
+     * @return integer
      */
-    public function addServiceCategoryProvider(\AppBundle\Entity\Provider $serviceCategoryProvider)
+    public function getId()
     {
-        $this->serviceCategoryProviders[] = $serviceCategoryProvider;
-
-        return $this;
-    }
-
-    /**
-     * Remove serviceCategoryProvider
-     *
-     * @param \AppBundle\Entity\Provider $serviceCategoryProvider
-     */
-    public function removeServiceCategoryProvider(\AppBundle\Entity\Provider $serviceCategoryProvider)
-    {
-        $this->serviceCategoryProviders->removeElement($serviceCategoryProvider);
-    }
-
-    /**
-     * Get serviceCategoryProviders
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getServiceCategoryProviders()
-    {
-        return $this->serviceCategoryProviders;
-    }
-
-    /**
-     * Add serviceCategoryPromotion
-     *
-     * @param \AppBundle\Entity\Promotion $serviceCategoryPromotion
-     *
-     * @return ServiceCategory
-     */
-    public function addServiceCategoryPromotion(\AppBundle\Entity\Promotion $serviceCategoryPromotion)
-    {
-        $this->serviceCategoryPromotions[] = $serviceCategoryPromotion;
-
-        return $this;
-    }
-
-    /**
-     * Remove serviceCategoryPromotion
-     *
-     * @param \AppBundle\Entity\Promotion $serviceCategoryPromotion
-     */
-    public function removeServiceCategoryPromotion(\AppBundle\Entity\Promotion $serviceCategoryPromotion)
-    {
-        $this->serviceCategoryPromotions->removeElement($serviceCategoryPromotion);
-    }
-
-    /**
-     * Get serviceCategoryPromotions
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getServiceCategoryPromotions()
-    {
-        return $this->serviceCategoryPromotions;
+        return $this->id;
     }
 
     /**
@@ -371,6 +184,30 @@ class ServiceCategory
     public function getValidity()
     {
         return $this->validity;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \AppBundle\Entity\Image $image
+     *
+     * @return ServiceCategory
+     */
+    public function setImage(\AppBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \AppBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 
     /**

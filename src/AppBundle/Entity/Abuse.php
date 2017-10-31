@@ -53,17 +53,15 @@ class Abuse
 
 
 
-
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
-
 
     /**
      * Set description

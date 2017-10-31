@@ -102,12 +102,12 @@ class User
      */
     private $commune;
 
-
+    
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -234,7 +234,6 @@ class User
         return $this->registrationDate;
     }
 
-
     /**
      * Set loginAttempts
      *
@@ -252,7 +251,7 @@ class User
     /**
      * Get loginAttempts
      *
-     * @return int
+     * @return integer
      */
     public function getLoginAttempts()
     {
@@ -276,7 +275,7 @@ class User
     /**
      * Get banned
      *
-     * @return bool
+     * @return boolean
      */
     public function getBanned()
     {
@@ -300,83 +299,11 @@ class User
     /**
      * Get registrationConfirmed
      *
-     * @return bool
+     * @return boolean
      */
     public function getRegistrationConfirmed()
     {
         return $this->registrationConfirmed;
-    }
-
-    /**
-     * Set userPostCode
-     *
-     * @param \AppBundle\Entity\PostCode $userPostCode
-     *
-     * @return User
-     */
-    public function setUserPostCode(\AppBundle\Entity\PostCode $userPostCode = null)
-    {
-        $this->userPostCode = $userPostCode;
-
-        return $this;
-    }
-
-    /**
-     * Get userPostCode
-     *
-     * @return \AppBundle\Entity\PostCode
-     */
-    public function getUserPostCode()
-    {
-        return $this->userPostCode;
-    }
-
-    /**
-     * Set userLocality
-     *
-     * @param \AppBundle\Entity\Locality $userLocality
-     *
-     * @return User
-     */
-    public function setUserLocality(\AppBundle\Entity\Locality $userLocality = null)
-    {
-        $this->userLocality = $userLocality;
-
-        return $this;
-    }
-
-    /**
-     * Get userLocality
-     *
-     * @return \AppBundle\Entity\Locality
-     */
-    public function getUserLocality()
-    {
-        return $this->userLocality;
-    }
-
-    /**
-     * Set userCommune
-     *
-     * @param \AppBundle\Entity\Commune $userCommune
-     *
-     * @return User
-     */
-    public function setUserCommune(\AppBundle\Entity\Commune $userCommune = null)
-    {
-        $this->userCommune = $userCommune;
-
-        return $this;
-    }
-
-    /**
-     * Get userCommune
-     *
-     * @return \AppBundle\Entity\Commune
-     */
-    public function getUserCommune()
-    {
-        return $this->userCommune;
     }
 
     /**

@@ -44,86 +44,15 @@ class Newsletter
 
 
 
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set newsletterTitle
-     *
-     * @param string $newsletterTitle
-     *
-     * @return Newsletter
-     */
-    public function setNewsletterTitle($newsletterTitle)
-    {
-        $this->newsletterTitle = $newsletterTitle;
-
-        return $this;
-    }
-
-    /**
-     * Get newsletterTitle
-     *
-     * @return string
-     */
-    public function getNewsletterTitle()
-    {
-        return $this->newsletterTitle;
-    }
-
-    /**
-     * Set newsletterDate
-     *
-     * @param \DateTime $newsletterDate
-     *
-     * @return Newsletter
-     */
-    public function setNewsletterDate($newsletterDate)
-    {
-        $this->newsletterDate = $newsletterDate;
-
-        return $this;
-    }
-
-    /**
-     * Get newsletterDate
-     *
-     * @return \DateTime
-     */
-    public function getNewsletterDate()
-    {
-        return $this->newsletterDate;
-    }
-
-    /**
-     * Set newsletterPDF
-     *
-     * @param string $newsletterPDF
-     *
-     * @return Newsletter
-     */
-    public function setNewsletterPDF($newsletterPDF)
-    {
-        $this->newsletterPDF = $newsletterPDF;
-
-        return $this;
-    }
-
-    /**
-     * Get newsletterPDF
-     *
-     * @return string
-     */
-    public function getNewsletterPDF()
-    {
-        return $this->newsletterPDF;
     }
 
     /**

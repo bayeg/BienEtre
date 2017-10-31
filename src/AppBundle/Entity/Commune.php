@@ -39,9 +39,17 @@ class Commune
 
 
     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -70,47 +78,6 @@ class Commune
     public function getCommune()
     {
         return $this->commune;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->communeUsers = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add communeUser
-     *
-     * @param \AppBundle\Entity\User $communeUser
-     *
-     * @return Commune
-     */
-    public function addCommuneUser(\AppBundle\Entity\User $communeUser)
-    {
-        $this->communeUsers[] = $communeUser;
-
-        return $this;
-    }
-
-    /**
-     * Remove communeUser
-     *
-     * @param \AppBundle\Entity\User $communeUser
-     */
-    public function removeCommuneUser(\AppBundle\Entity\User $communeUser)
-    {
-        $this->communeUsers->removeElement($communeUser);
-    }
-
-    /**
-     * Get communeUsers
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCommuneUsers()
-    {
-        return $this->communeUsers;
     }
 
     /**

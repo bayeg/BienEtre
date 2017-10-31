@@ -37,112 +37,112 @@ class PostCode
 
 
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set postCode
-     *
-     * @param string $postCode
-     *
-     * @return PostCode
-     */
-    public function setPostCode($postCode)
-    {
-        $this->postCode = $postCode;
-
-        return $this;
-    }
-
-    /**
-     * Get postCode
-     *
-     * @return string
-     */
-    public function getPostCode()
-    {
-        return $this->postCode;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->postCodeUsers = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add postCodeUser
-     *
-     * @param \AppBundle\Entity\User $postCodeUser
-     *
-     * @return PostCode
-     */
-    public function addPostCodeUser(\AppBundle\Entity\User $postCodeUser)
-    {
-        $this->postCodeUsers[] = $postCodeUser;
-
-        return $this;
-    }
-
-    /**
-     * Remove postCodeUser
-     *
-     * @param \AppBundle\Entity\User $postCodeUser
-     */
-    public function removePostCodeUser(\AppBundle\Entity\User $postCodeUser)
-    {
-        $this->postCodeUsers->removeElement($postCodeUser);
-    }
-
-    /**
-     * Get postCodeUsers
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPostCodeUsers()
-    {
-        return $this->postCodeUsers;
-    }
-
-    /**
-     * Add user
-     *
-     * @param \AppBundle\Entity\User $user
-     *
-     * @return PostCode
-     */
-    public function addUser(\AppBundle\Entity\User $user)
-    {
-        $this->users[] = $user;
-
-        return $this;
-    }
-
-    /**
-     * Remove user
-     *
-     * @param \AppBundle\Entity\User $user
-     */
-    public function removeUser(\AppBundle\Entity\User $user)
-    {
-        $this->users->removeElement($user);
-    }
-
-    /**
-     * Get users
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
+//    /**
+   //     * Get id
+   //     *
+   //     * @return int
+   //     */
+//    public function getId()
+//    {
+//        return $this->id;
+//    }
+//
+//    /**
+//     * Set postCode
+//     *
+//     * @param string $postCode
+//     *
+//     * @return PostCode
+//     */
+//    public function setPostCode($postCode)
+//    {
+//        $this->postCode = $postCode;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get postCode
+//     *
+//     * @return string
+//     */
+//    public function getPostCode()
+//    {
+//        return $this->postCode;
+//    }
+//    /**
+//     * Constructor
+//     */
+//    public function __construct()
+//    {
+//        $this->postCodeUsers = new \Doctrine\Common\Collections\ArrayCollection();
+//    }
+//
+//    /**
+//     * Add postCodeUser
+//     *
+//     * @param \AppBundle\Entity\User $postCodeUser
+//     *
+//     * @return PostCode
+//     */
+//    public function addPostCodeUser(\AppBundle\Entity\User $postCodeUser)
+//    {
+//        $this->postCodeUsers[] = $postCodeUser;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Remove postCodeUser
+//     *
+//     * @param \AppBundle\Entity\User $postCodeUser
+//     */
+//    public function removePostCodeUser(\AppBundle\Entity\User $postCodeUser)
+//    {
+//        $this->postCodeUsers->removeElement($postCodeUser);
+//    }
+//
+//    /**
+//     * Get postCodeUsers
+//     *
+//     * @return \Doctrine\Common\Collections\Collection
+//     */
+//    public function getPostCodeUsers()
+//    {
+//        return $this->postCodeUsers;
+//    }
+//
+//    /**
+//     * Add user
+//     *
+//     * @param \AppBundle\Entity\User $user
+//     *
+//     * @return PostCode
+//     */
+//    public function addUser(\AppBundle\Entity\User $user)
+//    {
+//        $this->users[] = $user;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Remove user
+//     *
+//     * @param \AppBundle\Entity\User $user
+//     */
+//    public function removeUser(\AppBundle\Entity\User $user)
+//    {
+//        $this->users->removeElement($user);
+//    }
+//
+//    /**
+//     * Get users
+//     *
+//     * @return \Doctrine\Common\Collections\Collection
+//     */
+//    public function getUsers()
+//    {
+//        return $this->users;
+//    }
 }

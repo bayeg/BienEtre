@@ -38,9 +38,17 @@ class PostCode
 
 
     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -69,47 +77,6 @@ class PostCode
     public function getPostCode()
     {
         return $this->postCode;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->postCodeUsers = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add postCodeUser
-     *
-     * @param \AppBundle\Entity\User $postCodeUser
-     *
-     * @return PostCode
-     */
-    public function addPostCodeUser(\AppBundle\Entity\User $postCodeUser)
-    {
-        $this->postCodeUsers[] = $postCodeUser;
-
-        return $this;
-    }
-
-    /**
-     * Remove postCodeUser
-     *
-     * @param \AppBundle\Entity\User $postCodeUser
-     */
-    public function removePostCodeUser(\AppBundle\Entity\User $postCodeUser)
-    {
-        $this->postCodeUsers->removeElement($postCodeUser);
-    }
-
-    /**
-     * Get postCodeUsers
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPostCodeUsers()
-    {
-        return $this->postCodeUsers;
     }
 
     /**

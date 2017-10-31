@@ -103,351 +103,351 @@ class User
     private $commune;
 
 
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return User
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Set password
-     *
-     * @param string $password
-     *
-     * @return User
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * Set addressNumber
-     *
-     * @param string $addressNumber
-     *
-     * @return User
-     */
-    public function setAddressNumber($addressNumber)
-    {
-        $this->addressNumber = $addressNumber;
-
-        return $this;
-    }
-
-    /**
-     * Get addressNumber
-     *
-     * @return string
-     */
-    public function getAddressNumber()
-    {
-        return $this->addressNumber;
-    }
-
-    /**
-     * Set addressStreet
-     *
-     * @param string $addressStreet
-     *
-     * @return User
-     */
-    public function setAddressStreet($addressStreet)
-    {
-        $this->addressStreet = $addressStreet;
-
-        return $this;
-    }
-
-    /**
-     * Get addressStreet
-     *
-     * @return string
-     */
-    public function getAddressStreet()
-    {
-        return $this->addressStreet;
-    }
-
-    /**
-     * Set registrationDate
-     *
-     * @param \DateTime $registrationDate
-     *
-     * @return User
-     */
-    public function setRegistrationDate($registrationDate)
-    {
-        $this->registrationDate = $registrationDate;
-
-        return $this;
-    }
-
-    /**
-     * Get registrationDate
-     *
-     * @return \DateTime
-     */
-    public function getRegistrationDate()
-    {
-        return $this->registrationDate;
-    }
-
-
-    /**
-     * Set loginAttempts
-     *
-     * @param integer $loginAttempts
-     *
-     * @return User
-     */
-    public function setLoginAttempts($loginAttempts)
-    {
-        $this->loginAttempts = $loginAttempts;
-
-        return $this;
-    }
-
-    /**
-     * Get loginAttempts
-     *
-     * @return int
-     */
-    public function getLoginAttempts()
-    {
-        return $this->loginAttempts;
-    }
-
-    /**
-     * Set banned
-     *
-     * @param boolean $banned
-     *
-     * @return User
-     */
-    public function setBanned($banned)
-    {
-        $this->banned = $banned;
-
-        return $this;
-    }
-
-    /**
-     * Get banned
-     *
-     * @return bool
-     */
-    public function getBanned()
-    {
-        return $this->banned;
-    }
-
-    /**
-     * Set registrationConfirmed
-     *
-     * @param boolean $registrationConfirmed
-     *
-     * @return User
-     */
-    public function setRegistrationConfirmed($registrationConfirmed)
-    {
-        $this->registrationConfirmed = $registrationConfirmed;
-
-        return $this;
-    }
-
-    /**
-     * Get registrationConfirmed
-     *
-     * @return bool
-     */
-    public function getRegistrationConfirmed()
-    {
-        return $this->registrationConfirmed;
-    }
-
-    /**
-     * Set userPostCode
-     *
-     * @param \AppBundle\Entity\PostCode $userPostCode
-     *
-     * @return User
-     */
-    public function setUserPostCode(\AppBundle\Entity\PostCode $userPostCode = null)
-    {
-        $this->userPostCode = $userPostCode;
-
-        return $this;
-    }
-
-    /**
-     * Get userPostCode
-     *
-     * @return \AppBundle\Entity\PostCode
-     */
-    public function getUserPostCode()
-    {
-        return $this->userPostCode;
-    }
-
-    /**
-     * Set userLocality
-     *
-     * @param \AppBundle\Entity\Locality $userLocality
-     *
-     * @return User
-     */
-    public function setUserLocality(\AppBundle\Entity\Locality $userLocality = null)
-    {
-        $this->userLocality = $userLocality;
-
-        return $this;
-    }
-
-    /**
-     * Get userLocality
-     *
-     * @return \AppBundle\Entity\Locality
-     */
-    public function getUserLocality()
-    {
-        return $this->userLocality;
-    }
-
-    /**
-     * Set userCommune
-     *
-     * @param \AppBundle\Entity\Commune $userCommune
-     *
-     * @return User
-     */
-    public function setUserCommune(\AppBundle\Entity\Commune $userCommune = null)
-    {
-        $this->userCommune = $userCommune;
-
-        return $this;
-    }
-
-    /**
-     * Get userCommune
-     *
-     * @return \AppBundle\Entity\Commune
-     */
-    public function getUserCommune()
-    {
-        return $this->userCommune;
-    }
-
-    /**
-     * Set postCode
-     *
-     * @param \AppBundle\Entity\PostCode $postCode
-     *
-     * @return User
-     */
-    public function setPostCode(\AppBundle\Entity\PostCode $postCode = null)
-    {
-        $this->postCode = $postCode;
-
-        return $this;
-    }
-
-    /**
-     * Get postCode
-     *
-     * @return \AppBundle\Entity\PostCode
-     */
-    public function getPostCode()
-    {
-        return $this->postCode;
-    }
-
-    /**
-     * Set locality
-     *
-     * @param \AppBundle\Entity\Locality $locality
-     *
-     * @return User
-     */
-    public function setLocality(\AppBundle\Entity\Locality $locality = null)
-    {
-        $this->locality = $locality;
-
-        return $this;
-    }
-
-    /**
-     * Get locality
-     *
-     * @return \AppBundle\Entity\Locality
-     */
-    public function getLocality()
-    {
-        return $this->locality;
-    }
-
-    /**
-     * Set commune
-     *
-     * @param \AppBundle\Entity\Commune $commune
-     *
-     * @return User
-     */
-    public function setCommune(\AppBundle\Entity\Commune $commune = null)
-    {
-        $this->commune = $commune;
-
-        return $this;
-    }
-
-    /**
-     * Get commune
-     *
-     * @return \AppBundle\Entity\Commune
-     */
-    public function getCommune()
-    {
-        return $this->commune;
-    }
+//
+//    /**
+//     * Get id
+//     *
+//     * @return int
+//     */
+//    public function getId()
+//    {
+//        return $this->id;
+//    }
+//
+//    /**
+//     * Set email
+//     *
+//     * @param string $email
+//     *
+//     * @return User
+//     */
+//    public function setEmail($email)
+//    {
+//        $this->email = $email;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get email
+//     *
+//     * @return string
+//     */
+//    public function getEmail()
+//    {
+//        return $this->email;
+//    }
+//
+//    /**
+//     * Set password
+//     *
+//     * @param string $password
+//     *
+//     * @return User
+//     */
+//    public function setPassword($password)
+//    {
+//        $this->password = $password;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get password
+//     *
+//     * @return string
+//     */
+//    public function getPassword()
+//    {
+//        return $this->password;
+//    }
+//
+//    /**
+//     * Set addressNumber
+//     *
+//     * @param string $addressNumber
+//     *
+//     * @return User
+//     */
+//    public function setAddressNumber($addressNumber)
+//    {
+//        $this->addressNumber = $addressNumber;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get addressNumber
+//     *
+//     * @return string
+//     */
+//    public function getAddressNumber()
+//    {
+//        return $this->addressNumber;
+//    }
+//
+//    /**
+//     * Set addressStreet
+//     *
+//     * @param string $addressStreet
+//     *
+//     * @return User
+//     */
+//    public function setAddressStreet($addressStreet)
+//    {
+//        $this->addressStreet = $addressStreet;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get addressStreet
+//     *
+//     * @return string
+//     */
+//    public function getAddressStreet()
+//    {
+//        return $this->addressStreet;
+//    }
+//
+//    /**
+//     * Set registrationDate
+//     *
+//     * @param \DateTime $registrationDate
+//     *
+//     * @return User
+//     */
+//    public function setRegistrationDate($registrationDate)
+//    {
+//        $this->registrationDate = $registrationDate;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get registrationDate
+//     *
+//     * @return \DateTime
+//     */
+//    public function getRegistrationDate()
+//    {
+//        return $this->registrationDate;
+//    }
+//
+//
+//    /**
+//     * Set loginAttempts
+//     *
+//     * @param integer $loginAttempts
+//     *
+//     * @return User
+//     */
+//    public function setLoginAttempts($loginAttempts)
+//    {
+//        $this->loginAttempts = $loginAttempts;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get loginAttempts
+//     *
+//     * @return int
+//     */
+//    public function getLoginAttempts()
+//    {
+//        return $this->loginAttempts;
+//    }
+//
+//    /**
+//     * Set banned
+//     *
+//     * @param boolean $banned
+//     *
+//     * @return User
+//     */
+//    public function setBanned($banned)
+//    {
+//        $this->banned = $banned;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get banned
+//     *
+//     * @return bool
+//     */
+//    public function getBanned()
+//    {
+//        return $this->banned;
+//    }
+//
+//    /**
+//     * Set registrationConfirmed
+//     *
+//     * @param boolean $registrationConfirmed
+//     *
+//     * @return User
+//     */
+//    public function setRegistrationConfirmed($registrationConfirmed)
+//    {
+//        $this->registrationConfirmed = $registrationConfirmed;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get registrationConfirmed
+//     *
+//     * @return bool
+//     */
+//    public function getRegistrationConfirmed()
+//    {
+//        return $this->registrationConfirmed;
+//    }
+//
+//    /**
+//     * Set userPostCode
+//     *
+//     * @param \AppBundle\Entity\PostCode $userPostCode
+//     *
+//     * @return User
+//     */
+//    public function setUserPostCode(\AppBundle\Entity\PostCode $userPostCode = null)
+//    {
+//        $this->userPostCode = $userPostCode;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get userPostCode
+//     *
+//     * @return \AppBundle\Entity\PostCode
+//     */
+//    public function getUserPostCode()
+//    {
+//        return $this->userPostCode;
+//    }
+//
+//    /**
+//     * Set userLocality
+//     *
+//     * @param \AppBundle\Entity\Locality $userLocality
+//     *
+//     * @return User
+//     */
+//    public function setUserLocality(\AppBundle\Entity\Locality $userLocality = null)
+//    {
+//        $this->userLocality = $userLocality;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get userLocality
+//     *
+//     * @return \AppBundle\Entity\Locality
+//     */
+//    public function getUserLocality()
+//    {
+//        return $this->userLocality;
+//    }
+//
+//    /**
+//     * Set userCommune
+//     *
+//     * @param \AppBundle\Entity\Commune $userCommune
+//     *
+//     * @return User
+//     */
+//    public function setUserCommune(\AppBundle\Entity\Commune $userCommune = null)
+//    {
+//        $this->userCommune = $userCommune;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get userCommune
+//     *
+//     * @return \AppBundle\Entity\Commune
+//     */
+//    public function getUserCommune()
+//    {
+//        return $this->userCommune;
+//    }
+//
+//    /**
+//     * Set postCode
+//     *
+//     * @param \AppBundle\Entity\PostCode $postCode
+//     *
+//     * @return User
+//     */
+//    public function setPostCode(\AppBundle\Entity\PostCode $postCode = null)
+//    {
+//        $this->postCode = $postCode;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get postCode
+//     *
+//     * @return \AppBundle\Entity\PostCode
+//     */
+//    public function getPostCode()
+//    {
+//        return $this->postCode;
+//    }
+//
+//    /**
+//     * Set locality
+//     *
+//     * @param \AppBundle\Entity\Locality $locality
+//     *
+//     * @return User
+//     */
+//    public function setLocality(\AppBundle\Entity\Locality $locality = null)
+//    {
+//        $this->locality = $locality;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get locality
+//     *
+//     * @return \AppBundle\Entity\Locality
+//     */
+//    public function getLocality()
+//    {
+//        return $this->locality;
+//    }
+//
+//    /**
+//     * Set commune
+//     *
+//     * @param \AppBundle\Entity\Commune $commune
+//     *
+//     * @return User
+//     */
+//    public function setCommune(\AppBundle\Entity\Commune $commune = null)
+//    {
+//        $this->commune = $commune;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get commune
+//     *
+//     * @return \AppBundle\Entity\Commune
+//     */
+//    public function getCommune()
+//    {
+//        return $this->commune;
+//    }
 }

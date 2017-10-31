@@ -47,56 +47,21 @@ class Block
 
 
     /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-
-    /**
      * Constructor
      */
     public function __construct()
     {
-        $this->blockInternauts = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->positions = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add blockInternaut
+     * Get id
      *
-     * @param \AppBundle\Entity\Internaut $blockInternaut
-     *
-     * @return Block
+     * @return integer
      */
-    public function addBlockInternaut(\AppBundle\Entity\Internaut $blockInternaut)
+    public function getId()
     {
-        $this->blockInternauts[] = $blockInternaut;
-
-        return $this;
-    }
-
-    /**
-     * Remove blockInternaut
-     *
-     * @param \AppBundle\Entity\Internaut $blockInternaut
-     */
-    public function removeBlockInternaut(\AppBundle\Entity\Internaut $blockInternaut)
-    {
-        $this->blockInternauts->removeElement($blockInternaut);
-    }
-
-    /**
-     * Get blockInternauts
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getBlockInternauts()
-    {
-        return $this->blockInternauts;
+        return $this->id;
     }
 
     /**
@@ -121,40 +86,6 @@ class Block
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Add blockPosition
-     *
-     * @param \AppBundle\Entity\Position $blockPosition
-     *
-     * @return Block
-     */
-    public function addBlockPosition(\AppBundle\Entity\Position $blockPosition)
-    {
-        $this->blockPositions[] = $blockPosition;
-
-        return $this;
-    }
-
-    /**
-     * Remove blockPosition
-     *
-     * @param \AppBundle\Entity\Position $blockPosition
-     */
-    public function removeBlockPosition(\AppBundle\Entity\Position $blockPosition)
-    {
-        $this->blockPositions->removeElement($blockPosition);
-    }
-
-    /**
-     * Get blockPositions
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getBlockPositions()
-    {
-        return $this->blockPositions;
     }
 
     /**

@@ -74,103 +74,21 @@ class Comment
 
 
     /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
      * Constructor
      */
     public function __construct()
     {
-        $this->commentAbuses = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->abuses = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Set commentProvider
+     * Get id
      *
-     * @param \AppBundle\Entity\Provider $commentProvider
-     *
-     * @return Comment
+     * @return integer
      */
-    public function setCommentProvider(\AppBundle\Entity\Provider $commentProvider = null)
+    public function getId()
     {
-        $this->commentProvider = $commentProvider;
-
-        return $this;
-    }
-
-    /**
-     * Get commentProvider
-     *
-     * @return \AppBundle\Entity\Provider
-     */
-    public function getCommentProvider()
-    {
-        return $this->commentProvider;
-    }
-
-    /**
-     * Add commentAbus
-     *
-     * @param \AppBundle\Entity\Abuse $commentAbus
-     *
-     * @return Comment
-     */
-    public function addCommentAbus(\AppBundle\Entity\Abuse $commentAbus)
-    {
-        $this->commentAbuses[] = $commentAbus;
-
-        return $this;
-    }
-
-    /**
-     * Remove commentAbus
-     *
-     * @param \AppBundle\Entity\Abuse $commentAbus
-     */
-    public function removeCommentAbus(\AppBundle\Entity\Abuse $commentAbus)
-    {
-        $this->commentAbuses->removeElement($commentAbus);
-    }
-
-    /**
-     * Get commentAbuses
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCommentAbuses()
-    {
-        return $this->commentAbuses;
-    }
-
-    /**
-     * Set commentInternaut
-     *
-     * @param \AppBundle\Entity\Internaut $commentInternaut
-     *
-     * @return Comment
-     */
-    public function setCommentInternaut(\AppBundle\Entity\Internaut $commentInternaut = null)
-    {
-        $this->commentInternaut = $commentInternaut;
-
-        return $this;
-    }
-
-    /**
-     * Get commentInternaut
-     *
-     * @return \AppBundle\Entity\Internaut
-     */
-    public function getCommentInternaut()
-    {
-        return $this->commentInternaut;
+        return $this->id;
     }
 
     /**

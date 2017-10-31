@@ -52,107 +52,11 @@ class Image
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set imageOrder
-     *
-     * @param integer $imageOrder
-     *
-     * @return Image
-     */
-    public function setImageOrder($imageOrder)
-    {
-        $this->imageOrder = $imageOrder;
-
-        return $this;
-    }
-
-    /**
-     * Get imageOrder
-     *
-     * @return int
-     */
-    public function getImageOrder()
-    {
-        return $this->imageOrder;
-    }
-
-    /**
-     * Set imageURL
-     *
-     * @param string $imageURL
-     *
-     * @return Image
-     */
-    public function setImageURL($imageURL)
-    {
-        $this->imageURL = $imageURL;
-
-        return $this;
-    }
-
-    /**
-     * Get imageURL
-     *
-     * @return string
-     */
-    public function getImageURL()
-    {
-        return $this->imageURL;
-    }
-
-    /**
-     * Set providerLogos
-     *
-     * @param \AppBundle\Entity\Provider $providerLogos
-     *
-     * @return Image
-     */
-    public function setProviderLogos(\AppBundle\Entity\Provider $providerLogos = null)
-    {
-        $this->providerLogos = $providerLogos;
-
-        return $this;
-    }
-
-    /**
-     * Get providerLogos
-     *
-     * @return \AppBundle\Entity\Provider
-     */
-    public function getProviderLogos()
-    {
-        return $this->providerLogos;
-    }
-
-    /**
-     * Set providerPhotos
-     *
-     * @param \AppBundle\Entity\Provider $providerPhotos
-     *
-     * @return Image
-     */
-    public function setProviderPhotos(\AppBundle\Entity\Provider $providerPhotos = null)
-    {
-        $this->providerPhotos = $providerPhotos;
-
-        return $this;
-    }
-
-    /**
-     * Get providerPhotos
-     *
-     * @return \AppBundle\Entity\Provider
-     */
-    public function getProviderPhotos()
-    {
-        return $this->providerPhotos;
     }
 
     /**

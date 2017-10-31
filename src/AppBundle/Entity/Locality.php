@@ -37,11 +37,18 @@ class Locality
 
 
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -70,47 +77,6 @@ class Locality
     public function getLocality()
     {
         return $this->locality;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->localityUsers = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add localityUser
-     *
-     * @param \AppBundle\Entity\User $localityUser
-     *
-     * @return Locality
-     */
-    public function addLocalityUser(\AppBundle\Entity\User $localityUser)
-    {
-        $this->localityUsers[] = $localityUser;
-
-        return $this;
-    }
-
-    /**
-     * Remove localityUser
-     *
-     * @param \AppBundle\Entity\User $localityUser
-     */
-    public function removeLocalityUser(\AppBundle\Entity\User $localityUser)
-    {
-        $this->localityUsers->removeElement($localityUser);
-    }
-
-    /**
-     * Get localityUsers
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getLocalityUsers()
-    {
-        return $this->localityUsers;
     }
 
     /**
