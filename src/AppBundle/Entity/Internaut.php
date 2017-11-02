@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Internaut extends User
 {
+
+// ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -41,6 +44,8 @@ class Internaut extends User
      * @ORM\Column(name="newsletter", type="boolean")
      */
     private $newsletter;
+
+// ------------------------- Relationship parameters -------------------------
 
     /**
      * @var Image
@@ -72,8 +77,7 @@ class Internaut extends User
      */
     private $positions;
 
-
-
+// ------------------------- Methods -------------------------
 
     /**
      * Constructor

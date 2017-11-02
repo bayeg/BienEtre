@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ServiceCategory
 {
+
+ // ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -55,6 +58,8 @@ class ServiceCategory
      */
     private $image;
 
+// ------------------------- Relationship parameters -------------------------
+
     /**
      *@var ArrayCollection
      *@ORM\ManyToMany(targetEntity="AppBundle\Entity\Provider", mappedBy="serviceCategories")
@@ -69,7 +74,7 @@ class ServiceCategory
     private $promotions;
 
 
-    
+// ------------------------- Methods -------------------------
 
     /**
      * Constructor

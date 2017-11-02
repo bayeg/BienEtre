@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Comment
 {
+
+// ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -49,6 +52,8 @@ class Comment
      */
     private $date;
 
+// ------------------------- Relationship parameters -------------------------
+
     /**
      *@var Provider
      *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="comments")
@@ -68,10 +73,7 @@ class Comment
     private $internaut;
 
 
-
-
-
-
+// ------------------------- Methods -------------------------
 
     /**
      * Constructor

@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Commune
 {
+
+// ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -28,14 +31,16 @@ class Commune
      */
     private $commune;
 
-    /**
-     *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="commune")
-     */
-    private $users;
+// ------------------------- Relationship parameters -------------------------
+
+//    /**
+//     *@var ArrayCollection
+//     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="commune")
+//     */
+//    private $users;
 
 
-
+// ------------------------- Methods -------------------------
 
 
     /**

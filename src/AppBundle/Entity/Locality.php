@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Locality
 {
+
+// ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -28,14 +31,15 @@ class Locality
      */
     private $locality;
 
-    /**
-     *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="locality")
-     */
-    private $users;
+// ------------------------- Relationship parameters -------------------------
 
+//    /**
+//     *@var ArrayCollection
+//     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="locality")
+//     */
+//    private $users;
 
-
+// ------------------------- Methods -------------------------
 
     /**
      * Constructor

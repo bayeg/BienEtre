@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Abuse
 {
+
+// ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -35,6 +38,7 @@ class Abuse
      */
     private $date;
 
+// ------------------------- Relationship parameters -------------------------
 
     /**
      *@var Comment
@@ -50,7 +54,7 @@ class Abuse
     private $internaut;
 
 
-
+// ------------------------- Methods -------------------------
 
 
     /**

@@ -18,6 +18,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 class User
 {
+
+// ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -30,7 +33,7 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255, unique=true)
      */
     private $email;
 
@@ -84,25 +87,27 @@ class User
      */
     private $registrationConfirmed;
 
+// ------------------------- Relationship parameters -------------------------
+
     /**
      *@var PostCode
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\PostCode", inversedBy="users")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\PostCode")
      */
     private $postCode;
 
     /**
      *@var Locality
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Locality", inversedBy="users")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Locality")
      */
     private $locality;
 
     /**
      *@var Commune
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Commune", inversedBy="users")
+     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Commune")
      */
     private $commune;
 
-    
+// ------------------------- Methods -------------------------
 
     /**
      * Get id

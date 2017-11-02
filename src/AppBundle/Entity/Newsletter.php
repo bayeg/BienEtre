@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Newsletter
 {
+
+// ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -42,8 +45,9 @@ class Newsletter
      */
     private $pdf;
 
+// ------------------------- Relationship parameters -------------------------
 
-
+// ------------------------- Methods -------------------------
 
     /**
      * Get id

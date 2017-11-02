@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Locality
 {
+
+// ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -28,122 +31,89 @@ class Locality
      */
     private $locality;
 
+// ------------------------- Relationship parameters -------------------------
+
+//    /**
+//     *@var ArrayCollection
+//     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="locality")
+//     */
+//    private $users;
+
+// ------------------------- Methods -------------------------
+
     /**
-     *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="locality")
+     * Constructor
      */
-    private $users;
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
+    /**
+     * Set locality
+     *
+     * @param string $locality
+     *
+     * @return Locality
+     */
+    public function setLocality($locality)
+    {
+        $this->locality = $locality;
 
+        return $this;
+    }
 
-//
-//    /**
-//     * Get id
-//     *
-//     * @return int
-//     */
-//    public function getId()
-//    {
-//        return $this->id;
-//    }
-//
-//    /**
-//     * Set locality
-//     *
-//     * @param string $locality
-//     *
-//     * @return Locality
-//     */
-//    public function setLocality($locality)
-//    {
-//        $this->locality = $locality;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Get locality
-//     *
-//     * @return string
-//     */
-//    public function getLocality()
-//    {
-//        return $this->locality;
-//    }
-//    /**
-//     * Constructor
-//     */
-//    public function __construct()
-//    {
-//        $this->localityUsers = new \Doctrine\Common\Collections\ArrayCollection();
-//    }
-//
-//    /**
-//     * Add localityUser
-//     *
-//     * @param \AppBundle\Entity\User $localityUser
-//     *
-//     * @return Locality
-//     */
-//    public function addLocalityUser(\AppBundle\Entity\User $localityUser)
-//    {
-//        $this->localityUsers[] = $localityUser;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Remove localityUser
-//     *
-//     * @param \AppBundle\Entity\User $localityUser
-//     */
-//    public function removeLocalityUser(\AppBundle\Entity\User $localityUser)
-//    {
-//        $this->localityUsers->removeElement($localityUser);
-//    }
-//
-//    /**
-//     * Get localityUsers
-//     *
-//     * @return \Doctrine\Common\Collections\Collection
-//     */
-//    public function getLocalityUsers()
-//    {
-//        return $this->localityUsers;
-//    }
-//
-//    /**
-//     * Add user
-//     *
-//     * @param \AppBundle\Entity\User $user
-//     *
-//     * @return Locality
-//     */
-//    public function addUser(\AppBundle\Entity\User $user)
-//    {
-//        $this->users[] = $user;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Remove user
-//     *
-//     * @param \AppBundle\Entity\User $user
-//     */
-//    public function removeUser(\AppBundle\Entity\User $user)
-//    {
-//        $this->users->removeElement($user);
-//    }
-//
-//    /**
-//     * Get users
-//     *
-//     * @return \Doctrine\Common\Collections\Collection
-//     */
-//    public function getUsers()
-//    {
-//        return $this->users;
-//    }
+    /**
+     * Get locality
+     *
+     * @return string
+     */
+    public function getLocality()
+    {
+        return $this->locality;
+    }
+
+    /**
+     * Add user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Locality
+     */
+    public function addUser(\AppBundle\Entity\User $user)
+    {
+        $this->users[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \AppBundle\Entity\User $user
+     */
+    public function removeUser(\AppBundle\Entity\User $user)
+    {
+        $this->users->removeElement($user);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
 }

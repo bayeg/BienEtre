@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Block
 {
+
+// ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -35,7 +38,9 @@ class Block
      */
     private $description;
 
+// ------------------------- Relationship parameters -------------------------
 
+// Position de 1 à 4
     /**
      *@var ArrayCollection
      *@ORM\OneToMany(targetEntity="AppBundle\Entity\Position", mappedBy="block")
@@ -43,7 +48,7 @@ class Block
     private $positions;
 
 
-
+// ------------------------- Methods -------------------------
 
 
     /**

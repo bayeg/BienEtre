@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Course
 {
+
+ // ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -77,6 +80,8 @@ class Course
      */
     private $showEnd;
 
+// ------------------------- Relationship parameters -------------------------
+
     /**
      *@var Provider
      *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="courses")
@@ -84,7 +89,7 @@ class Course
     private $provider;
 
 
-
+// ------------------------- Methods -------------------------
 
     /**
      * Get id

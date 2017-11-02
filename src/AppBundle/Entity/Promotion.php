@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Promotion
 {
+
+ // ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -70,6 +73,8 @@ class Promotion
      */
     private $showEnd;
 
+// ------------------------- Relationship parameters -------------------------
+
     /**
      *@var Provider
      *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="promotions")
@@ -83,7 +88,7 @@ class Promotion
     private $serviceCategory;
 
 
-
+// ------------------------- Methods -------------------------
 
 
     /**

@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Provider extends User
 {
+
+    // ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -38,9 +41,9 @@ class Provider extends User
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="contact_email", type="string", length=255)
      */
-    private $email;
+    private $contactEmail;
 
     /**
      * @var string
@@ -62,6 +65,8 @@ class Provider extends User
      * @ORM\Column(name="slug", type="string", length=225)
      */
     private $slug;
+
+// ------------------------- Relationship parameters -------------------------
 
     /**
      * @var ArrayCollection
@@ -99,14 +104,13 @@ class Provider extends User
      */
     private $comments;
 
-
     /**
      * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Internaut", inversedBy="providers")
      */
     private $internauts;
 
-
+// ------------------------- Methods -------------------------
 
     /**
      * Constructor
@@ -181,27 +185,27 @@ class Provider extends User
     }
 
     /**
-     * Set email
+     * Set contactEmail
      *
-     * @param string $email
+     * @param string $contactEmail
      *
      * @return Provider
      */
-    public function setEmail($email)
+    public function setContactEmail($contactEmail)
     {
-        $this->email = $email;
+        $this->contactEmail = $contactEmail;
 
         return $this;
     }
 
     /**
-     * Get email
+     * Get contactEmail
      *
      * @return string
      */
-    public function getEmail()
+    public function getContactEmail()
     {
-        return $this->email;
+        return $this->contactEmail;
     }
 
     /**

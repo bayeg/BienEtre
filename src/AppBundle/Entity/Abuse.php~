@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Abuse
 {
+
+// ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -35,6 +38,7 @@ class Abuse
      */
     private $date;
 
+// ------------------------- Relationship parameters -------------------------
 
     /**
      *@var Comment
@@ -50,114 +54,112 @@ class Abuse
     private $internaut;
 
 
+// ------------------------- Methods -------------------------
 
 
-//
-//    /**
-//     * Get id
-//     *
-//
-//     * @return int
-//     */
-//    public function getId()
-//    {
-//        return $this->id;
-//    }
-//
-//
-//    /**
-//     * Set description
-//     *
-//     * @param string $description
-//     *
-//     * @return Abuse
-//     */
-//    public function setDescription($description)
-//    {
-//        $this->description = $description;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Get description
-//     *
-//     * @return string
-//     */
-//    public function getDescription()
-//    {
-//        return $this->description;
-//    }
-//
-//    /**
-//     * Set date
-//     *
-//     * @param \DateTime $date
-//     *
-//     * @return Abuse
-//     */
-//    public function setDate($date)
-//    {
-//        $this->date = $date;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Get date
-//     *
-//     * @return \DateTime
-//     */
-//    public function getDate()
-//    {
-//        return $this->date;
-//    }
-//
-//    /**
-//     * Set comment
-//     *
-//     * @param \AppBundle\Entity\Comment $comment
-//     *
-//     * @return Abuse
-//     */
-//    public function setComment(\AppBundle\Entity\Comment $comment = null)
-//    {
-//        $this->comment = $comment;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Get comment
-//     *
-//     * @return \AppBundle\Entity\Comment
-//     */
-//    public function getComment()
-//    {
-//        return $this->comment;
-//    }
-//
-//    /**
-//     * Set internaut
-//     *
-//     * @param \AppBundle\Entity\Internaut $internaut
-//     *
-//     * @return Abuse
-//     */
-//    public function setInternaut(\AppBundle\Entity\Internaut $internaut = null)
-//    {
-//        $this->internaut = $internaut;
-//
-//        return $this;
-//    }
-//
-//    /**
-//     * Get internaut
-//     *
-//     * @return \AppBundle\Entity\Internaut
-//     */
-//    public function getInternaut()
-//    {
-//        return $this->internaut;
-//    }
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Abuse
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Abuse
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set comment
+     *
+     * @param \AppBundle\Entity\Comment $comment
+     *
+     * @return Abuse
+     */
+    public function setComment(\AppBundle\Entity\Comment $comment = null)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return \AppBundle\Entity\Comment
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Set internaut
+     *
+     * @param \AppBundle\Entity\Internaut $internaut
+     *
+     * @return Abuse
+     */
+    public function setInternaut(\AppBundle\Entity\Internaut $internaut = null)
+    {
+        $this->internaut = $internaut;
+
+        return $this;
+    }
+
+    /**
+     * Get internaut
+     *
+     * @return \AppBundle\Entity\Internaut
+     */
+    public function getInternaut()
+    {
+        return $this->internaut;
+    }
 }

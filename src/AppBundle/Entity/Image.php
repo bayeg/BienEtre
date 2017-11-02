@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Image
 {
+
+// ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -35,6 +38,8 @@ class Image
      */
     private $url;
 
+// ------------------------- Relationship parameters -------------------------
+
     /**
      *@var Provider
      *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Provider", inversedBy="logos")
@@ -47,7 +52,7 @@ class Image
      */
     private $photoProvider;
 
-
+// ------------------------- Methods -------------------------
 
     /**
      * Get id

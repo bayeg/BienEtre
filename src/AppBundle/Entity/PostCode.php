@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class PostCode
 {
+
+// ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -24,17 +27,20 @@ class PostCode
     /**
      * @var string
      *
-     * @ORM\Column(name="post_code", type="string", length=255)
+     * @ORM\Column(name="post_code", type="string", length=25)
      */
     private $postCode;
 
-    /**
-     *@var ArrayCollection
-     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="postCode")
-     */
-    private $users;
+// ------------------------- Relationship parameters -------------------------
+
+//    /**
+//     *@var ArrayCollection
+//     *@ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="postCode")
+//     */
+//    private $users;
 
 
+// ------------------------- Methods -------------------------
 
 
     /**

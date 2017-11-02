@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Position
 {
+
+// ------------------------- Column parameters -------------------------
+
     /**
      * @var int
      *
@@ -28,6 +31,8 @@ class Position
      */
     private $order;
 
+// ------------------------- Relationship parameters -------------------------
+
     /**
      *@var Block
      *@ORM\ManyToOne(targetEntity="AppBundle\Entity\Block", inversedBy="positions")
@@ -40,7 +45,7 @@ class Position
      */
     private $internaut;
 
-
+// ------------------------- Methods -------------------------
 
 
     /**
