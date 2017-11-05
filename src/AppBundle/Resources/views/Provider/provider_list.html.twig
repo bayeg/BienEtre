@@ -1,0 +1,17 @@
+{% extends '../my_base.html.twig' %}
+
+{% block title %}AppBundle:Provider:providerList{% endblock %}
+
+{% block body %}
+    <h1>Welcome to the Provider:providerList page</h1>
+    {%for p in providers%}
+        <div>
+            {#<a href="{{path("authorDetail", {"id" : a.id})}}"><img src="{{a.image.url}}"/></a>#}
+            <ul>
+                <li>{{p.name}}</li>
+                <li>{{p.website}}</li>
+                <li>{{p.contactEmail}}</li>
+            </ul>
+        </div>
+    {%endfor%}
+{% endblock %}

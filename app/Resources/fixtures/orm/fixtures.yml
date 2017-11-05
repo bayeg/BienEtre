@@ -7,12 +7,10 @@ AppBundle\Entity\Abuse:
       comment: '@comment_*'
       internaut: '@internaut_*'
 
-
 AppBundle\Entity\Block:
     block_{1..10}:
         name: <text(25)>
         description: <text(255)>
-###############################################        positions: '@position_{1..2}'
 
 AppBundle\Entity\Comment:
     comment_{1..10}:
@@ -22,8 +20,6 @@ AppBundle\Entity\Comment:
         date: <dateTime()>
         provider: '@provider_*'
         internaut: '@internaut_*'
-#######################################       abuses: '@abuse_*'
-
 
 AppBundle\Entity\Commune:
     commune_{1..100}:
@@ -43,11 +39,10 @@ AppBundle\Entity\Course:
 
 AppBundle\Entity\Image:
     image_{1..10}:
-#        order: <numberBetween(1, 4)>
+        imgOrder: <numberBetween(1, 10)>
         url: <imageUrl()>
-#        logoProvider: '@provider_*'
-#        photoProvider: '@provider_*'
-
+        logoProvider: '@provider_*'
+        photoProvider: '@provider_*'
 
 AppBundle\Entity\Internaut:
     internaut_{1..10}:
@@ -65,16 +60,10 @@ AppBundle\Entity\Internaut:
         lastName: <lastName()>
         firstName: <firstName()>
         newsletter: <boolean()>
-####################################        image: '@image_*'
-#####################################        providers: '@provider_*'
-###################################        abuses: '@abuse_*'
-#################################        comments: '@comment_*'
-#################################        positions: '@position_*'
 
 AppBundle\Entity\Locality:
       locality_{1..100}:
           locality: <city()>
-#################################          users: '@user_*'
 
 AppBundle\Entity\Newsletter:
     newsletter_{1..10}:
@@ -82,17 +71,15 @@ AppBundle\Entity\Newsletter:
          date: <dateTime()>
          pdf: <url()>
 
-#AppBundle\Entity\Position:
-#    position_{1..4}:
-#        order: <numberBetween(1, 4)>
-#        block: '@block_*'
-#        internaut: '@internaut_*'
+AppBundle\Entity\Position:
+    position_{1..4}:
+        positionOrder: <numberBetween(1, 4)>
+        block: '@block_*'
+        internaut: '@internaut_*'
 
 AppBundle\Entity\PostCode:
     postCode_{1..1000}:
         postCode: <numberBetween(1000, 9999)>
-#################################        users: '@user_*'
-
 
 AppBundle\Entity\Promotion:
     promotion_{1..100}:
@@ -127,14 +114,6 @@ AppBundle\Entity\Provider:
         slug: <slug()>
         serviceCategories: ['@service_category_*']
         internauts: ['@internaut_*']
-###############################        serviceCategories: '<numberBetween(1,2)>x @service_category_*'
-#################################      logos: '@image_*'
-#################################      photos: '@image_*'
-#################################      courses: '@course_*'
- #################################      promotions: '@promotion_*'
- #################################      comments: '@comment_*'
-
-
 
 AppBundle\Entity\ServiceCategory:
       service_category_{1..10}:
@@ -143,5 +122,3 @@ AppBundle\Entity\ServiceCategory:
           featured: <boolean()>
           validity: <boolean()>
 #          image: '@image_*'
-######################################          providers: '@provider_*'
-#################################          promotions: '@promotion_*'
