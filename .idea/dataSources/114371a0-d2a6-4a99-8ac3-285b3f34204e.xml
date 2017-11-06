@@ -246,7 +246,7 @@
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="67" parent="12" name="order">
+    <column id="67" parent="12" name="img_order">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
@@ -331,14 +331,14 @@
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="84" parent="15" name="internaut_id">
+    <column id="84" parent="15" name="position_order">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="85" parent="15" name="order">
+    <column id="85" parent="15" name="internaut_id">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <index id="86" parent="15" name="IDX_462CE4F59FE1F53D">
       <ColNames>internaut_id</ColNames>
@@ -371,7 +371,7 @@
     </column>
     <column id="92" parent="16" name="post_code">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <key id="93" parent="16" name="PRIMARY">
@@ -657,7 +657,7 @@ service_category_id</ColNames>
     </column>
     <column id="151" parent="21" name="slug">
       <Position>19</Position>
-      <DataType>varchar(25)|0</DataType>
+      <DataType>varchar(225)|0</DataType>
     </column>
     <column id="152" parent="21" name="last_name">
       <Position>20</Position>
@@ -671,42 +671,54 @@ service_category_id</ColNames>
       <Position>22</Position>
       <DataType>tinyint(1)|0</DataType>
     </column>
-    <index id="155" parent="21" name="IDX_8D93D649131A4F72">
+    <column id="155" parent="21" name="contact_email">
+      <Position>23</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="156" parent="21" name="IDX_8D93D649131A4F72">
       <ColNames>commune_id</ColNames>
     </index>
-    <index id="156" parent="21" name="IDX_8D93D6491A324924">
+    <index id="157" parent="21" name="IDX_8D93D6491A324924">
       <ColNames>post_code_id</ColNames>
     </index>
-    <index id="157" parent="21" name="IDX_8D93D6493DA5256D">
+    <index id="158" parent="21" name="IDX_8D93D6493DA5256D">
       <ColNames>image_id</ColNames>
     </index>
-    <index id="158" parent="21" name="IDX_8D93D64988823A92">
+    <index id="159" parent="21" name="IDX_8D93D64988823A92">
       <ColNames>locality_id</ColNames>
     </index>
-    <key id="159" parent="21" name="PRIMARY">
+    <index id="160" parent="21" name="UNIQ_8D93D649E7927C74">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="161" parent="21" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="160" parent="21" name="FK_8D93D6491A324924">
+    <key id="162" parent="21" name="UNIQ_8D93D649E7927C74">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>UNIQ_8D93D649E7927C74</UnderlyingIndexName>
+    </key>
+    <foreign-key id="163" parent="21" name="FK_8D93D6491A324924">
       <ColNames>post_code_id</ColNames>
       <RefSchemaName>bien_etre</RefSchemaName>
       <RefTableName>post_code</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="161" parent="21" name="FK_8D93D64988823A92">
+    <foreign-key id="164" parent="21" name="FK_8D93D64988823A92">
       <ColNames>locality_id</ColNames>
       <RefSchemaName>bien_etre</RefSchemaName>
       <RefTableName>locality</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="162" parent="21" name="FK_8D93D649131A4F72">
+    <foreign-key id="165" parent="21" name="FK_8D93D649131A4F72">
       <ColNames>commune_id</ColNames>
       <RefSchemaName>bien_etre</RefSchemaName>
       <RefTableName>commune</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="163" parent="21" name="FK_8D93D6493DA5256D">
+    <foreign-key id="166" parent="21" name="FK_8D93D6493DA5256D">
       <ColNames>image_id</ColNames>
       <RefSchemaName>bien_etre</RefSchemaName>
       <RefTableName>image</RefTableName>

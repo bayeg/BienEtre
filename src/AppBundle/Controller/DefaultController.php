@@ -9,7 +9,7 @@ namespace AppBundle\Controller;
  class DefaultController extends Controller
  {
         /**
-         * @Route("/test", name="homepage")
+         * @Route("/", name="homepage")
          */
         public function indexAction(Request $request)
      {

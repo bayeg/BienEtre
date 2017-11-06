@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="132f6fcb-f984-4c05-bd2d-80bcd4b81d6d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/my_base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/BienEtreGB.iml" afterPath="$PROJECT_DIR$/.idea/BienEtreGB.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/footer.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/header.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/javascipts.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/menu.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/114371a0-d2a6-4a99-8ac3-285b3f34204e.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/114371a0-d2a6-4a99-8ac3-285b3f34204e.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/fixtures/orm/fixtures.yml" afterPath="$PROJECT_DIR$/app/Resources/fixtures/orm/fixtures.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Image.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Position.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Position.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ProviderController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ProviderController.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Provider/provider_detail.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/Provider/provider_detail.html.twig" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Provider/provider_list.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/Provider/provider_list.html.twig" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Test/test.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/Test/test.html.twig" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/my_base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/my_base.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,14 +71,94 @@
       <file leaf-file-name="fixtures.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/fixtures/orm/fixtures.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="121" column="31" lean-forward="false" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="31" />
+            <state relative-caret-position="310">
+              <caret line="110" column="31" lean-forward="true" selection-start-line="110" selection-start-column="31" selection-end-line="110" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ProviderController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProviderController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+              <folding>
+                <element signature="e#40#97#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listing-grid.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/superlist-directory-template/superlist-1.0.1/superlist/listing-grid.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+              <folding>
+                <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="provider_list.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/Provider/provider_list.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my_base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/my_base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+              <folding>
+                <element signature="e#267#1237#0#Twig" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/header.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+              <folding>
+                <element signature="e#453#1306#0#Twig" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/menu.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="123" column="34" lean-forward="false" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+              <folding>
+                <element signature="n#ul#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Twig" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -100,6 +184,8 @@
       <find>src=&quot;../../../../../web/assets/</find>
       <find>.js&quot;</find>
       <find>asset('</find>
+      <find>src=&quot;</find>
+      <find>image</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;</replace>
@@ -110,8 +196,8 @@
       <replace>href=&quot;{{ asset('</replace>
       <replace>.css') }}&quot;</replace>
       <replace>.js') }}&quot;</replace>
-      <replace>src=&quot;{{ asset('</replace>
       <replace>asset('assets/</replace>
+      <replace>src=&quot;{{ asset('</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\EasyPHP\eds-www\BienEtreGB</dir>
@@ -147,17 +233,22 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Provider.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Image.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Position.php" />
-        <option value="$PROJECT_DIR$/app/Resources/fixtures/orm/fixtures.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProviderController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/TestController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Test/test.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/my_base.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/Provider/provider_list.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Provider/provider_list.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProviderController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/Provider/provider_list.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/footer.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/javascipts.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/my_base.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/menu.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/header.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/fixtures/orm/fixtures.yml" />
       </list>
     </option>
   </component>
@@ -217,9 +308,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+    <option name="x" value="32" />
+    <option name="y" value="287" />
+    <option name="width" value="1180" />
+    <option name="height" value="980" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -238,122 +330,118 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="fixtures" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="fixtures" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="orm" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="default" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Provider" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Test" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Tests" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="bin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="BienEtre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BienEtre" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="BienEtreGB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BienEtreGB" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -366,8 +454,15 @@
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Twig" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\EasyPHP\eds-www\BienEtreGB\app\Resources\views" />
+      <recent name="C:\wamp64\www\BienEtre\src\AppBundle\Resources\views" />
+      <recent name="D:\EasyPHP\eds-www\BienEtreGB\app\Resources\fixtures\orm" />
+      <recent name="D:\EasyPHP\eds-www\BienEtreGB\src\AppBundle\Datafixtures\ORM" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\BienEtre\src\AppBundle\Resources\views" />
       <recent name="C:\wamp64\www\BienEtre\app\Resources\views" />
@@ -375,11 +470,460 @@
       <recent name="C:\wamp64\www\BienEtre\src\AppBundle\Resources\views\Test" />
       <recent name="D:\EasyPHP\eds-www\BienEtreGB\app\Resources\fixtures\orm" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\BienEtre\src\AppBundle\Resources\views" />
-      <recent name="D:\EasyPHP\eds-www\BienEtreGB\app\Resources\fixtures\orm" />
-      <recent name="D:\EasyPHP\eds-www\BienEtreGB\src\AppBundle\Datafixtures\ORM" />
-    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/BienEtreGB.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/php.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Resources/fixtures/orm/fixtures.yml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/composer.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/composer.lock</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Abuse.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Abuse.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Block.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Block.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Comment.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Comment.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Commune.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Commune.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Course.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Course.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Image.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Image.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Internaut.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Internaut.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Locality.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Locality.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Newsletter.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Newsletter.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Position.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Position.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/PostCode.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/PostCode.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Promotion.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Promotion.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Provider.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/Provider.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/ServiceCategory.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/ServiceCategory.php~</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/User.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Entity/User.php~</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/deployment.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Controller/ProviderController.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Controller/TestController.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Resources/views/Provider/provider_detail.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Resources/views/Provider/provider_list.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Resources/views/Test/test.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Resources/views/my_base.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Tests/Controller/ProviderControllerTest.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Tests/Controller/TestControllerTest.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/css/superlist.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/favicon.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/logo-white.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/logo.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/agent-1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/agent-2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/agent-3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/agent-4.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/agent-5.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/bg-transparent.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/blog-1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/detail-banner-1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/gallery-1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/gallery-2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/gallery-3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/gallery-4.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/gallery-5.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/gallery-6.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/gallery-7.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/gallery-8.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/partner-1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/partner-1.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/partner-2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/partner-2.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/partner-3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/partner-3.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/partner-4.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/partner-4.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/partner-5.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/partner-5.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/pragmaticmates-logo.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-10.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-11.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-12.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-13.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-14.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-4.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-5.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-6.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-7.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-8.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/product-9.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/slider-1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/slider-2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/slider-3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/slider-large-1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/slider-large-2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/tmp/slider-large-3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/img/transparent-marker-image.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/js/jquery.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/js/map.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/js/superlist.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-fileinput/fileinput.min.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-fileinput/fileinput.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/fonts/bootstrap/glyphicons-halflings-regular.eot</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/fonts/bootstrap/glyphicons-halflings-regular.svg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/fonts/bootstrap/glyphicons-halflings-regular.ttf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/fonts/bootstrap/glyphicons-halflings-regular.woff</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/fonts/bootstrap/glyphicons-halflings-regular.woff2</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap-sprockets.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap/affix.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap/alert.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap/button.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap/carousel.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap/collapse.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap/dropdown.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap/modal.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap/popover.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap/scrollspy.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap/tab.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap/tooltip.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/javascripts/bootstrap/transition.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/_bootstrap-compass.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/_bootstrap-mincer.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/_bootstrap-sprockets.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/_bootstrap.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_alerts.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_badges.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_breadcrumbs.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_button-groups.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_buttons.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_carousel.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_close.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_code.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_component-animations.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_dropdowns.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_forms.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_glyphicons.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_grid.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_input-groups.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_jumbotron.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_labels.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_list-group.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_media.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_mixins.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_modals.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_navbar.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_navs.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_normalize.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_pager.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_pagination.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_panels.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_popovers.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_print.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_progress-bars.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_responsive-embed.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_responsive-utilities.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_scaffolding.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_tables.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_theme.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_thumbnails.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_tooltip.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_type.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_utilities.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_variables.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/_wells.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_alerts.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_background-variant.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_border-radius.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_buttons.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_center-block.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_clearfix.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_forms.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_gradients.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_grid-framework.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_grid.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_hide-text.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_image.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_labels.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_list-group.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_nav-divider.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_nav-vertical-align.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_opacity.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_pagination.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_panels.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_progress-bar.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_reset-filter.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_reset-text.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_resize.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_responsive-visibility.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_size.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_tab-focus.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_table-row.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_text-emphasis.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_text-overflow.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-sass/stylesheets/bootstrap/mixins/_vendor-prefixes.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-select/bootstrap-select.min.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/bootstrap-select/bootstrap-select.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/bower.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/colorbox.ai</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/content/ajax.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/content/daisy.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/content/daisy@2x.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/content/homer.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/content/marylou.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/content/ohoopee1.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/content/ohoopee2.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/content/ohoopee3.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example1/colorbox.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example1/images/border.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example1/images/controls.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example1/images/loading.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example1/images/loading_background.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example1/images/overlay.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example1/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example2/colorbox.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example2/images/controls.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example2/images/loading.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example2/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example3/colorbox.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example3/images/controls.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example3/images/loading.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example3/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example4/colorbox.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example4/images/border1.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example4/images/border2.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example4/images/loading.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example4/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example5/colorbox.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example5/images/border.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example5/images/controls.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example5/images/loading.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example5/images/loading_background.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/example5/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-ar.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-bg.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-bn.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-ca.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-cs.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-da.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-de.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-es.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-et.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-fa.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-fi.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-fr.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-gl.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-gr.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-he.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-hr.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-hu.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-id.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-it.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-ja.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-kr.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-lt.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-lv.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-my.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-nl.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-no.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-pl.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-pt-BR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-ro.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-ru.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-si.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-sk.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-sr.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-sv.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-tr.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-uk.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-zh-CN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/i18n/jquery.colorbox-zh-TW.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/jquery.colorbox-min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/jquery.colorbox.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/colorbox/package.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.colorhelpers.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.canvas.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.categories.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.crosshair.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.errorbars.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.fillbetween.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.image.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.navigate.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.pie.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.resize.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.selection.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.spline.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.stack.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.symbol.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.threshold.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/flot/jquery.flot.time.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/font-awesome/css/font-awesome.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/font-awesome/css/font-awesome.min.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/font-awesome/fonts/FontAwesome.otf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/font-awesome/fonts/fontawesome-webfont.eot</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/font-awesome/fonts/fontawesome-webfont.svg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/font-awesome/fonts/fontawesome-webfont.ttf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/font-awesome/fonts/fontawesome-webfont.woff</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/font-awesome/fonts/fontawesome-webfont.woff2</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/jquery-google-map/img/marker.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/jquery-google-map/infobox.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/jquery-google-map/jquery-google-map.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/jquery-google-map/markerclusterer.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/owl.carousel/assets/owl.carousel.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/owl.carousel/owl.carousel.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/libraries/owl.carousel/owl.carousel.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_admin.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_buttons.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_card.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_categories.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_colorbox.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_comments.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_commons.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_detail.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_detail_gallery.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_events.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_faq.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_filter.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_footer.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_forms.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_fullscreen.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_header.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_header_nav_user.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_header_statusbar.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_hero_image.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_hero_slider.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_hero_video.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_invoice.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_map.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_pagination.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_partners.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_posts.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_posts_detail.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_pricing.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_promotion.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_reviews.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_social.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_testimonials.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_users.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_variables.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/helpers/_widgets.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/web/assets/scss/superlist.scss</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -423,30 +967,40 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126831000" />
+    <option name="totallyTimeSpent" value="135567000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-4" y="-4" width="1288" height="988" extended-state="6" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22913617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25390625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3026906" sideWeight="0.503125" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27733755" sideWeight="0.496875" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22982062" sideWeight="0.496875" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3026906" sideWeight="0.503125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22913617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27733755" sideWeight="0.496875" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -482,29 +1036,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/ff3a7057/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.comment" />
-    <entry file="das://table:/ff3a7057/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.provider_internaut" />
-    <entry file="das://table:/ff3a7057/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.provider_service_category" />
-    <entry file="das://table:/ff3a7057/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.user" />
-    <entry file="das://table:/ff3a7057/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.promotion" />
-    <entry file="file://$PROJECT_DIR$/app/Resources/fixtures/orm/dummy.yml" />
-    <entry file="das://table:/ff3a7057/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.block" />
-    <entry file="das://table:/ff3a7057/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.position" />
-    <entry file="das://table:/ff3a7057/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.commune" />
-    <entry file="file://$PROJECT_DIR$/vendor/composer/ca-bundle/res/cacert.pem">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config_dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/theofidry/alice-data-fixtures/src/Bridge/Symfony/DependencyInjection/FidryAliceDataFixturesExtension.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -555,14 +1086,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Block.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Comment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -575,14 +1098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-221">
           <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Internaut.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="75" column="14" lean-forward="false" selection-start-line="75" selection-start-column="14" selection-end-line="77" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -619,28 +1134,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/c57deb03/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.commune">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/c57deb03/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.commune" />
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="47" column="18" lean-forward="false" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="176">
+          <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding>
+            <marker date="1509990750241" expanded="true" signature="411:6822" ph="{...}" />
+            <marker date="1509990750241" expanded="true" signature="5536:5647" ph=" Set postCode ..." />
+            <marker date="1509990750241" expanded="true" signature="5726:5798" ph="{...}" />
+            <marker date="1509990750241" expanded="true" signature="5807:5882" ph=" Get postCode ..." />
+            <marker date="1509990750241" expanded="true" signature="5918:5962" ph="{...}" />
+            <marker date="1509990750241" expanded="true" signature="5971:6082" ph=" Set locality ..." />
+            <marker date="1509990750241" expanded="true" signature="6161:6233" ph="{...}" />
+            <marker date="1509990750241" expanded="true" signature="6242:6317" ph=" Get locality ..." />
+            <marker date="1509990750241" expanded="true" signature="6353:6397" ph="{...}" />
+            <marker date="1509990750241" expanded="true" signature="6406:6514" ph=" Set commune ..." />
+            <marker date="1509990750241" expanded="true" signature="6590:6660" ph="{...}" />
+            <marker date="1509990750241" expanded="true" signature="6669:6742" ph=" Get commune ..." />
+            <marker date="1509990750241" expanded="true" signature="6777:6820" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/c57deb03/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.promotion">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/c57deb03/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.promotion" />
     <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -657,38 +1174,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="61" column="14" lean-forward="false" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/superlist-directory-template/superlist-1.0.1/documentation/assets/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1275">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/superlist-directory-template/superlist-1.0.1/documentation/assets/css/documentation.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/superlist-directory-template/superlist-1.0.1/documentation/assets/css/bootstrap.min.css" />
+    <entry file="file://$USER_HOME$/Desktop/superlist-directory-template/superlist-1.0.1/documentation/assets/css/documentation.css" />
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/ServiceCategory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -697,18 +1191,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="73" column="37" lean-forward="false" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Position.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="61" column="24" lean-forward="false" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="24" />
+        <state relative-caret-position="109">
+          <caret line="92" column="5" lean-forward="true" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -717,7 +1203,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -725,39 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/superlist-directory-template/superlist-1.0.1/superlist/listing-grid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1545">
-          <caret line="662" column="33" lean-forward="false" selection-start-line="662" selection-start-column="29" selection-end-line="662" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -765,17 +1217,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProviderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-          <folding>
-            <element signature="e#40#97#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -783,7 +1224,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,32 +1231,205 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="32" />
-          <folding>
-            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TestController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Block.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="736">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Provider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="52" column="18" lean-forward="false" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="18" />
+        <state relative-caret-position="813">
+          <caret line="84" column="56" lean-forward="false" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/ff3a7057/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.block">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Internaut.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="813">
+          <caret line="61" column="7" lean-forward="false" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/ff3a7057/114371a0-d2a6-4a99-8ac3-285b3f34204e/bien_etre.position">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="26" column="7" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="e#40#97#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Test/test.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="862">
+          <caret line="61" column="14" lean-forward="false" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="2" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <folding>
+            <element signature="e#42#101#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProviderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#97#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/javascipts.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="27" column="84" lean-forward="false" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/footer.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="52" column="26" lean-forward="false" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/superlist-directory-template/superlist-1.0.1/superlist/listing-grid-sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="851" column="0" lean-forward="false" selection-start-line="851" selection-start-column="0" selection-end-line="851" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/menu.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="123" column="34" lean-forward="false" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+          <folding>
+            <element signature="n#ul#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/header.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+          <folding>
+            <element signature="e#453#1306#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/my_base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding>
+            <element signature="e#267#1237#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Provider/provider_list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/superlist-directory-template/superlist-1.0.1/superlist/listing-grid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/fixtures/orm/fixtures.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="121" column="31" lean-forward="false" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="31" />
+        <state relative-caret-position="310">
+          <caret line="110" column="31" lean-forward="true" selection-start-line="110" selection-start-column="31" selection-end-line="110" selection-end-column="31" />
           <folding />
         </state>
       </provider>

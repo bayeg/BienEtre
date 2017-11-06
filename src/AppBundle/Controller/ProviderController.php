@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class ProviderController extends Controller
 {
     /**
-     * @Route("/provider")
+     * @Route("/provider", name="providerList")
      */
     public function providerListAction()
     {
@@ -16,19 +16,19 @@ class ProviderController extends Controller
         $providers = $em->getRepository("AppBundle:Provider")
             ->findAll();
 
-        return $this->render('AppBundle:Provider:provider_list.html.twig', array(
+        return $this->render('Provider/provider_list.html.twig', array(
             "providers" => $providers
         ));
     }
 
-    /**
-     * @Route("/provider/{slug}")
-     */
-    public function providerDetailAction($slug)
-    {
-        return $this->render('AppBundle:Provider:provider_detail.html.twig', array(
-            // ...
-        ));
-    }
+//    /**
+//     * @Route("/provider/{slug}, name="providerDetail")
+//     */
+//    public function providerDetailAction($slug)
+//    {
+//        return $this->render('Provider/provider_detail.html.twig', array(
+//            // ...
+//        ));
+//    }
 
 }
