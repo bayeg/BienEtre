@@ -529,7 +529,7 @@ service_category_id</ColNames>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="124" parent="20" name="image_id">
+    <column id="124" parent="20" name="service_image_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
@@ -553,8 +553,8 @@ service_category_id</ColNames>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="129" parent="20" name="UNIQ_FF3A42FC3DA5256D">
-      <ColNames>image_id</ColNames>
+    <index id="129" parent="20" name="UNIQ_FF3A42FCC4D37E50">
+      <ColNames>service_image_id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="130" parent="20" name="PRIMARY">
@@ -562,12 +562,12 @@ service_category_id</ColNames>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="131" parent="20" name="UNIQ_FF3A42FC3DA5256D">
-      <ColNames>image_id</ColNames>
-      <UnderlyingIndexName>UNIQ_FF3A42FC3DA5256D</UnderlyingIndexName>
+    <key id="131" parent="20" name="UNIQ_FF3A42FCC4D37E50">
+      <ColNames>service_image_id</ColNames>
+      <UnderlyingIndexName>UNIQ_FF3A42FCC4D37E50</UnderlyingIndexName>
     </key>
-    <foreign-key id="132" parent="20" name="FK_FF3A42FC3DA5256D">
-      <ColNames>image_id</ColNames>
+    <foreign-key id="132" parent="20" name="FK_FF3A42FCC4D37E50">
+      <ColNames>service_image_id</ColNames>
       <RefSchemaName>bien_etre</RefSchemaName>
       <RefTableName>image</RefTableName>
       <RefColNames>id</RefColNames>

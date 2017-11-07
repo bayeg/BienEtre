@@ -38,7 +38,7 @@ AppBundle\Entity\Course:
         provider: '@provider_*'
 
 AppBundle\Entity\Image:
-    image_{1..10}:
+    image_{1..100}:
         imgOrder: <numberBetween(1, 10)>
         url: <imageUrl()>
         logoProvider: '@provider_*'
@@ -121,4 +121,4 @@ AppBundle\Entity\ServiceCategory:
           description: <text(255)>
           featured: <boolean()>
           validity: <boolean()>
-#          image: '@image_*'
+          serviceImage : '@image_*'

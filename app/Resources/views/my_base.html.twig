@@ -20,13 +20,35 @@
 </head>
 
     <body>
+    {% block body %}
     <div class="page-wrapper">
         <header class="header">
             {% block header %}
                 {% include "header.html.twig" %}
             {% endblock %}
         </header><!-- /.header -->
-        {% block body %}{% endblock %}
+
+            <div class="main">
+                {% block main %}
+                    <div class="main-inner">
+                        <div class="container">
+                            <div class="row"><!-- VARIE si pas SIDEBAR-->
+                                {% block slider_doc_title %}
+                                    {% include "slider_doc_title.html.twig" %}
+                                {% endblock %}
+                                {% block content %}
+                                    {%  include "content_provider.html.twig" %}
+                                {% endblock %}
+                                {% block sidebar %}
+                                    {% include "sidebar.html.twig" %}
+                                {% endblock %}
+                            </div><!-- /.row -->
+                        </div><!-- /.container -->
+                    </div><!-- /.main-inner WITH SIDEBAR -->
+                {% endblock %}
+            </div><!-- /.main -->
+
+
         {% block footer %}
             {% include "footer.html.twig" %}
         {% endblock %}
@@ -34,5 +56,6 @@
             {% include "javascipts.html.twig" %}
         {% endblock %}
     </div><!-- /.page-wrapper -->
+    {% endblock %}
     </body>
 </html>

@@ -56,7 +56,7 @@ class ServiceCategory
      * @var Image
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\Image")
      */
-    private $image;
+    private $serviceImage;
 
 // ------------------------- Relationship parameters -------------------------
 
@@ -192,27 +192,27 @@ class ServiceCategory
     }
 
     /**
-     * Set image
+     * Set serviceImage
      *
-     * @param \AppBundle\Entity\Image $image
+     * @param \AppBundle\Entity\Image $serviceImage
      *
      * @return ServiceCategory
      */
-    public function setImage(\AppBundle\Entity\Image $image = null)
+    public function setServiceImage(\AppBundle\Entity\Image $serviceImage = null)
     {
-        $this->image = $image;
+        $this->serviceImage = $serviceImage;
 
         return $this;
     }
 
     /**
-     * Get image
+     * Get serviceImage
      *
      * @return \AppBundle\Entity\Image
      */
-    public function getImage()
+    public function getServiceImage()
     {
-        return $this->image;
+        return $this->serviceImage;
     }
 
     /**
