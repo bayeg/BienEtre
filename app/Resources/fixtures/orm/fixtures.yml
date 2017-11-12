@@ -115,7 +115,7 @@ AppBundle\Entity\Provider:
         serviceCategories: ['@service_category_*']
         internauts: ['@internaut_*']
 
-AppBundle\Entity\ServiceCategory:
+AppBundle\Entity\ServiceCategory: #   massage, fitness, yoga, balnéothérapie,...
       service_category_{1..10}:
           name: <text(25)>
           description: <text(255)>

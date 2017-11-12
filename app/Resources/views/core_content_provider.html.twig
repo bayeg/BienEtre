@@ -1,12 +1,25 @@
 <div class="cards-simple-wrapper">
     <div class="row">
 
+
+        {#<li>{{"Nom : "}}<a href="{{ path('authorDetail',#}
+            {#{"id" : a.id})}}">{{a.name}}</a></li>#}
+
+
+
+
+.00
+
+
+
         {%for p in providers%}
             <div class="col-sm-6 col-lg-4">
                 <div class="card-simple" data-background-image="{{asset(p.logos[0].url)}}">
                     <div class="card-simple-background">
                         <div class="card-simple-content">
-                            <h2><a href="listing-detail.html">{{p.name}}</a></h2>
+                            {#<h2><a href="listing-detail.html">{{p.name}}</a></h2>#}
+                            <h2><a href="{{ path("providerDetail",
+                                {"id" : p.id})}}">{{p.name}}</a></h2>
                             <div class="card-simple-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -30,13 +43,6 @@
                 </div><!-- /.card-simple -->
             </div><!-- /.col-* -->
 
-        {#<div>#}
-        {#<ul>#}
-        {#<li></li>#}
-        {#<li>{{p.website}}</li>#}
-        {#<li>{{p.contactEmail}}</li>#}
-        {#</ul>#}
-        {#</div>#}
         {%endfor%}
 
 

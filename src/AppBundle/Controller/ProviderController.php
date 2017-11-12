@@ -16,19 +16,23 @@ class ProviderController extends Controller
         $providers = $em->getRepository("AppBundle:Provider")
             ->findAll();
 
-        return $this->render('Provider/provider_list.html.twig', array(
+        return $this->render('Provider/provider_list.html.twig', [
             "providers" => $providers
-        ));
+        ]);
     }
 
-//    /**
-//     * @Route("/provider/{slug}, name="providerDetail")
-//     */
-//    public function providerDetailAction($slug)
-//    {
-//        return $this->render('Provider/provider_detail.html.twig', array(
-//            // ...
-//        ));
-//    }
+    /**
+     * @Route("/provider/{id}", name="providerDetail")
+     */
+    public function providerDetailAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $provider = $em->getRepository("AppBundle:Provider")
+            ->find($id);
+
+        return $this->render('Provider/provider_detail.html.twig', [
+            "p" => $provider
+        ]);
+    }
 
 }
