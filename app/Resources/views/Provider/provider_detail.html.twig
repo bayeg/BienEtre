@@ -1,7 +1,4 @@
-{% extends "::base.html.twig" %}
-
-{% block title %}AppBundle:Provider:providerDetail{% endblock %}
-
-{% block body %}
-<h1>Welcome to the Provider:providerDetail page</h1>
-{% endblock %}
+{% extends 'default/my_base.html.twig' %}
+        {% block main %}
+            {% include "provider/main_provider_detail.html.twig" %}
+        {% endblock %}

@@ -1,17 +1,4 @@
-{% extends 'my_base.html.twig' %}
-{#{% block title %}AppBundle:Provider:providerList{% endblock %}#}
-
-{#{% block core_content %}#}
-    {#<h1>Welcome to the Provider:providerList page</h1>#}
-
-    {#{%for p in providers%}#}
-
-        {#<div>#}
-            {#<ul>#}
-                {#<li>{{p.name}}</li>#}
-                {#<li>{{p.website}}</li>#}
-                {#<li>{{p.contactEmail}}</li>#}
-            {#</ul>#}
-        {#</div>#}
-    {#{%endfor%}#}
-{#{% endblock %}#}
+{% extends 'default/my_base.html.twig' %}
+        {% block main %}
+            {% include "provider/main_provider_list.html.twig" %}
+        {% endblock %}

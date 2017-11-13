@@ -22,13 +22,13 @@ class ProviderController extends Controller
     }
 
     /**
-     * @Route("/provider/{id}", name="providerDetail")
+     * @Route("/provider/{slug}", name="providerDetail")
      */
-    public function providerDetailAction($id)
+    public function providerDetailAction($slug)
     {
         $em = $this->getDoctrine()->getManager();
         $provider = $em->getRepository("AppBundle:Provider")
-            ->find($id);
+            ->find($slug);
 
         return $this->render('Provider/provider_detail.html.twig', [
             "p" => $provider

@@ -24,36 +24,22 @@
     <div class="page-wrapper">
         <header class="header">
             {% block header %}
-                {% include "header.html.twig" %}
+                {% include "default/header.html.twig" %}
             {% endblock %}
         </header><!-- /.header -->
 
             <div class="main">
                 {% block main %}
-                    <div class="main-inner">
-                        <div class="container">
-                            <div class="row"><!-- VARIE si pas SIDEBAR-->
-                                {% block slider_doc_title %}
-                                    {% include "slider_doc_title.html.twig" %}
-                                {% endblock %}
-                                {% block content %}
-                                    {%  include "content_provider.html.twig" %}
-                                {% endblock %}
-                                {% block sidebar %}
-                                    {% include "sidebar.html.twig" %}
-                                {% endblock %}
-                            </div><!-- /.row -->
-                        </div><!-- /.container -->
-                    </div><!-- /.main-inner WITH SIDEBAR -->
+                    {#{% include ("provider/main_provider_list.html.twig") %}#}
                 {% endblock %}
             </div><!-- /.main -->
 
 
         {% block footer %}
-            {% include "footer.html.twig" %}
+            {% include "default/footer.html.twig" %}
         {% endblock %}
         {% block javascripts %}
-            {% include "javascipts.html.twig" %}
+            {% include "default/javascipts.html.twig" %}
         {% endblock %}
     </div><!-- /.page-wrapper -->
     {% endblock %}
