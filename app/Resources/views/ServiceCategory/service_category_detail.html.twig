@@ -1,7 +1,4 @@
-{% extends "::base.html.twig" %}
-
-{% block title %}AppBundle:ServiceCategory:serviceCategoryDetail{% endblock %}
-
-{% block body %}
-<h1>Welcome to the ServiceCategory:serviceCategoryDetail page</h1>
-{% endblock %}
+{% extends 'default/my_base.html.twig' %}
+        {% block main %}
+            {% include "ServiceCategory/main_service_category_detail.html.twig" %}
+        {% endblock %}

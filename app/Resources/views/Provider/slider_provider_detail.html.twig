@@ -1,7 +1,8 @@
 
 
 <div class="mt-80 mb80">
-    <div class="detail-banner" style="background-image: url(assets/img/tmp/detail-banner-1.jpg);">
+    {#<div class="detail-banner" style="background-image: url(assets/img/tmp/detail-banner-1.jpg);">#}
+    <div class="detail-banner" style="background-image: url({{asset(provider.logos[0].url)}});">
         <div class="container">
             <div class="detail-banner-left">
                 <div class="detail-banner-info">
@@ -10,11 +11,13 @@
                 </div><!-- /.detail-banner-info -->
 
                 <h2 class="detail-title">
-                    Name
+                    {{ provider.name }}
                 </h2>
 
                 <div class="detail-banner-address">
-                    <i class="fa fa-map-o"></i> 347/26 22nd Avenue, New York City, USA
+                    <i class="fa fa-map-o"></i>
+                    {{ provider.addressStreet }}
+                    {{ provider.addressNumber }}
                 </div><!-- /.detail-banner-address -->
 
                 <div class="detail-banner-rating">

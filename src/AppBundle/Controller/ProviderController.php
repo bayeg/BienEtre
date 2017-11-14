@@ -28,10 +28,13 @@ class ProviderController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $provider = $em->getRepository("AppBundle:Provider")
-            ->find($slug);
+            ->findOneBy(array(
+                "slug" => $slug
+                )
+            );
 
         return $this->render('Provider/provider_detail.html.twig', [
-            "p" => $provider
+            "provider" => $provider
         ]);
     }
 

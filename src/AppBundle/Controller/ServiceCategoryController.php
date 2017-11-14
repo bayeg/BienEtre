@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class ServiceCategoryController extends Controller
 {
     /**
-     * @Route("/serviceCategory")
+     * @Route("/category", name="serviceCategoryList")
      */
     public function serviceCategoryListAction()
     {
@@ -22,7 +22,7 @@ class ServiceCategoryController extends Controller
     }
 
     /**
-     * @Route("/serviceCategory/{id}")
+     * @Route("/category/{id}", name="serviceCategoryDetail")
      */
     public function serviceCategoryDetailAction($id)
     {

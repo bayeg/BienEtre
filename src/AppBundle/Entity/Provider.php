@@ -107,6 +107,7 @@ class Provider extends User
     /**
      * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Internaut", inversedBy="providers")
+     * @ORM\JoinTable(name="favorite")
      */
     private $internauts;
 
