@@ -1,28 +1,28 @@
-{% extends 'default/my_base.html.twig' %}
+{% extends ':Front:front_layout.html.twig' %}
         {% block main %}
             <div class="main-inner">
                 <div class="container">
                     <div class="row"><!-- VARIE si pas SIDEBAR-->
                         {% block slider %}
-                            {#{% include "Provider/slider_provider_list.html.twig" %}#}
+                            {% include ":Front/Provider:slider_provider_list.html.twig" %}
                         {% endblock %}
                         {% block content %}
                             <div class="col-sm-8 col-lg-9">
                                 <div class="content">
                                     {% block search_form %}
-                                        {% include "Provider/search_form.html.twig" %}
+                                        {% include ":Front/Provider:search_form.html.twig" %}
                                     {% endblock %}
                                     {% block result_filter_form %}
-                                        {% include "Provider/result_filter_form.html.twig" %}
+                                        {% include ":Front/Provider:result_filter_form.html.twig" %}
                                     {% endblock %}
                                     {% block core_content %}
-                                        {#{% include "ServiceCategory/core_content_service_category_list.html.twig" %}#}
+                                        {% include ":Front/Provider:core_content_provider_list.html.twig" %}
                                     {% endblock %}
                                 </div><!-- /.content -->
                             </div><!-- /.col-* -->
                         {% endblock %}
                         {% block sidebar %}
-                            {% include "Provider/sidebar.html.twig" %}
+                            {% include ":Front/Provider:sidebar.html.twig" %}
                         {% endblock %}
                     </div><!-- /.row -->
                 </div><!-- /.container -->

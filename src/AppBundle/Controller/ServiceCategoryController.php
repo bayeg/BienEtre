@@ -16,22 +16,25 @@ class ServiceCategoryController extends Controller
         $serviceCategories = $em->getRepository("AppBundle:ServiceCategory")
             ->findAll();
 
-        return $this->render('ServiceCategory/service_category_list.html.twig',[
+        return $this->render('Front/ServiceCategory/service_category_list.html.twig',[
             "serviceCategories" => $serviceCategories
         ]);
     }
 
     /**
-     * @Route("/category/{id}", name="serviceCategoryDetail")
+     * @Route("/category/{name}", name="serviceCategoryDetail")
      */
-    public function serviceCategoryDetailAction($id)
+    public function serviceCategoryDetailAction($name)
     {
         $em = $this->getDoctrine()->getManager();
         $serviceCategory = $em->getRepository("AppBundle:ServiceCategory")
-            ->find($id);
+            ->findOneBy(array(
+                "name" => $name
+                )
+            );
 
-        return $this->render('ServiceCategory/service_category_detail.html.twig', [
-            "sc" => $serviceCategory
+        return $this->render('Front/ServiceCategory/service_category_detail.html.twig', [
+            "serviceCategory" => $serviceCategory
         ]);
     }
 

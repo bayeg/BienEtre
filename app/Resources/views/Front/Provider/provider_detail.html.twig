@@ -1,9 +1,9 @@
-{% extends 'default/my_base.html.twig' %}
+{% extends '::my_base.html.twig' %}
         {% block main %}
             <div class="main-inner">
                 <div class="content">
                     {% block slider %}
-                        {% include "provider/slider_provider_detail.html.twig" %}
+                        {% include ":Front/Provider:slider_provider_detail.html.twig" %}
                     {% endblock %}
                     {% block container %}
                         <div class="container">
@@ -107,12 +107,12 @@
                                         </div>
                                     </div>
 
-                                    <h2>Video</h2>
-                                    <div class="detail-video">
-                                        <iframe src="https://player.vimeo.com/video/36911719?color=009f8b&byline=0&portrait=0"
-                                                width="653" height="366" frameborder="0" webkitallowfullscreen
-                                                mozallowfullscreen allowfullscreen></iframe>
-                                    </div><!-- /.detail-video -->
+                                    {#<h2>Video</h2>#}
+                                    {#<div class="detail-video">#}
+                                        {#<iframe src="https://player.vimeo.com/video/36911719?color=009f8b&byline=0&portrait=0"#}
+                                                {#width="653" height="366" frameborder="0" webkitallowfullscreen#}
+                                                {#mozallowfullscreen allowfullscreen></iframe>#}
+                                    {#</div><!-- /.detail-video -->#}
 
                                     <h2 id="reviews">All Reviews</h2>
                                     <div class="reviews">
@@ -392,7 +392,7 @@
                                         </div><!-- /.detail-actions -->
                                     </div>
 
-                                    <h2>About <span class="text-secondary">Brazilian Coffe Taste</span></h2>
+                                    <h2>About <span class="text-secondary">{{ provider.name }}</span></h2>
                                     <div class="background-white p20">
                                         <div class="detail-vcard">
                                             <div class="detail-logo">
@@ -401,18 +401,18 @@
 
                                             <div class="detail-contact">
                                                 <div class="detail-contact-email">
-                                                    <i class="fa fa-envelope-o"></i> <a href="mailto:#">company@example.com</a>
+                                                    <i class="fa fa-envelope-o"></i> <a href="mailto:#">{{provider.contactEmail}}</a>
                                                 </div>
                                                 <div class="detail-contact-phone">
-                                                    <i class="fa fa-mobile-phone"></i> <a href="tel:#">+01-23-456-789</a>
+                                                    <i class="fa fa-mobile-phone"></i> <a href="tel:#">{{provider.phone}}</a>
                                                 </div>
                                                 <div class="detail-contact-website">
-                                                    <i class="fa fa-globe"></i> <a href="#">www.superlist.com</a>
+                                                    <i class="fa fa-globe"></i> <a href="#">{{provider.website}}</a>
                                                 </div>
                                                 <div class="detail-contact-address">
                                                     <i class="fa fa-map-o"></i>
-                                                    347/26 22nd Avenue<br>
-                                                    NYC AZ 85705, USA
+                                                    {{provider.addressStreet}} {{provider.addressNumber}}<br>
+                                                    {{provider.postCode.postCode}} {{provider.locality.locality}}
                                                 </div>
                                             </div><!-- /.detail-contact -->
                                         </div><!-- /.detail-vcard -->
