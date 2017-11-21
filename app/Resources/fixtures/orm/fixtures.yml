@@ -117,7 +117,7 @@ AppBundle\Entity\Provider:
 
 AppBundle\Entity\ServiceCategory: #   massage, fitness, yoga, balnéothérapie,...
       service_category_{1..10}:
-          name: <text(25)>
+          name: <word()>
           description: <text(255)>
           featured: <boolean()>
           validity: <boolean()>

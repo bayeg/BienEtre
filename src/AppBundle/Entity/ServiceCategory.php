@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -32,6 +33,12 @@ class ServiceCategory
     private $name;
 
     /**
+     * @Gedmo\Slug(fields={"created", "name"})
+     * @ORM\Column(name="slug", length=64, unique=true)
+     */
+    private $slug;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=500)
@@ -52,13 +59,13 @@ class ServiceCategory
      */
     private $validity;
 
+// ------------------------- Relationship parameters -------------------------
+
     /**
      * @var Image
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\Image")
      */
     private $serviceImage;
-
-// ------------------------- Relationship parameters -------------------------
 
     /**
      *@var ArrayCollection

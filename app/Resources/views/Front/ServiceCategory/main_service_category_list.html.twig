@@ -1,0 +1,30 @@
+{% extends ':Front:front_layout.html.twig' %}
+        {% block main %}
+            <div class="main-inner">
+                <div class="container">
+                    <div class="content"><!-- ROW -> IF SIDEBAR -->
+                        {% block slider %}
+                            {% include ":Front/ServiceCategory:slider_service_category_list.html.twig" %}
+                        {% endblock %}
+                        {% block content %}
+                            {#<div class="col-sm-8 col-lg-9">#}
+                            {#<div class="content">#}
+                            {% block search_form %}
+                                {% include ":Front/Provider:search_form.html.twig" %}
+                            {% endblock %}
+                            {% block result_filter_form %}
+                                {% include ":Front/Provider:result_filter_form.html.twig" %}
+                            {% endblock %}
+                            {% block core_content %}
+                                {% include ":Front/ServiceCategory:core_content_service_category_list.html.twig" %}
+                            {% endblock %}
+                            {#</div><!-- /.content -->#}
+                            {#</div><!-- /.col-* -->#}
+                        {% endblock %}
+                        {#{% block sidebar %}#}
+                        {#{% include ":Front/Provider:sidebar.html.twig" %}#}
+                        {#{% endblock %}#}
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.main-inner WITH SIDEBAR -->
+        {% endblock %}

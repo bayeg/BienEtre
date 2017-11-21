@@ -2,13 +2,13 @@
         {% block main %}
             <div class="main-inner">
                 <div class="container">
-                    <div class="row"><!-- VARIE si pas SIDEBAR-->
+                    <div class="content"><!-- OR ROW IF SIDEBAR-->
                         {% block slider %}
                             {% include ":Front/Provider:slider_provider_list.html.twig" %}
                         {% endblock %}
                         {% block content %}
-                            <div class="col-sm-8 col-lg-9">
-                                <div class="content">
+                            {#<div class="col-sm-8 col-lg-9">#}
+                                {#<div class="content">#}
                                     {% block search_form %}
                                         {% include ":Front/Provider:search_form.html.twig" %}
                                     {% endblock %}
@@ -18,13 +18,13 @@
                                     {% block core_content %}
                                         {% include ":Front/Provider:core_content_provider_list.html.twig" %}
                                     {% endblock %}
-                                </div><!-- /.content -->
-                            </div><!-- /.col-* -->
+                                {#</div><!-- /.content -->#}
+                            {#</div><!-- /.col-* -->#}
                         {% endblock %}
-                        {% block sidebar %}
-                            {% include ":Front/Provider:sidebar.html.twig" %}
-                        {% endblock %}
-                    </div><!-- /.row -->
+                        {#{% block sidebar %}#}
+                            {#{% include ":Front/Provider:sidebar.html.twig" %}#}
+                        {#{% endblock %}#}
+                    </div><!-- /.content OR ROW IF SIDEBAR-->
                 </div><!-- /.container -->
             </div><!-- /.main-inner WITH SIDEBAR -->
         {% endblock %}

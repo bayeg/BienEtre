@@ -16,7 +16,7 @@ class ServiceCategoryController extends Controller
         $serviceCategories = $em->getRepository("AppBundle:ServiceCategory")
             ->findAll();
 
-        return $this->render('Front/ServiceCategory/service_category_list.html.twig',[
+        return $this->render('Front/ServiceCategory/main_service_category_list.html.twig',[
             "serviceCategories" => $serviceCategories
         ]);
     }
@@ -33,7 +33,7 @@ class ServiceCategoryController extends Controller
                 )
             );
 
-        return $this->render('Front/ServiceCategory/service_category_detail.html.twig', [
+        return $this->render('Front/ServiceCategory/main_service_category_detail.html.twig', [
             "serviceCategory" => $serviceCategory
         ]);
     }
