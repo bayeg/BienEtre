@@ -24,7 +24,7 @@
     <div class="page-wrapper">
         <header class="header">
             {% block header %}
-                {% include "default/header.html.twig" %}
+                {% include ":Front/Common:header.html.twig" %}
             {% endblock %}
         </header><!-- /.header -->
 
@@ -36,10 +36,10 @@
 
 
         {% block footer %}
-            {% include "default/footer.html.twig" %}
+            {% include ":Front/Common:footer.html.twig" %}
         {% endblock %}
         {% block javascripts %}
-            {% include "default/javascipts.html.twig" %}
+            {% include ":Front/Common:javascipts.html.twig" %}
         {% endblock %}
     </div><!-- /.page-wrapper -->
     {% endblock %}

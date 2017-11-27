@@ -22,14 +22,14 @@ class ServiceCategoryController extends Controller
     }
 
     /**
-     * @Route("/category/{name}", name="serviceCategoryDetail")
+     * @Route("/category/{slug}", name="serviceCategoryDetail")
      */
-    public function serviceCategoryDetailAction($name)
+    public function serviceCategoryDetailAction($slug)
     {
         $em = $this->getDoctrine()->getManager();
         $serviceCategory = $em->getRepository("AppBundle:ServiceCategory")
             ->findOneBy(array(
-                "name" => $name
+                "slug" => $slug
                 )
             );
 

@@ -33,8 +33,8 @@ class ServiceCategory
     private $name;
 
     /**
-     * @Gedmo\Slug(fields={"created", "name"})
-     * @ORM\Column(name="slug", length=64, unique=true)
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(name="slug", type="string")
      */
     private $slug;
 
@@ -288,5 +288,29 @@ class ServiceCategory
     public function getPromotions()
     {
         return $this->promotions;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return ServiceCategory
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

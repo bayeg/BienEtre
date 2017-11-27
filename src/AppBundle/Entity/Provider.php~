@@ -41,9 +41,9 @@ class Provider extends User
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="contact_email", type="string", length=255)
      */
-    private $email;
+    private $contactEmail;
 
     /**
      * @var string
@@ -107,6 +107,7 @@ class Provider extends User
     /**
      * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Internaut", inversedBy="providers")
+     * @ORM\JoinTable(name="favorite")
      */
     private $internauts;
 
@@ -185,27 +186,27 @@ class Provider extends User
     }
 
     /**
-     * Set email
+     * Set contactEmail
      *
-     * @param string $email
+     * @param string $contactEmail
      *
      * @return Provider
      */
-    public function setEmail($email)
+    public function setContactEmail($contactEmail)
     {
-        $this->email = $email;
+        $this->contactEmail = $contactEmail;
 
         return $this;
     }
 
     /**
-     * Get email
+     * Get contactEmail
      *
      * @return string
      */
-    public function getEmail()
+    public function getContactEmail()
     {
-        return $this->email;
+        return $this->contactEmail;
     }
 
     /**

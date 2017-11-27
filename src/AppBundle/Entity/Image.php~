@@ -27,9 +27,9 @@ class Image
     /**
      * @var int
      *
-     * @ORM\Column(name="order", type="integer")
+     * @ORM\Column(name="img_order", type="integer")
      */
-    private $order;
+    private $imgOrder;
 
     /**
      * @var string
@@ -65,27 +65,27 @@ class Image
     }
 
     /**
-     * Set order
+     * Set imgOrder
      *
-     * @param integer $order
+     * @param integer $imgOrder
      *
      * @return Image
      */
-    public function setOrder($order)
+    public function setImgOrder($imgOrder)
     {
-        $this->order = $order;
+        $this->imgOrder = $imgOrder;
 
         return $this;
     }
 
     /**
-     * Get order
+     * Get imgOrder
      *
      * @return integer
      */
-    public function getOrder()
+    public function getImgOrder()
     {
-        return $this->order;
+        return $this->imgOrder;
     }
 
     /**

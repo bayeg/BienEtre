@@ -27,9 +27,9 @@ class Position
     /**
      * @var int
      *
-     * @ORM\Column(name="order", type="integer")
+     * @ORM\Column(name="position_order", type="integer")
      */
-    private $order;
+    private $positionOrder;
 
 // ------------------------- Relationship parameters -------------------------
 
@@ -59,27 +59,27 @@ class Position
     }
 
     /**
-     * Set order
+     * Set positionOrder
      *
-     * @param integer $order
+     * @param integer $positionOrder
      *
      * @return Position
      */
-    public function setOrder($order)
+    public function setPositionOrder($positionOrder)
     {
-        $this->order = $order;
+        $this->positionOrder = $positionOrder;
 
         return $this;
     }
 
     /**
-     * Get order
+     * Get positionOrder
      *
      * @return integer
      */
-    public function getOrder()
+    public function getPositionOrder()
     {
-        return $this->order;
+        return $this->positionOrder;
     }
 
     /**

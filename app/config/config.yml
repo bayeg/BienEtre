@@ -116,6 +116,6 @@ stof_doctrine_extensions:
 #        default_file_info_class: Stof\DoctrineExtensionsBundle\Uploadable\UploadedFileInfo
     orm:
         default:
-          sluggable : true
-    mongodb:
-        default: ~
+          sluggable: true
+#    mongodb:
+#        default: ~
