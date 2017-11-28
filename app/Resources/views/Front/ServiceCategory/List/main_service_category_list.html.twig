@@ -4,7 +4,7 @@
                 <div class="container">
                     <div class="content"><!-- ROW -> IF SIDEBAR -->
                         {% block slider %}
-                            {% include ":Front/ServiceCategory:slider_service_category_list.html.twig" %}
+                            {% include ":Front/ServiceCategory/List:slider_service_category_list.html.twig" %}
                         {% endblock %}
                         {% block content %}
                             {#<div class="col-sm-8 col-lg-9">#}
@@ -16,7 +16,7 @@
                                 {% include ":Front/Provider:result_filter_form.html.twig" %}
                             {% endblock %}
                             {% block core_content %}
-                                {% include ":Front/ServiceCategory:core_content_service_category_list.html.twig" %}
+                                {% include ":Front/ServiceCategory/List:core_content_service_category_list.html.twig" %}
                             {% endblock %}
                             {#</div><!-- /.content -->#}
                             {#</div><!-- /.col-* -->#}

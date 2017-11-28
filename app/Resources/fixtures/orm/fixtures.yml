@@ -116,9 +116,9 @@ AppBundle\Entity\Provider:
         internauts: ['@internaut_*']
 
 AppBundle\Entity\ServiceCategory: #   massage, fitness, yoga, balnéothérapie,...
-      service_category_{1..10}:
-          name: <word()>
-          description: <text(255)>
+      service_category_{1..4}:
+          name: <text(25)>
+          description: <text(500)>
           featured: <boolean()>
           validity: <boolean()>
           serviceImage : '@image_*'

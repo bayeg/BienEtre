@@ -8,7 +8,7 @@
 
 <ul class="header-nav-primary nav nav-pills collapse navbar-collapse">
     <li >
-        <a href="{{path("home")}}">Home<i class="fa fa-chevron-down"></i></a>
+        <a href="{{path("home")}}">Home<i class="fa"></i></a>
 
         {#<ul class="sub-menu">#}
             {#<li><a href="index-video.html">Video v1</a></li>#}
@@ -22,7 +22,7 @@
     </li>
 
     <li class="active">
-        <a href="{{path("providerList")}}">Providers<i class="fa fa-chevron-down"></i></a>
+        <a href="{{path("providerList")}}">Providers<i class="fa"></i></a>
 
         {#<ul class="sub-menu">#}
             {#<li><a href="../listing-detail.html">Detail</a></li>#}
@@ -35,7 +35,7 @@
     </li>
 
     <li class="has-mega-menu ">
-        <a href="{{path("serviceCategoryList")}}">Categories<i class="fa fa-chevron-down"></i></a>
+        <a href="{{path("serviceCategoryList")}}">Categories<i class="fa"></i></a>
 
         {#<ul class="mega-menu">#}
             {#<li>#}
@@ -82,17 +82,15 @@
     </li>
 
     <li >
-        <a href="#">About...<i class="fa fa-chevron-down"></i></a>
+        <a href="{{path("newsletter")}}">Newsletters<i class="fa"></i></a>
+    </li>
 
-        {#<ul class="sub-menu">#}
-            {#<li><a href="blog-standard-right-sidebar.html">Standard Right Sidebar</a></li>#}
-            {#<li><a href="blog-standard-left-sidebar.html">Standard Left Sidebar</a></li>#}
-            {#<li><a href="blog-boxed.html">Boxed Style</a></li>#}
-            {#<li><a href="blog-condensed.html">Condensed Style</a></li>#}
-            {#<li><a href="blog-detail.html">Detail Fullwidth</a></li>#}
-            {#<li><a href="blog-detail-right-sidebar.html">Detail Right Sidebar</a></li>#}
-            {#<li><a href="blog-detail-left-sidebar.html">Detail Left Sidebar</a></li>#}
-        {#</ul>#}
+    <li >
+        <a href="{{path("contact")}}">Contact<i class="fa"></i></a>
+    </li>
+
+    <li >
+        <a href="{{path("about")}}">About<i class="fa"></i></a>
     </li>
 
     {#<li >#}
@@ -107,14 +105,7 @@
         {#</ul>#}
     {#</li>#}
 
-    <li >
-        <a href="#">Contact...<i class="fa fa-chevron-down"></i></a>
-        {#<ul class="sub-menu">#}
-            {#<li><a href="contact-1.html">Contact v1</a></li>#}
-            {#<li><a href="contact-2.html">Contact v2</a></li>#}
-            {#<li><a href="contact-3.html">Contact v3</a></li>#}
-        {#</ul>#}
-    </li>
+
 </ul>
 
 <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".header-nav-primary">

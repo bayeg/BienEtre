@@ -3,7 +3,7 @@
             <div class="main-inner">
                 <div class="content">
                     {% block slider %}
-                        {% include ":Front/ServiceCategory:slider_service_category_detail.html.twig" %}
+                        {% include ":Front/Provider/Detail:slider_provider_detail.html.twig" %}
                     {% endblock %}
                     {% block container %}
                         <div class="container">
@@ -109,9 +109,9 @@
 
                                     {#<h2>Video</h2>#}
                                     {#<div class="detail-video">#}
-                                    {#<iframe src="https://player.vimeo.com/video/36911719?color=009f8b&byline=0&portrait=0"#}
-                                    {#width="653" height="366" frameborder="0" webkitallowfullscreen#}
-                                    {#mozallowfullscreen allowfullscreen></iframe>#}
+                                        {#<iframe src="https://player.vimeo.com/video/36911719?color=009f8b&byline=0&portrait=0"#}
+                                                {#width="653" height="366" frameborder="0" webkitallowfullscreen#}
+                                                {#mozallowfullscreen allowfullscreen></iframe>#}
                                     {#</div><!-- /.detail-video -->#}
 
                                     <h2 id="reviews">All Reviews</h2>
@@ -392,7 +392,7 @@
                                         </div><!-- /.detail-actions -->
                                     </div>
 
-                                    <h2>About <span class="text-secondary">Truc</span></h2>
+                                    <h2>About <span class="text-secondary">{{ provider.name }}</span></h2>
                                     <div class="background-white p20">
                                         <div class="detail-vcard">
                                             <div class="detail-logo">
@@ -401,18 +401,18 @@
 
                                             <div class="detail-contact">
                                                 <div class="detail-contact-email">
-                                                    <i class="fa fa-envelope-o"></i> <a href="mailto:#">Much</a>
+                                                    <i class="fa fa-envelope-o"></i> <a href="mailto:#">{{provider.contactEmail}}</a>
                                                 </div>
                                                 <div class="detail-contact-phone">
-                                                    <i class="fa fa-mobile-phone"></i> <a href="tel:#">Bla bla</a>
+                                                    <i class="fa fa-mobile-phone"></i> <a href="tel:#">{{provider.phone}}</a>
                                                 </div>
                                                 <div class="detail-contact-website">
-                                                    <i class="fa fa-globe"></i> <a href="#">Etc.</a>
+                                                    <i class="fa fa-globe"></i> <a href="#">{{provider.website}}</a>
                                                 </div>
                                                 <div class="detail-contact-address">
                                                     <i class="fa fa-map-o"></i>
-                                                    skdljf  sdf <br>
-                                                    qsdfqsdfqsdf
+                                                    {{provider.addressStreet}} {{provider.addressNumber}}<br>
+                                                    {{provider.postCode.postCode}} {{provider.locality.locality}}
                                                 </div>
                                             </div><!-- /.detail-contact -->
                                         </div><!-- /.detail-vcard -->

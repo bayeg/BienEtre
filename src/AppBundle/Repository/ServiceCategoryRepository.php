@@ -10,4 +10,19 @@ namespace AppBundle\Repository;
  */
 class ServiceCategoryRepository extends \Doctrine\ORM\EntityRepository
 {
+
+// Depuis le repository d'Advert
+    public function getServiceCategoriesWithProviders()
+    {
+        $qb = $this
+            ->createQueryBuilder('sc')
+            ->leftJoin('sc.providers', 'prov')
+            ->addSelect('prov')
+        ;
+
+        return $qb
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }

@@ -16,7 +16,7 @@ class ProviderController extends Controller
         $providers = $em->getRepository("AppBundle:Provider")
             ->findAll();
 
-        return $this->render('Front/Provider/provider_list.html.twig', [
+        return $this->render(':Front/Provider/List:provider_list.html.twig', [
             "providers" => $providers
         ]);
     }
@@ -33,7 +33,7 @@ class ProviderController extends Controller
                 )
             );
 
-        return $this->render('Front/Provider/provider_detail.html.twig', [
+        return $this->render(':Front/Provider/Detail:provider_detail.html.twig', [
             "provider" => $provider
         ]);
     }
