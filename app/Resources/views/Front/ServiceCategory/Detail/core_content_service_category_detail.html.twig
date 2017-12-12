@@ -1,7 +1,7 @@
 <div class="cards-simple-wrapper">
     <div class="row">
-        {{ dump(serviceCategory) }}
-        {{ dump(serviceCategory.providers[0]) }}
+        {#{{ dump(serviceCategory) }}#}
+        {#{{ dump(serviceCategory.providers[0]) }}#}
         {%for p in serviceCategory.providers%}
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="card-simple" data-background-image="{{asset(p.logos[0].url)}}">
