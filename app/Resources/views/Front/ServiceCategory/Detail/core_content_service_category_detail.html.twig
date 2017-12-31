@@ -2,6 +2,18 @@
     <div class="row">
         {#{{ dump(serviceCategory) }}#}
         {#{{ dump(serviceCategory.providers[0]) }}#}
+
+        {#{%for prov in serviceCategory %}#}
+            {#<p>coucou</p>#}
+            {#<p>coucou</p>#}
+            {#<p>coucou</p>#}
+            {#<p>coucou</p>#}
+            {#<p>coucou</p>#}
+            {#<p>coucou</p>#}
+            {#<p>coucou</p>#}
+        {#{%endfor%}#}
+
+
         {%for p in serviceCategory.providers%}
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="card-simple" data-background-image="{{asset(p.logos[0].url)}}">
@@ -33,7 +45,8 @@
 
         {%endfor%}
 
-        {#{%for prov in sc%}#}
+
+        {#{%for prov in serviceCategory %}#}
             {#<div class="col-sm-6 col-md-4 col-lg-3">#}
                 {#<div class="card-simple" data-background-image="{{asset(prov.logos[0].url)}}">#}
                     {#<div class="card-simple-background">#}

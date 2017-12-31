@@ -10,4 +10,37 @@ namespace AppBundle\Repository;
  */
 class ProviderRepository extends \Doctrine\ORM\EntityRepository
 {
+//    public function findProviders($data)
+//
+//    {
+//
+//        $query = $this->createQueryBuilder('p');
+//
+//        $query
+//            ->where('a.anneeProduction BETWEEN :anneeProductionMin AND :anneeProductionMax')
+//
+//            ->andWhere('a.kilometres BETWEEN :kilometresMin AND :kilometresMax')
+//
+//            ->andWhere('a.prix BETWEEN :prixMin AND :prixMax')
+//
+//            ->setParameters(array(
+//
+//                'anneeProductionMin' => $data['annee_Production'],
+//
+//                'anneeProductionMax' => $data['annee_Production_Max'],
+//
+//                'kilometresMin' => $data['kilometres'],
+//
+//                'kilometresMax' => $data['kilometres_Max'],
+//
+//                'prixMin' => $data['prix'],
+//
+//                'prixMax' => $data['prix_Max']));
+//
+//
+//
+//        return $query->getQuery()->getResult();
+//
+//    }
+
 }

@@ -11,18 +11,55 @@ namespace AppBundle\Repository;
 class ServiceCategoryRepository extends \Doctrine\ORM\EntityRepository
 {
 
-// Depuis le repository d'Advert
-    public function getServiceCategoriesWithProviders()
+// Dans un repository
+
+    public function myFindOne($slug)
     {
-        $qb = $this
-            ->createQueryBuilder('sc')
+        $qb = $this->createQueryBuilder('sc');
+
+        $qb
+            ->where('sc.slug = :slug')
+            ->setParameter('slug', $slug)
             ->leftJoin('sc.providers', 'prov')
             ->addSelect('prov')
         ;
 
         return $qb
             ->getQuery()
-            ->getResult()
+            ->getSingleResult()
             ;
     }
+
+// Depuis le repository d'Advert
+//    public function getServiceCategoriesWithProviders($slug)
+//    {
+//        $qb = $this
+//            ->createQueryBuilder('sc')
+//            ->where('sc.slug = :slug')
+//            ->setParameter('slug', $slug)
+//            ->leftJoin('sc.providers', 'prov')
+//            ->addSelect('prov')
+//        ;
+//
+//        return $qb
+//            ->getQuery()
+//            ->getResult()
+//            ;
+//    }
+
+
+
+//    public function getAdvertWithApplications()
+//    {
+//        $qb = $this
+//            ->createQueryBuilder('a')
+//            ->leftJoin('a.applications', 'app')
+//            ->addSelect('app')
+//        ;
+//
+//        return $qb
+//            ->getQuery()
+//            ->getResult()
+//            ;
+//    }
 }

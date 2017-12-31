@@ -28,10 +28,11 @@ class ServiceCategoryController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $serviceCategory = $em->getRepository("AppBundle:ServiceCategory")
-            ->findOneBy(array(
-                "slug" => $slug
-                )
-            );
+//            ->findOneBy(array(
+//                "slug" => $slug
+//                ));
+        ->myFindOne($slug);
+
 
         return $this->render('Front/ServiceCategory/Detail/main_service_category_detail.html.twig', [
             "serviceCategory" => $serviceCategory
