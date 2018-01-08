@@ -2,6 +2,7 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Entity\Image;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -10,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ProviderType extends AbstractType
 {
@@ -22,10 +24,10 @@ class ProviderType extends AbstractType
             ->add('name', SearchType::class)
             ->add('website', UrlType::class)
             ->add('phone', NumberType::class)
-            ->add('serviceCategories', CollectionType::class, [
-                'entry_type' => ServiceCategoryType::class,
-                'allow_add' => true,
-                'allow_delete' => true
+            ->add('serviceCategories', EntityType::class, [
+                'class' => 'AppBundle\Entity\ServiceCategory',
+                'choice_label' => 'name',
+                'multiple' => true,
             ])
             ->add('save',SubmitType::class)
 

@@ -30,8 +30,8 @@
 {#<button class="btn btn-primary btn-block" type="submit">Rechercher</button>#}
 {#{{form_end(form)}}#}
 
-
-
+{% extends ':Front:front_layout.html.twig' %}
+{% block main %}
 <div class="well">
     {{ form_start(form,{'attr':{'class':'form-horizontal'}}) }}
     {#Erreurs generales#}
@@ -65,6 +65,19 @@
         </div>
     </div>
 
+    {#Label + error + widget pour un champ#}
+    {{ form_row(form.serviceCategories) }}
+    <div class="form-group">
+        {#Label#}
+        {{ form_label(form.serviceCategories, "Le website",{ 'label_attr':{'class':'col-sm-2 control-label'}}) }}
+        {#Erreur pour ce champ#}
+        {{ form_errors(form.serviceCategories) }}
+        <div class="col-sm-10">
+            {#Input#}
+            {{ form_widget(form.serviceCategories,{'attr':{'class':'form-control'}}) }}
+        </div>
+    </div>
+
     {{ form_row(form.phone) }}
 
     {{ form_widget(form.save,{'attr':{'class':'btn btn-primary'}}) }}
@@ -77,7 +90,7 @@
 
 </div>
 
-
+{% endblock %}
 
 
 {#FORMULAIRE ORIGINAL :#}
