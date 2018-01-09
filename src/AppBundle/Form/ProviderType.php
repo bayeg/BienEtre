@@ -23,13 +23,13 @@ class ProviderType extends AbstractType
         $builder
             ->add('name', SearchType::class)
             ->add('website', UrlType::class)
-            ->add('phone', NumberType::class)
+//            ->add('phone', NumberType::class)
             ->add('serviceCategories', EntityType::class, [
                 'class' => 'AppBundle\Entity\ServiceCategory',
                 'choice_label' => 'name',
                 'multiple' => true,
             ])
-            ->add('save',SubmitType::class)
+            ->add('search',SubmitType::class)
 
         ;
     }
