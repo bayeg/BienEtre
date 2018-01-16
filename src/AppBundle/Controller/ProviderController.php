@@ -42,30 +42,30 @@ class ProviderController extends Controller
         ]);
     }
 
-    /**
-     * @param Request
-     * @Route("/s", name="providerSearch")
-     */
-    public function addAction(Request $request)
-    {
-
-        $provider = new Provider();
-        $form = $this->createForm(ProviderType::class,$provider);
-
-        if ($request->isMethod('POST')&& $form->handleRequest($request)->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($provider);
-            $em->flush();
-
-            $request->getSession()->getFlashBag()->add('notice', 'Provider bien enregistré');
-
-            return $this->redirectToRoute('providerDetail', array(
-                'id' => getId()));
-        }
-
-        return $this->render(':Front/Provider:search_form.html.twig', array(
-            'form' => $form->createView(),
-        ));
-    }
+//    /**
+//     * @param Request
+//     * @Route("/s", name="s")
+//     */
+//    public function addAction(Request $request)
+//    {
+//
+//        $provider = new Provider();
+//        $form = $this->createForm(ProviderType::class,$provider);
+//
+//        if ($request->isMethod('POST')&& $form->handleRequest($request)->isValid()) {
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($provider);
+//            $em->flush();
+//
+//            $request->getSession()->getFlashBag()->add('notice', 'Provider bien enregistré');
+//
+//            return $this->redirectToRoute('providerDetail', array(
+//                'id' => getId()));
+//        }
+//
+//        return $this->render(':Front/Provider:search_form.html.twig', array(
+//            'form' => $form->createView(),
+//        ));
+//    }
 
 }

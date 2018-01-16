@@ -10,6 +10,21 @@ namespace AppBundle\Repository;
  */
 class ProviderRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findProvider($data){
+
+        $qb = $this->createQueryBuilder('p');
+
+        $qb
+            ->where('p.serviceCategories = :serviceCategories')
+            ->setParameter(
+            'serviceCategories', $data['service_Categories']
+            );
+
+        return $qb
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 //    public function findProviders($data)
 //
 //    {

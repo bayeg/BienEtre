@@ -10,7 +10,11 @@
                             {#<div class="col-sm-8 col-lg-9">#}
                                 {#<div class="content">#}
                                     {% block search_form %}
-                                        {% include ":Front/Provider:search_form.html.twig" %}
+                                        {#{% include ":Front/Provider:search_form.html.twig" %}#}
+
+                                        {{ render(controller('AppBundle:ProviderSearch:providerSearch')) }}
+
+
                                     {% endblock %}
                                     {% block result_filter_form %}
                                         {% include ":Front/Provider:result_filter_form.html.twig" %}
