@@ -21,12 +21,17 @@ class ProviderSearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', SearchType::class)
-            ->add('postCode', SearchType::class)
+            ->add('name', SearchType::class,[
+                'required' => false
+            ])
+            ->add('postCode', SearchType::class,[
+                'required' => false
+            ])
             ->add('serviceCategories', EntityType::class, [
                 'class' => 'AppBundle\Entity\ServiceCategory',
                 'choice_label' => 'name',
                 'multiple' => true,
+                'required' => false
             ])
             ->add('search',SubmitType::class)
 
@@ -48,7 +53,7 @@ class ProviderSearchType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_provider_search';
+        return '';
     }
 
 

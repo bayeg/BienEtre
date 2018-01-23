@@ -15,28 +15,27 @@ class ProviderSearchController extends Controller
     public function providerSearchAction(Request $request)
     {
 
-//        $form = $this->createForm(new ProviderSearchType());
-
-
         $form = $this->createForm(ProviderSearchType::class);
-        $form->handleRequest($request);
 
+        $sc = $request->query->get('serviceCategories');
+        $n = $request->query->get('name');
+        $pc = $request->query->get('postCode');
+        $form->handleRequest($request);
         if($form->isSubmitted())
         {
             $em = $this->getDoctrine()->getManager();
             $providers = $em->getRepository("AppBundle:Provider")
-                ->findProvider(array(
-                        "request" => $request
-                    )
-                );
+                ->findProvider($n,$pc,$sc);
+                ;
 
             return $this->render(':Front/Provider/List:provider_list.html.twig', [
                 "providers" => $providers
             ]);
-
         }
 
+        return $this->render(':Front/ProviderSearch:provider_search.html.twig', ['form'=>$form->createView()]);
 
+    }
 //        $request = $this->getRequest();
 //
 //        if($request->getMethod() == 'POST')
@@ -51,28 +50,25 @@ class ProviderSearchController extends Controller
 //
 //        }
 
-        return $this->render(':Front/ProviderSearch:provider_search.html.twig', array(
-            'form' => $form->createView()
-        ));
-    }
 
-    /**
-     *
-     * @Route("/providerResult", name="providerResult")
-     */
-    public function providerResultAction(Request $request)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $providers = $em->getRepository("AppBundle:Provider")
-            ->findProvider(array(
-                    "request" => $request
-                )
-        );
 
-        return $this->render(':Front/Provider/List:provider_list.html.twig', [
-            "providers" => $providers
-        ]);
-    }
+//    /**
+//     *
+//     * @Route("/providerResult", name="providerResult")
+//     */
+//    public function providerResultAction(Request $request)
+//    {
+//        $em = $this->getDoctrine()->getManager();
+//        $providers = $em->getRepository("AppBundle:Provider")
+//            ->findProvider(array(
+//                    "request" => $request
+//                )
+//        );
+//
+//        return $this->render(':Front/Provider/List:provider_list.html.twig', [
+//            "providers" => $providers
+//        ]);
+//    }
 
 
 }

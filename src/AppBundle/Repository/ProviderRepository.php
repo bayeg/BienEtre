@@ -10,15 +10,25 @@ namespace AppBundle\Repository;
  */
 class ProviderRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findProvider($data){
+    public function findProvider($name, $postCode, $categorie){
 
         $qb = $this->createQueryBuilder('p');
 
-        $qb
-            ->where('p.serviceCategories = :serviceCategories')
-            ->setParameter(
-            'serviceCategories', $data['service_Categories']
-            );
+        if($name != '')
+        {
+            $qb->andWhere('p.name = :name')
+                ->setParameter('name',$name);
+        }
+        if($postCode != '')
+        {
+            $qb->andWhere('p.postCode = :postCode')
+                ->setParameter('postCode',$postCode);
+        }
+        if($categorie != '')
+        {
+            $qb->andWhere('p.serviceCategories = :serviceCategories')
+                ->setParameter('serviceCategories', $categorie);
+        }
 
         return $qb
             ->getQuery()
