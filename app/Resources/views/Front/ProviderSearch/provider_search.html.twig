@@ -7,7 +7,7 @@
     {#{% block main %}#}
         <div>
 
-            {{ form_start(form,{'method': 'GET','action': path('providerSearch')},{'attr':{'class':'filter'}}) }}
+            {{ form_start(form,{'attr':{'class':'filter'}}) }}
             {#Erreurs generales#}
             {{ form_errors(form) }}
 

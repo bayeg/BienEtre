@@ -34,6 +34,8 @@ class ProviderSearchType extends AbstractType
                 'required' => false
             ])
             ->add('search',SubmitType::class)
+            ->setMethod('GET')
+            ->setAction('providerResult');
 
         ;
     }

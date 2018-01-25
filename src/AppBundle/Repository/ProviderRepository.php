@@ -16,18 +16,27 @@ class ProviderRepository extends \Doctrine\ORM\EntityRepository
 
         if($name != '')
         {
-            $qb->andWhere('p.name = :name')
-                ->setParameter('name',$name);
+            $qb->andWhere('p.name LIKE :name')
+                ->setParameter('name','%'.$name.'%');
         }
         if($postCode != '')
         {
-            $qb->andWhere('p.postCode = :postCode')
+            $qb
+                ->leftJoin('p.postCode','pc')
+                ->addSelect('pc')
+                ->andWhere('pc.postCode = :postCode')
                 ->setParameter('postCode',$postCode);
         }
         if($categorie != '')
         {
-            $qb->andWhere('p.serviceCategories = :serviceCategories')
-                ->setParameter('serviceCategories', $categorie);
+            $qb
+                ->leftJoin('p.serviceCategories', 'sc','WITH','sc.name = :serviceCategories')
+                ->setParameter('serviceCategories',$categorie)
+//                ->leftJoin('p.serviceCategories', 'sc')
+//                ->addSelect('sc')
+//                ->andWhere('sc.name = :serviceCategories')
+//                ->setParameter('serviceCategories', $categorie)
+            ;
         }
 
         return $qb
