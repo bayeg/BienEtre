@@ -6,6 +6,7 @@ use AppBundle\Entity\Image;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
@@ -30,9 +31,10 @@ class ProviderSearchType extends AbstractType
             ->add('serviceCategories', EntityType::class, [
                 'class' => 'AppBundle\Entity\ServiceCategory',
                 'choice_label' => 'name',
-                'multiple' => true,
+                'placeholder' => '',
                 'required' => false
             ])
+//            ->add('reset',ResetType::class)
             ->add('search',SubmitType::class)
             ->setMethod('GET')
             ->setAction('providerResult');

@@ -11,7 +11,7 @@
                             {#<div class="content">#}
                             {% block search_form %}
                                 {#{% include ":Front/Provider:search_form.html.twig" %}#}
-                                {{ render(controller('AppBundle:ProviderSearch:providerSearch')) }}
+                                {{ render(controller('AppBundle:ProviderSearch:providerSearchDisplay')) }}
                             {% endblock %}
                             {% block result_filter_form %}
                                 {% include ":Front/Provider:result_filter_form.html.twig" %}

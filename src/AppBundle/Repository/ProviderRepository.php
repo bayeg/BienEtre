@@ -30,12 +30,10 @@ class ProviderRepository extends \Doctrine\ORM\EntityRepository
         if($categorie != '')
         {
             $qb
-                ->leftJoin('p.serviceCategories', 'sc','WITH','sc.name = :serviceCategories')
-                ->setParameter('serviceCategories',$categorie)
-//                ->leftJoin('p.serviceCategories', 'sc')
-//                ->addSelect('sc')
-//                ->andWhere('sc.name = :serviceCategories')
-//                ->setParameter('serviceCategories', $categorie)
+                ->leftJoin('p.serviceCategories', 'sc')
+                ->addSelect('sc')
+                ->andWhere('sc.id = :serviceCategories')
+                ->setParameter('serviceCategories', $categorie)
             ;
         }
 
@@ -44,37 +42,5 @@ class ProviderRepository extends \Doctrine\ORM\EntityRepository
             ->getResult()
             ;
     }
-//    public function findProviders($data)
-//
-//    {
-//
-//        $query = $this->createQueryBuilder('p');
-//
-//        $query
-//            ->where('a.anneeProduction BETWEEN :anneeProductionMin AND :anneeProductionMax')
-//
-//            ->andWhere('a.kilometres BETWEEN :kilometresMin AND :kilometresMax')
-//
-//            ->andWhere('a.prix BETWEEN :prixMin AND :prixMax')
-//
-//            ->setParameters(array(
-//
-//                'anneeProductionMin' => $data['annee_Production'],
-//
-//                'anneeProductionMax' => $data['annee_Production_Max'],
-//
-//                'kilometresMin' => $data['kilometres'],
-//
-//                'kilometresMax' => $data['kilometres_Max'],
-//
-//                'prixMin' => $data['prix'],
-//
-//                'prixMax' => $data['prix_Max']));
-//
-//
-//
-//        return $query->getQuery()->getResult();
-//
-//    }
 
 }
