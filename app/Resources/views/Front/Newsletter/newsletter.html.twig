@@ -1,5 +1,17 @@
 {% extends ":Front:front_layout.html.twig" %}
 
-{% block main %}
-    <h1>Newsletter</h1>
-{% endblock %}
+    {% block slider %}
+        {% include ":Front/Newsletter:slider_newsletter.html.twig" %}
+    {% endblock %}
+    {% block content %}
+        {% block search_form %}
+            {{ render(controller('AppBundle:ProviderSearch:providerSearchDisplay')) }}
+        {% endblock %}
+        {% block result_filter_form %}
+            {% include ":Front/Provider/List:result_filter_form.html.twig" %}
+        {% endblock %}
+        {% block core_content %}
+            
+        {% endblock %}
+
+    {% endblock %}

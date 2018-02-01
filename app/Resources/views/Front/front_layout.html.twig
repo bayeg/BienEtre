@@ -1,1 +1,24 @@
 {% extends '::layout.html.twig' %}
+        {% block main %}
+            <div class="main-inner">
+                <div class="container">
+                    <div class="content"><!-- OR ROW IF SIDEBAR-->
+                        {% block slider %}
+
+                        {% endblock %}
+                        {% block content %}
+                            {% block search_form %}
+                                {{ render(controller('AppBundle:ProviderSearch:providerSearchDisplay')) }}
+                            {% endblock %}
+                            {% block result_filter_form %}
+                                {% include ":Front/Provider/List:result_filter_form.html.twig" %}
+                            {% endblock %}
+                            {% block core_content %}
+
+                            {% endblock %}
+                        {% endblock %}
+
+                    </div><!-- /.content OR ROW IF SIDEBAR-->
+                </div><!-- /.container -->
+            </div><!-- /.main-inner WITH SIDEBAR -->
+        {% endblock %}

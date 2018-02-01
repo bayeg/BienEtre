@@ -70,12 +70,15 @@
     </div><!-- /.row -->
 </div><!-- /.cards-simple-wrapper -->
 
+{#<div class="pager">#}
+    {#<ul>#}
+        {#<li><a href="#">Prev</a></li>#}
+        {#<li><a href="#">5</a></li>#}
+        {#<li class="active"><a>6</a></li>#}
+        {#<li><a href="#">7</a></li>#}
+        {#<li><a href="#">Next</a></li>#}
+    {#</ul>#}
+{#</div><!-- /.pagination -->#}
 <div class="pager">
-    <ul>
-        <li><a href="#">Prev</a></li>
-        <li><a href="#">5</a></li>
-        <li class="active"><a>6</a></li>
-        <li><a href="#">7</a></li>
-        <li><a href="#">Next</a></li>
-    </ul>
-</div><!-- /.pagination -->
+    {{ knp_pagination_render(serviceCategories) }}
+</div>

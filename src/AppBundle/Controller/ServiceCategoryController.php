@@ -4,21 +4,34 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 class ServiceCategoryController extends Controller
 {
     /**
      * @Route("/category", name="serviceCategoryList")
      */
-    public function serviceCategoryListAction()
+    public function serviceCategoryListAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $serviceCategories = $em->getRepository("AppBundle:ServiceCategory")
             ->findAll();
 
-        return $this->render('Front/ServiceCategory/List/main_service_category_list.html.twig',[
-            "serviceCategories" => $serviceCategories
+        /**
+         * @var $paginator \Knp\Component\Pager\Paginator
+         */
+        $paginator  = $this->get('knp_paginator');
+        $result = $paginator->paginate(
+            $serviceCategories,
+            $request->query->getInt('page',1),
+            $request->query->getInt('limit',2)
+        );
+
+        return $this->render('Front/ServiceCategory/List/main_service_category_list.html.twig', [
+            "serviceCategories" => $result,
         ]);
+
+
     }
 
     /**

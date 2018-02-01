@@ -1,33 +1,19 @@
 {% extends ':Front:front_layout.html.twig' %}
-        {% block main %}
-            <div class="main-inner">
-                <div class="container">
-                    <div class="content"><!-- OR ROW IF SIDEBAR-->
-                        {% block slider %}
-                            {% include ":Front/Provider/List:slider_provider_list.html.twig" %}
-                        {% endblock %}
-                        {% block content %}
-                            {#<div class="col-sm-8 col-lg-9">#}
-                                {#<div class="content">#}
-                                    {% block search_form %}
-                                        {#{% include ":Front/Provider:search_form.html.twig" %}#}
 
-                                        {{ render(controller('AppBundle:ProviderSearch:providerSearchDisplay')) }}
+    {% block slider %}
+        {% include ":Front/Provider/List:slider_provider_list.html.twig" %}
+    {% endblock %}
+    {% block content %}
 
-                                    {% endblock %}
-                                    {% block result_filter_form %}
-                                        {% include ":Front/Provider:result_filter_form.html.twig" %}
-                                    {% endblock %}
-                                    {% block core_content %}
-                                        {% include ":Front/Provider/List:core_content_provider_list.html.twig" %}
-                                    {% endblock %}
-                                {#</div><!-- /.content -->#}
-                            {#</div><!-- /.col-* -->#}
-                        {% endblock %}
-                        {#{% block sidebar %}#}
-                            {#{% include ":Front/Provider:sidebar.html.twig" %}#}
-                        {#{% endblock %}#}
-                    </div><!-- /.content OR ROW IF SIDEBAR-->
-                </div><!-- /.container -->
-            </div><!-- /.main-inner WITH SIDEBAR -->
+        {% block search_form %}
+            {{ render(controller('AppBundle:ProviderSearch:providerSearchDisplay')) }}
         {% endblock %}
+        {% block result_filter_form %}
+            {% include ":Front/Provider/List:result_filter_form.html.twig" %}
+        {% endblock %}
+        {% block core_content %}
+            {% include ":Front/Provider/List:core_content_provider_list.html.twig" %}
+        {% endblock %}
+
+    {% endblock %}
+

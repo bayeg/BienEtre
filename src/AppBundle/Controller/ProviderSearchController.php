@@ -35,8 +35,19 @@ class ProviderSearchController extends Controller
         $providers = $em->getRepository("AppBundle:Provider")
             ->findProvider($n,$pc,$sc);
 
+
+        /**
+         * @var $paginator \Knp\Component\Pager\Paginator
+         */
+        $paginator  = $this->get('knp_paginator');
+        $result = $paginator->paginate(
+            $providers,
+            $request->query->getInt('page',1),
+            $request->query->getInt('limit',2)
+        );
+
         return $this->render(':Front/Provider/List:provider_list.html.twig', [
-            "providers" => $providers
+            "providers" => $result,
         ]);
 
     }

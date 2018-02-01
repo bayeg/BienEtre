@@ -14,16 +14,29 @@ class ProviderController extends Controller
     /**
      * @Route("/provider", name="providerList")
      */
-    public function providerListAction()
+    public function providerListAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $providers = $em->getRepository("AppBundle:Provider")
             ->findAll();
 
+        /**
+         * @var $paginator \Knp\Component\Pager\Paginator
+         */
+        $paginator  = $this->get('knp_paginator');
+        $result = $paginator->paginate(
+            $providers,
+            $request->query->getInt('page',1),
+            $request->query->getInt('limit',2)
+        );
+
         return $this->render(':Front/Provider/List:provider_list.html.twig', [
-            "providers" => $providers
+            "providers" => $result,
         ]);
     }
+
+
+
 
     /**
      * @Route("/provider/{slug}", name="providerDetail")
@@ -41,31 +54,5 @@ class ProviderController extends Controller
             "provider" => $provider
         ]);
     }
-
-//    /**
-//     * @param Request
-//     * @Route("/s", name="s")
-//     */
-//    public function addAction(Request $request)
-//    {
-//
-//        $provider = new Provider();
-//        $form = $this->createForm(ProviderType::class,$provider);
-//
-//        if ($request->isMethod('POST')&& $form->handleRequest($request)->isValid()) {
-//            $em = $this->getDoctrine()->getManager();
-//            $em->persist($provider);
-//            $em->flush();
-//
-//            $request->getSession()->getFlashBag()->add('notice', 'Provider bien enregistré');
-//
-//            return $this->redirectToRoute('providerDetail', array(
-//                'id' => getId()));
-//        }
-//
-//        return $this->render(':Front/Provider:search_form.html.twig', array(
-//            'form' => $form->createView(),
-//        ));
-//    }
 
 }
