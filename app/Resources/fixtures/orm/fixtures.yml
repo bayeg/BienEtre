@@ -1,4 +1,4 @@
-# app/Resources/fixtures/orm/fixtures.yml
+  # app/Resources/fixtures/orm/fixtures.yml
 
 AppBundle\Entity\Abuse:
     abuse_{1..10}:
@@ -26,15 +26,15 @@ AppBundle\Entity\Commune:
         commune: <city()>
 
 AppBundle\Entity\Course:
-    course_{1..10}:
-        name: <text(255)>
+    course_{1..100}:
+        name: <text(50)>
         description: <text(500)>
         tariff: <randomNumber(3)>
         info: <text(500)>
-        start: <dateTime()>
-        end: <dateTime()>
-        showStart: <dateTimeThisMonth()>
-        showEnd: <dateTimeThisMonth()>
+        start: <dateTimeBetween("-200 days", "+200 days")>
+        end: <dateTimeBetween($start, "+200 days")>
+        showStart: <dateTimeBetween("-200 days", $end)>
+        showEnd: <dateTimeBetween($end, $end)>
         provider: '@provider_*'
 
 AppBundle\Entity\Image:
@@ -78,23 +78,23 @@ AppBundle\Entity\Position:
         internaut: '@internaut_*'
 
 AppBundle\Entity\PostCode:
-    postCode_{1..1000}:
+    postCode_{1..5000}:
         postCode: <numberBetween(1000, 9999)>
 
 AppBundle\Entity\Promotion:
-    promotion_{1..100}:
+    promotion_{1..50}:
         name: <text(25)>
         description: <text(225)>
         pdf: <text(225)>
-        start: <dateTime()>
-        end: <dateTime()>
-        showStart: <dateTime()>
-        showEnd: <dateTime()>
+        start: <dateTimeBetween("-200 days", "+200 days")>
+        end: <dateTimeBetween($start, "+200 days")>
+        showStart: <dateTimeBetween("-200 days", $end)>
+        showEnd: <dateTimeBetween($end, $end)>
         provider: '@provider_*'
         serviceCategory: '@service_category_*'
 
 AppBundle\Entity\Provider:
-      provider_{1..10}:
+      provider_{1..50}:
         email: <email()>
         password: <password()>
         addressNumber: <numberBetween(1, 100)>
@@ -107,7 +107,7 @@ AppBundle\Entity\Provider:
         locality: '@locality_*'
         commune: '@commune_*'
         name: <company()>
-        website: <url()>
+        website: <domainName()>
         contactEmail: <email()>
         phone: <phoneNumber()>
         vat: <vat()>

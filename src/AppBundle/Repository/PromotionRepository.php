@@ -10,5 +10,18 @@ namespace AppBundle\Repository;
  */
 class PromotionRepository extends \Doctrine\ORM\EntityRepository
 {
-
+//    public function getPromotionsWithProvider($provider)
+//    {
+//        $qb = $this
+//            ->createQueryBuilder('prom')
+//            ->leftJoin('prom.provider', 'prov')
+//            ->addSelect('prov')
+//            ->where('prov.')
+//
+//        ;
+//
+//        return $qb
+//            ->getQuery()
+//            ->getResult();
+//    }
 }

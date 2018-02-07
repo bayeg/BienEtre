@@ -24,7 +24,7 @@ class ServiceCategoryController extends Controller
         $result = $paginator->paginate(
             $serviceCategories,
             $request->query->getInt('page',1),
-            $request->query->getInt('limit',2)
+            $request->query->getInt('limit',3)
         );
 
         return $this->render('Front/ServiceCategory/List/main_service_category_list.html.twig', [

@@ -43,7 +43,7 @@ class ProviderSearchController extends Controller
         $result = $paginator->paginate(
             $providers,
             $request->query->getInt('page',1),
-            $request->query->getInt('limit',2)
+            $request->query->getInt('limit',8)
         );
 
         return $this->render(':Front/Provider/List:provider_list.html.twig', [

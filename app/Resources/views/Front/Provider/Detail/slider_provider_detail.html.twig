@@ -1,40 +1,54 @@
-
-
 <div class="mt-80 mb80">
     {#<div class="detail-banner" style="background-image: url(assets/img/tmp/detail-banner-1.jpg);">#}
-    <div class="detail-banner" style="background-image: url({{asset(provider.photos[0].url)}});">
+    {% if provider.photos[0].url is defined %}
+
+    <div class="detail-banner" style="background-image: url({{ asset(provider.photos[0].url) }});">
+
+        {% else %}
+        <div class="detail-banner" >
+            {% endif %}
+
         <div class="container">
             <div class="detail-banner-left">
-                <div class="detail-banner-info">
-                    <div class="detail-label">Restaurant</div>
-                    <div class="detail-verified">Verified</div>
-                </div><!-- /.detail-banner-info -->
+
 
                 <h2 class="detail-title">
                     {{ provider.name }}
-                </h2>
+                </h2><br>
 
-                <div class="detail-banner-address">
-                    <i class="fa fa-map-o"></i>
-                    {{ provider.addressStreet }}
-                    {{ provider.addressNumber }}
-                </div><!-- /.detail-banner-address -->
+                <div class="detail-banner-info">
 
-                <div class="detail-banner-rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                </div><!-- /.detail-banner-rating -->
+                    {% for categ in provider.serviceCategories %}
 
-                <div class="detail-banner-btn bookmark">
-                    <i class="fa fa-bookmark-o"></i> <span data-toggle="Bookmarked">Bookmark</span>
-                </div><!-- /.detail-claim -->
+                        <a href="{{ path("serviceCategoryDetail", {"slug" : categ.slug}) }}">
+                            <div class="detail-verified">{{ categ.name }}</div>
+                        </a>
 
-                <div class="detail-banner-btn heart">
-                    <i class="fa fa-heart-o"></i> <span data-toggle="I Love It">Give Heart</span>
-                </div><!-- /.detail-claim -->
+                    {% endfor %}
+
+                </div><!-- /.detail-banner-info -->
+
+                {#<div class="detail-banner-address">#}
+                {#<i class="fa fa-map-o"></i>#}
+                {#{{ provider.addressStreet }}#}
+                {#{{ provider.addressNumber }}#}
+                {#</div><!-- /.detail-banner-address -->#}
+
+                {#<div class="detail-banner-rating">#}
+                {#<i class="fa fa-star"></i>#}
+                {#<i class="fa fa-star"></i>#}
+                {#<i class="fa fa-star"></i>#}
+                {#<i class="fa fa-star"></i>#}
+                {#<i class="fa fa-star-half-o"></i>#}
+                {#</div><!-- /.detail-banner-rating -->#}
+
+                {#<div class="detail-banner-btn bookmark">#}
+                {#<i class="fa fa-bookmark-o"></i> <span data-toggle="Bookmarked">Bookmark</span>#}
+                {#</div><!-- /.detail-claim -->#}
+
+                {#<div class="detail-banner-btn heart">#}
+                {#<i class="fa fa-heart-o"></i> <span data-toggle="I Love It">Give Heart</span>#}
+                {#</div><!-- /.detail-claim -->#}
 
             </div><!-- /.detail-banner-left -->
         </div><!-- /.container -->
