@@ -14,14 +14,11 @@ class ProviderSearchController extends Controller
      */
     public function providerSearchDisplayAction()
     {
-
         $form = $this->createForm(ProviderSearchType::class);
         return $this->render(':Front/ProviderSearch:provider_search.html.twig', ['form' => $form->createView()]);
-
     }
 
     /**
-     *
      * @Route("/providerResult", name="providerResult")
      */
     public function providerResultAction(Request $request)
