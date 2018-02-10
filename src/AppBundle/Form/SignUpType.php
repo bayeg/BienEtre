@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Image;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
@@ -26,7 +27,8 @@ class SignUpType extends AbstractType
         $builder
             ->add('email', EmailType::class)
             ->add('password', PasswordType::class)
-            ->add('passwordConfirm', PasswordType::class)
+//            ->add('passwordConfirm', PasswordType::class)
+//            ->add('suscribeDate', DateType::class)
             ->add('type', ChoiceType::class, array(
                 'choices' => array(
                     'Internaut' => 'internaut',
@@ -49,7 +51,8 @@ class SignUpType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_tempuser';
+//        return 'appbundle_tempuser';
+        return '';
     }
 
 }

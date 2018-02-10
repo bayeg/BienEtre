@@ -5,7 +5,9 @@ namespace AppBundle\Controller;
 use AppBundle\Form\SignUpType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\BrowserKit\Request;
+//use Symfony\Component\BrowserKit\Request;
+use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\TempUser;
 
 class SecurityController extends Controller
 {
@@ -29,6 +31,9 @@ class SecurityController extends Controller
             'form' => $form->createView()
         ));
         }
+        return $this->render(':Front/Security/SignUp:sign_up.html.twig ', array(
+            'form' => $form->createView()
+        ));
     }
 
     /**
