@@ -4,33 +4,52 @@
         {% block core_content %}
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-4">
+
                     <div class="page-title">
                         <h1>Sign Up</h1>
                     </div><!-- /.page-title -->
 
-                    {{ form_start(form) }}
-                    {{ form_widget(form) }}
-                    {{ form_end(form) }}
-
+                    {#Form Start#}
                     {#<form method="post" action="?">#}
-                        {#<div class="form-group">#}
-                            {#<label for="login-form-email">E-mail</label>#}
-                            {#<input type="email" class="form-control" name="email" id="login-form-email">#}
-                        {#</div><!-- /.form-group -->#}
+                    {{ form_start(form)}}
+                    {{ form_errors(form) }}
 
-                        {#<div class="form-group">#}
-                            {#<label for="login-form-password">Password</label>#}
-                            {#<input type="password" class="form-control" name="password" id="login-form-password">#}
-                        {#</div><!-- /.form-group -->#}
+                    {#Email#}
+                    <div class="form-group">
+                    {{ form_errors(form.email) }}
+                    {{ form_label(form.email, 'Email') }}
+                    {{ form_widget(form.email, {'attr':{'class':'form-control'}}) }}
+                    </div><!-- /.form-group -->
 
-                        {#<div class="form-group">#}
-                            {#<label for="login-form-password-retype">Retype password</label>#}
-                            {#<input type="password" class="form-control" name="password-retype"#}
-                                   {#id="login-form-password-retype">#}
-                        {#</div><!-- /.form-group -->#}
+                    {#Password#}
+                    <div class="form-group">
+                        {{ form_errors(form.password.first) }}
+                        {{ form_label(form.password.first, 'Password') }}
+                        {{ form_widget(form.password.first, {'attr':{'class':'form-control'}}) }}
+                    </div><!-- /.form-group -->
 
-                        {#<button type="submit" class="btn btn-primary pull-right">Register</button>#}
-                    {#</form>#}
+                    {#Password Retype#}
+                    <div class="form-group">
+                        {{ form_errors(form.password.second) }}
+                        {{ form_label(form.password.second, 'Retype Password') }}
+                        {{ form_widget(form.password.second, {'attr':{'class':'form-control'}}) }}
+                    </div><!-- /.form-group -->
+
+                    {#Type#}
+                    <div class="form-group">
+                        {{ form_errors(form.type) }}
+                        {{ form_label(form.type, 'Type') }}
+                        {{ form_widget(form.type, {'attr':{'class':'form-control'}}) }}
+                    </div><!-- /.form-group -->
+
+                    {#Submit#}
+                    {{ form_widget(form.submit,{'label':'Register','attr':{'class':'btn btn-primary pull-right'}}) }}
+
+
+                    {{ form_rest(form) }}
+                    {{ form_end(form) }}
+                    {#Form End#}
+
                 </div><!-- /.col-sm-4 -->
             </div><!-- /.row -->
         {% endblock %}

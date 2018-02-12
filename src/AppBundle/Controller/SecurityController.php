@@ -16,24 +16,44 @@ class SecurityController extends Controller
      */
     public function signUpAction(Request $request)
     {
-        $tempUser = new tempUser();
 
-        $form = $this->createForm(SignUpType::class, $tempUser);
+        $form = $this->createForm(SignUpType::class);
 
-        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-            $em= $this->getDoctrine()->getManager();
+        $form->handleRequest($request);
+
+        if($form->isValid()){
+            /** @var TempUser $tempUser */
+            $tempUser = $form->getData();
+            $em = $this->getDoctrine()->getManager();
             $em->persist($tempUser);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Go check your inbox !');
+            $this->addFlash('success','Go check your mailbox !');
+//            $request->getSession()->getFlashBag()->add('notice', 'Go check your inbox !');
 
-            return $this->render(':Front/Security/SignUp:sign_up.html.twig ', array(
-            'form' => $form->createView()
-        ));
+            return $this->redirectToRoute('home');
         }
-        return $this->render(':Front/Security/SignUp:sign_up.html.twig ', array(
-            'form' => $form->createView()
+
+        return $this->render(':Front/Security/SignUp:sign_up.html.twig',array(
+            'form'=> $form->createView()
         ));
+
+
+//        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+//            $em= $this->getDoctrine()->getManager();
+//            $em->persist($tempUser);
+//            $em->flush();
+//
+//            $request->getSession()->getFlashBag()->add('notice', 'Go check your inbox !');
+//
+//            return $this->render(':Front/Security/SignUp:sign_up.html.twig ', array(
+//            'form' => $form->createView()
+//        ));
+//        }
+//
+//        return $this->render(':Front/Security/SignUp:sign_up.html.twig ', array(
+//            'form' => $form->createView()
+//        ));
     }
 
     /**

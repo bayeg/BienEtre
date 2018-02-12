@@ -12,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TempUser
 {
+// ------------------------- Column parameters -------------------------
     /**
      * @var int
      *
@@ -48,6 +49,16 @@ class TempUser
      * @ORM\Column(name="registrationDate", type="date")
      */
     private $registrationDate;
+
+// ------------------------- Methods -------------------------
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->registrationDate = new \DateTime();
+    }
 
 
     /**

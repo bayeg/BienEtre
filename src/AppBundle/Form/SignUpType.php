@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
@@ -26,8 +27,9 @@ class SignUpType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class)
-            ->add('password', PasswordType::class)
-//            ->add('passwordConfirm', PasswordType::class)
+            ->add('password', RepeatedType::class,array(
+                'type' => PasswordType::class
+            ))
 //            ->add('suscribeDate', DateType::class)
             ->add('type', ChoiceType::class, array(
                 'choices' => array(
@@ -35,7 +37,7 @@ class SignUpType extends AbstractType
                     'Provider' => 'provider'
                 )
             ))
-            ->add('Submit',SubmitType::class)
+            ->add('submit',SubmitType::class)
         ;
     }
 
@@ -51,8 +53,8 @@ class SignUpType extends AbstractType
      */
     public function getBlockPrefix()
     {
-//        return 'appbundle_tempuser';
-        return '';
+        return 'appbundle_tempuser';
+//        return '';
     }
 
 }
