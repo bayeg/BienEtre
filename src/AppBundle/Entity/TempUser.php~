@@ -3,7 +3,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * TempUser
@@ -11,9 +10,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table(name="temp_user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TempUserRepository")
  */
-class TempUser implements UserInterface
+class TempUser
 {
-
 // ------------------------- Column parameters -------------------------
     /**
      * @var int
@@ -177,50 +175,5 @@ class TempUser implements UserInterface
     {
         return $this->registrationDate;
     }
-
-    /**
-     * Set token
-     *
-     * @param string $token
-     *
-     * @return TempUser
-     */
-    public function setToken($token)
-    {
-        $this->token = $token;
-
-        return $this;
-    }
-
-    /**
-     * Get token
-     *
-     * @return string
-     */
-    public function getToken()
-    {
-        return $this->token;
-    }
-
-// ------------------------- UserInterface -------------------------
-
-    public function getRoles()
-    {
-        // TODO: Implement getRoles() method.
-    }
-
-    public function getSalt()
-    {
-        // TODO: Implement getSalt() method.
-    }
-
-    public function getUsername()
-    {
-        // TODO: Implement getUsername() method.
-    }
-
-    public function eraseCredentials()
-    {
-        // TODO: Implement eraseCredentials() method.
-    }
 }
+

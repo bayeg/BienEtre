@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Form\SignUpType;
+use AppBundle\Form\TempUserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 //use Symfony\Component\BrowserKit\Request;
@@ -17,11 +17,13 @@ class SecurityController extends Controller
     public function signUpAction(Request $request)
     {
 
-        $form = $this->createForm(SignUpType::class);
+        $form = $this->createForm(TempUserType::class);
 
         $form->handleRequest($request);
 
         if($form->isValid()){
+
+            // USER CREATION
             /** @var TempUser $tempUser */
             $tempUser = $form->getData();
             $em = $this->getDoctrine()->getManager();
@@ -31,7 +33,28 @@ class SecurityController extends Controller
             $this->addFlash('success','Go check your mailbox !');
 //            $request->getSession()->getFlashBag()->add('notice', 'Go check your inbox !');
 
-            return $this->redirectToRoute('home');
+
+            //MAILER
+            $to = $tempUser->getEmail();
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Hello Email')
+                ->setFrom('no-reply@bien-etre.be')
+//                ->setTo('091bdfdbbe-a7b357@inbox.mailtrap.io')
+                ->setTo($to)
+                ->setBody('Message Body')
+//                ->setBody(
+//                    $this->renderView(
+//                        'HelloBundle:Hello:email.txt.twig',
+//                        array('name' => $name)
+//                    ))
+            ;
+            $this->get('mailer')->send($message);
+
+            return $this->redirectToRoute('home',array(
+                //
+            ));
+
+
         }
 
         return $this->render(':Front/Security/SignUp:sign_up.html.twig',array(

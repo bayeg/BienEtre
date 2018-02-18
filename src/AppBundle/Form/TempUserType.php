@@ -18,7 +18,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class SignUpType extends AbstractType
+class TempUserType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -26,17 +26,18 @@ class SignUpType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', EmailType::class)
-            ->add('password', RepeatedType::class,array(
-                'type' => PasswordType::class
-            ))
-//            ->add('suscribeDate', DateType::class)
             ->add('type', ChoiceType::class, array(
                 'choices' => array(
                     'Internaut' => 'internaut',
                     'Provider' => 'provider'
                 )
             ))
+            ->add('email', EmailType::class)
+            ->add('password', RepeatedType::class,array(
+                'type' => PasswordType::class
+            ))
+//            ->add('suscribeDate', DateType::class)
+
             ->add('submit',SubmitType::class)
         ;
     }

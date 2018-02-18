@@ -14,6 +14,13 @@
                     {{ form_start(form)}}
                     {{ form_errors(form) }}
 
+                    {#Type#}
+                    <div class="form-group">
+                        {{ form_errors(form.type) }}
+                        {{ form_label(form.type, 'Type') }}
+                        {{ form_widget(form.type, {'attr':{'class':'form-control'}}) }}
+                    </div><!-- /.form-group -->
+
                     {#Email#}
                     <div class="form-group">
                     {{ form_errors(form.email) }}
@@ -35,12 +42,7 @@
                         {{ form_widget(form.password.second, {'attr':{'class':'form-control'}}) }}
                     </div><!-- /.form-group -->
 
-                    {#Type#}
-                    <div class="form-group">
-                        {{ form_errors(form.type) }}
-                        {{ form_label(form.type, 'Type') }}
-                        {{ form_widget(form.type, {'attr':{'class':'form-control'}}) }}
-                    </div><!-- /.form-group -->
+
 
                     {#Submit#}
                     {{ form_widget(form.submit,{'label':'Register','attr':{'class':'btn btn-primary pull-right'}}) }}

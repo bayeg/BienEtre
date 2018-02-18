@@ -1,9 +1,9 @@
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
-
-#    encoders:
-#        bCript ....
+    encoders:
+        AppBundle\Entity\TempUser:
+            algorithm: bcrypt
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
