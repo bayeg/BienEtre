@@ -20,7 +20,7 @@
 
                     {% for categ in provider.serviceCategories %}
 
-                        <a href="{{ path("serviceCategoryDetail", {"slug" : categ.slug}) }}">
+                        <a href="{{ path("service_category_detail", {"slug" : categ.slug}) }}">
                             <div class="detail-verified">{{ categ.name }}</div>
                         </a>
 

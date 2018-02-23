@@ -1,17 +1,73 @@
 {% extends ":Front:front_layout.html.twig" %}
-
-    {% block slider %}
-        {% include ":Front/Security/Login:login_slider.html.twig" %}
-    {% endblock %}
     {% block content %}
-        {#{% block search_form %}#}
-        {#{{ render(controller('AppBundle:ProviderSearch:providerSearchDisplay')) }}#}
-        {#{% endblock %}#}
-        {#{% block result_filter_form %}#}
-        {#{% include ":Front/Provider/List:result_filter_form.html.twig" %}#}
-        {#{% endblock %}#}
         {% block core_content %}
-            CONTENT LOGIN
+                            <div class="row">
+                                <div class="col-sm-4 col-sm-offset-4">
+                                    <div class="page-title">
+                                        <h1>Login</h1>
+                                    </div><!-- /.page-title -->
+
+
+
+                                    {% if error %}
+                                        <div class="alert alert-danger">
+                                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                                        </div>
+                                    {% endif %}
+
+                                    {{ form_start(form) }}
+                                        {{ form_row(form._username)}}
+                                        {{ form_row(form._password)}}
+                                        <button type="submit" class="btn btn-primary pull-right">Login</button>
+                                    {{ form_end(form) }}
+
+                                    {#<form action="{{ path('login') }}" method="post">#}
+
+                                        {#<div class="form-group">#}
+                                        {#<label for="username">Username:</label>#}
+                                        {#<input type="text" id="username" name="_username" value="{{ last_username }}" />#}
+                                        {#</div><!-- /.form-group -->#}
+
+
+                                        {#<div class="form-group">#}
+                                        {#<label for="password">Password:</label>#}
+                                        {#<input type="password" id="password" name="_password" />#}
+                                        {#</div><!-- /.form-group -->#}
+
+
+                                        {##}
+                                            {#If you want to control the URL the user#}
+                                            {#is redirected to on success (more details below)#}
+                                            {#<input type="hidden" name="_target_path" value="/account" />#}
+                                        {##}
+
+                                        {#<button type="submit">login</button>#}
+                                    {#</form>#}
+
+
+
+                                    {#POUR LAYOUT#}
+                                    {#<form method="post" action="?">#}
+                                        {#<div class="form-group">#}
+                                            {#<label for="login-form-email">E-mail</label>#}
+                                            {#<input type="email" class="form-control" name="email" id="login-form-email">#}
+                                        {#</div><!-- /.form-group -->#}
+
+                                        {#<div class="form-group">#}
+                                            {#<label for="login-form-password">Password</label>#}
+                                            {#<input type="password" class="form-control" name="password" id="login-form-password">#}
+                                        {#</div><!-- /.form-group -->#}
+
+                                        {#<button type="submit" class="btn btn-primary pull-right">Login</button>#}
+                                    {#</form>#}
+
+
+
+
+
+
+                                </div><!-- /.col-sm-4 -->
+                            </div><!-- /.row -->
         {% endblock %}
 
     {% endblock %}

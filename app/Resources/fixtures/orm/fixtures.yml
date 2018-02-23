@@ -47,6 +47,7 @@ AppBundle\Entity\Image:
 AppBundle\Entity\Internaut:
     internaut_{1..10}:
         email: <email()>
+        plainPassword: test
         password: <password()>
         addressNumber: <numberBetween(1, 100)>
         addressStreet: <streetName()>
@@ -96,6 +97,7 @@ AppBundle\Entity\Promotion:
 AppBundle\Entity\Provider:
       provider_{1..50}:
         email: <email()>
+        plainPassword: test
         password: <password()>
         addressNumber: <numberBetween(1, 100)>
         addressStreet: <streetName()>

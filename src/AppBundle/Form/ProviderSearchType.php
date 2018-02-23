@@ -37,8 +37,7 @@ class ProviderSearchType extends AbstractType
 //            ->add('reset',ResetType::class)
             ->add('search',SubmitType::class)
             ->setMethod('GET')
-            ->setAction('providerResult');
-
+            ->setAction('provider-result');
         ;
     }
 

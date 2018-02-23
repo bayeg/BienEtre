@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table(name="temp_user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TempUserRepository")
  */
-class TempUser implements UserInterface
+class TempUser
 {
 
 // ------------------------- Column parameters -------------------------
@@ -69,8 +69,8 @@ class TempUser implements UserInterface
     public function __construct()
     {
         $this->registrationDate = new \DateTime();
+        $this->token = bin2hex(random_bytes(16));
     }
-
 
     /**
      * Get id
@@ -202,25 +202,25 @@ class TempUser implements UserInterface
         return $this->token;
     }
 
-// ------------------------- UserInterface -------------------------
-
-    public function getRoles()
-    {
-        // TODO: Implement getRoles() method.
-    }
-
-    public function getSalt()
-    {
-        // TODO: Implement getSalt() method.
-    }
-
-    public function getUsername()
-    {
-        // TODO: Implement getUsername() method.
-    }
-
-    public function eraseCredentials()
-    {
-        // TODO: Implement eraseCredentials() method.
-    }
+//// ------------------------- UserInterface -------------------------
+//
+//    public function getRoles()
+//    {
+//        // TODO: Implement getRoles() method.
+//    }
+//
+//    public function getSalt()
+//    {
+//        // TODO: Implement getSalt() method.
+//    }
+//
+//    public function getUsername()
+//    {
+//        // TODO: Implement getUsername() method.
+//    }
+//
+//    public function eraseCredentials()
+//    {
+//        // TODO: Implement eraseCredentials() method.
+//    }
 }

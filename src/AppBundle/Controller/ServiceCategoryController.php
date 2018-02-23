@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 class ServiceCategoryController extends Controller
 {
     /**
-     * @Route("/category", name="serviceCategoryList")
+     * @Route("/category", name="service_category_list")
      */
     public function serviceCategoryListAction(Request $request)
     {
@@ -35,7 +35,7 @@ class ServiceCategoryController extends Controller
     }
 
     /**
-     * @Route("/category/{slug}", name="serviceCategoryDetail")
+     * @Route("/category/{slug}", name="service_category_detail")
      */
     public function serviceCategoryDetailAction($slug)
     {

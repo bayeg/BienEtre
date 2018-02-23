@@ -10,6 +10,7 @@
                     </div><!-- /.page-title -->
 
                     {#Form Start#}
+                    {#<form method="post" action="?">#}
                     {{ form_start(form)}}
                     {{ form_errors(form) }}
 
@@ -40,6 +41,7 @@
                         {{ form_label(form.password.second, 'Retype Password') }}
                         {{ form_widget(form.password.second, {'attr':{'class':'form-control'}}) }}
                     </div><!-- /.form-group -->
+
 
 
                     {#Submit#}

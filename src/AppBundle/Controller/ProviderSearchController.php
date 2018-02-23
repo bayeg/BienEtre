@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 class ProviderSearchController extends Controller
 {
     /**
-     * @Route(name="providerSearch")
+     * @Route(name="provider_search")
      */
     public function providerSearchDisplayAction()
     {
@@ -19,7 +19,7 @@ class ProviderSearchController extends Controller
     }
 
     /**
-     * @Route("/providerResult", name="providerResult")
+     * @Route("/provider-result", name="provider_result")
      */
     public function providerResultAction(Request $request)
     {

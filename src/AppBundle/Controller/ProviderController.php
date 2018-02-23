@@ -12,7 +12,7 @@ use AppBundle\Entity\Provider;
 class ProviderController extends Controller
 {
     /**
-     * @Route("/provider", name="providerList")
+     * @Route("/provider", name="provider_list")
      */
     public function providerListAction(Request $request)
     {
@@ -40,7 +40,7 @@ class ProviderController extends Controller
 
 
     /**
-     * @Route("/provider/{slug}", name="providerDetail")
+     * @Route("/provider/{slug}", name="provider_detail")
      */
     public function providerDetailAction($slug)
     {

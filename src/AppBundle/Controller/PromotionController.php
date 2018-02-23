@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class PromotionController extends Controller
 {
     /**
-     * @Route("/promotionList")
+     * @Route("/promotion-list", name="promotion_list")
      */
     public function promotionListAction()
     {

@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
@@ -16,7 +17,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\DiscriminatorMap({"user" = "User", "provider" = "Provider", "internaut" = "Internaut"})
  */
 
-class User
+class User implements UserInterface
 {
 
 // ------------------------- Column parameters -------------------------
@@ -43,6 +44,9 @@ class User
      * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
+
+
+    private $plainPassword;
 
     /**
      * @var string
@@ -381,5 +385,49 @@ class User
     public function getCommune()
     {
         return $this->commune;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param mixed $plainPassword
+     */
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
+        // to make understand Doctrine that the plainPassword has been changed
+        // even if not persisted, so listeners are called
+        $this->password = null;
+    }
+
+
+
+
+    // ------------------------- Methods : UserInterface -------------------------
+
+    public function getUsername()
+    {
+        return $this->email;
+    }
+    public function getRoles()
+    {
+        return ['ROLE_USER'];
+    }
+
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+    }
+
+    public function eraseCredentials()
+    {
+        // called after login so the plainPassword is not saved anywhere
+        $this->plainPassword = null;
     }
 }

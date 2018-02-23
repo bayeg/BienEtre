@@ -6,7 +6,7 @@
                 <div class="card-simple" data-background-image="{{asset(sc.serviceImage.url)}}">
                     <div class="card-simple-background">
                         <div class="card-simple-content">
-                            <h2><a href="{{ path("serviceCategoryDetail", {"slug" : sc.slug})}}">{{sc.name}}</a></h2>
+                            <h2><a href="{{ path("service_category_detail", {"slug" : sc.slug})}}">{{sc.name}}</a></h2>
                             {#{{dump (sc)}}#}
                             {#<div class="card-simple-rating">#}
                                 {#<i class="fa fa-star"></i>#}
@@ -17,7 +17,7 @@
                             {#</div><!-- /.card-rating -->#}
                             <div class="card-simple-actions">
                                 {#<a href="#" class="fa fa-star-o"></a>#}
-                                <a href="{{ path("serviceCategoryDetail", {"slug" : sc.slug})}}" class="fa fa-search"></a>
+                                <a href="{{ path("service_category_detail", {"slug" : sc.slug})}}" class="fa fa-search"></a>
                                 {#<a href="#" class="fa fa-heart-o"></a>#}
                             </div><!-- /.card-simple-actions -->
                         </div><!-- /.card-simple-content -->

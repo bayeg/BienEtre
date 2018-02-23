@@ -1,0 +1,18 @@
+
+        {#bonjour#}
+            {#{% for item in navigation %}#}
+                {#<li><a href="{{ item.href }}">{{ item.caption }}</a></li>#}
+            {#{% endfor %}#}
+
+    {#</body>#}
+{#</html>#}
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2>Bien-être</h2>
+    <p>Welcome on bien-etre.be !
+        To complete your registration,
+        <a href="{{ url('home') }}">click here!</a>
+    </p>
+{% endblock %}
+
+
