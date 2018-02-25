@@ -129,4 +129,9 @@ class Position
     {
         return $this->internaut;
     }
+
+    public function __toString()
+{
+    return 'Position'.$this->getPositionOrder();
+}
 }

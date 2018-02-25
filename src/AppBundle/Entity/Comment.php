@@ -270,4 +270,9 @@ class Comment
     {
         return $this->internaut;
     }
+
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }

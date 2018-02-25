@@ -159,4 +159,9 @@ class Image
     {
         return $this->photoProvider;
     }
+
+    public function __toString()
+    {
+        return $this->getUrl();
+    }
 }

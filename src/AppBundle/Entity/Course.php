@@ -316,4 +316,9 @@ class Course
     {
         return $this->provider;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

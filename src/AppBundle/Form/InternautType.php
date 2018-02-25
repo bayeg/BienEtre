@@ -3,6 +3,8 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,11 +16,13 @@ class InternautType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-//            ->add('lastName')
-//            ->add('firstName')
+            ->add('lastName', TextType::class)
+            ->add('firstName',TextType::class)
+            ->add('addressNumber', TextType::class)
 //            ->add('newsletter')
 //            ->add('image')
 //            ->add('providers')
+            ->add('submit', SubmitType::class)
         ;
     }
 

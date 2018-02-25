@@ -146,3 +146,39 @@ knp_paginator:
         pagination: '@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig'
 #        sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
 #        filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
+
+easy_admin:
+    site_name: 'Admin - Bien-être'
+    entities:
+        Abuse:
+              class: AppBundle\Entity\Abuse
+        Block:
+              class: AppBundle\Entity\Block
+        Comment:
+              class: AppBundle\Entity\Comment
+        Commune:
+            class: AppBundle\Entity\Commune
+        Course:
+            class: AppBundle\Entity\Course
+        Image:
+            class: AppBundle\Entity\Image
+        Internaut:
+            class: AppBundle\Entity\Internaut
+        Locality:
+            class: AppBundle\Entity\Locality
+        Newsletter:
+            class: AppBundle\Entity\Newsletter
+        Position:
+            class: AppBundle\Entity\Position
+        PostCode:
+            class: AppBundle\Entity\PostCode
+        Promotion:
+            class: AppBundle\Entity\Promotion
+        Provider:
+            class: AppBundle\Entity\Provider
+        ServiceCategory:
+            class: AppBundle\Entity\ServiceCategory
+        User:
+            class: AppBundle\Entity\User
+        TempUser:
+            class: AppBundle\Entity\TempUser

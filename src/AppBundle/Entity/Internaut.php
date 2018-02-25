@@ -22,7 +22,7 @@ class Internaut extends User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -330,5 +330,10 @@ class Internaut extends User
     public function getPositions()
     {
         return $this->positions;
+    }
+
+    public function __toString()
+    {
+        return $this->getEmail();
     }
 }

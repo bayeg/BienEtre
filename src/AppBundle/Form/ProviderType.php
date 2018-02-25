@@ -22,6 +22,7 @@ class ProviderType extends AbstractType
 //            ->add('slug')
 //            ->add('serviceCategories')
 //            ->add('internauts')
+            ->add('submit', SubmitType::class)
         ;
     }
 

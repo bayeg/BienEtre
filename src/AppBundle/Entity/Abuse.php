@@ -162,4 +162,10 @@ class Abuse
     {
         return $this->internaut;
     }
+
+    public function __toString()
+    {
+        return $this->getDescription();
+    }
+
 }

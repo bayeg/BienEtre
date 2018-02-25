@@ -116,4 +116,9 @@ class Locality
     {
         return $this->users;
     }
+
+    public function __toString()
+    {
+        return $this->getLocality();
+    }
 }

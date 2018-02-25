@@ -316,4 +316,9 @@ class Promotion
     {
         return $this->serviceCategory;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

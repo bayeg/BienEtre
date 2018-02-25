@@ -150,4 +150,9 @@ class Block
     {
         return $this->positions;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

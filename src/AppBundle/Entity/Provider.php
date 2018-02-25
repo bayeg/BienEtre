@@ -22,7 +22,7 @@ class Provider extends User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -518,4 +518,10 @@ class Provider extends User
     {
         return $this->internauts;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
 }

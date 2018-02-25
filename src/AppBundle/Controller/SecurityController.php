@@ -31,14 +31,19 @@ class SecurityController extends Controller
 
         if($type == 'internaut'){
             $form = $this->createForm(InternautType::class);
+            return $this->render(':Front/Security/Confirm:confirm_internaut.html.twig',[
+                'tempUser' => $tempUser,
+                'form' => $form->createView()
+            ]);
         }elseif ($type == 'provider'){
             $form = $this->createForm(ProviderType::class);
+            return $this->render(':Front/Security/Confirm:confirm_provider.html.twig',[
+                'tempUser' => $tempUser,
+                'form' => $form->createView()
+            ]);
         }
 
-        return $this->render(':Front/Security/Confirm:confirm.html.twig',[
-            'tempUser' => $tempUser,
-            'form' => $form->createView()
-        ]);
+
 
     }
 
