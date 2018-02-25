@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Gilles
- * Date: 23-02-18
- * Time: 15:11
- */
 
 namespace AppBundle\Doctrine;
-
 
 use AppBundle\Entity\User;
 use Doctrine\Common\EventSubscriber;
@@ -16,7 +9,6 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
 
 class HashPasswordListener implements EventSubscriber
 {
-
     private $passwordEncoder;
 
     public function __construct(UserPasswordEncoder $passwordEncoder)
@@ -37,7 +29,7 @@ class HashPasswordListener implements EventSubscriber
     public function preUpdate(LifecycleEventArgs $args)
     {
         $entity = $args->getEntity();
-        if(!$entity instanceof User){
+        if(!$entity instanceof User|!$entity instanceof User){
             return;
         }
 
@@ -47,8 +39,6 @@ class HashPasswordListener implements EventSubscriber
         $meta = $em->getClassMetadata(get_class($entity));
         $em->getUnitOfWork()->recomputeSingleEntityChangeSet($meta, $entity);
     }
-
-
 
     public function getSubscribedEvents()
     {

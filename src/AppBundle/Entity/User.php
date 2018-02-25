@@ -45,9 +45,6 @@ class User implements UserInterface
      */
     private $password;
 
-
-    private $plainPassword;
-
     /**
      * @var string
      *
@@ -405,9 +402,6 @@ class User implements UserInterface
         // even if not persisted, so listeners are called
         $this->password = null;
     }
-
-
-
 
     // ------------------------- Methods : UserInterface -------------------------
 

@@ -38,6 +38,8 @@ class TempUser
      */
     private $password;
 
+//    private $plainPassword;
+
     /**
      * @var string
      *
@@ -202,11 +204,35 @@ class TempUser
         return $this->token;
     }
 
-//// ------------------------- UserInterface -------------------------
+//    /**
+//     * @return mixed
+//     */
+//    public function getPlainPassword()
+//    {
+//        return $this->plainPassword;
+//    }
+//
+//    /**
+//     * @param mixed $plainPassword
+//     */
+//    public function setPlainPassword($plainPassword)
+//    {
+//        $this->plainPassword = $plainPassword;
+//        // to make understand Doctrine that the plainPassword has been changed
+//        // even if not persisted, so listeners are called
+//        $this->password = null;
+//    }
+
+// ------------------------- UserInterface -------------------------
+//
+//    public function getUsername()
+//    {
+//        return $this->email;
+//    }
 //
 //    public function getRoles()
 //    {
-//        // TODO: Implement getRoles() method.
+//
 //    }
 //
 //    public function getSalt()
@@ -214,13 +240,9 @@ class TempUser
 //        // TODO: Implement getSalt() method.
 //    }
 //
-//    public function getUsername()
-//    {
-//        // TODO: Implement getUsername() method.
-//    }
-//
 //    public function eraseCredentials()
 //    {
-//        // TODO: Implement eraseCredentials() method.
+//        // called after login so the plainPassword is not saved anywhere
+//        $this->plainPassword = null;
 //    }
 }

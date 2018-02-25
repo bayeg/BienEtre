@@ -18,7 +18,10 @@
                                     {{ form_start(form) }}
                                         {{ form_row(form._username)}}
                                         {{ form_row(form._password)}}
+                                        {#Affiche le reste des champs. Est utile pour générer le champ invisible _token de symfony.#}
+                                        {{ form_rest(form) }}
                                         <button type="submit" class="btn btn-primary pull-right">Login</button>
+
                                     {{ form_end(form) }}
 
                                     {#<form action="{{ path('login') }}" method="post">#}

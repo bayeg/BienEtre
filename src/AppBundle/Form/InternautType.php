@@ -14,12 +14,15 @@ class InternautType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('lastName')
-            ->add('firstName')
-            ->add('newsletter')
-            ->add('image')
-            ->add('providers');
-    }/**
+//            ->add('lastName')
+//            ->add('firstName')
+//            ->add('newsletter')
+//            ->add('image')
+//            ->add('providers')
+        ;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

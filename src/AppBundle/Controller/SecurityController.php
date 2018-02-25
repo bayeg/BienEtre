@@ -2,7 +2,9 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Form\InternautType;
 use AppBundle\Form\LoginForm;
+use AppBundle\Form\ProviderType;
 use AppBundle\Form\TempUserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -13,58 +15,33 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends Controller
 {
+
     /**
-     * @Route("/sign-up", name="sign_up")
+     * @Route("/confirm/{token}", name="confirm")
      */
-    public function signUpAction(Request $request)
+    public function confirmAction($token)
     {
+        $em = $this->getDoctrine()->getManager();
+        $tempUser = $em->getRepository("AppBundle:TempUser")
+            ->findOneBy([
+                "token" => $token
+            ]);
 
-        $form = $this->createForm(TempUserType::class);
+        $type = $tempUser->getType();
 
-        $form->handleRequest($request);
-
-        if($form->isValid()){
-
-            // USER CREATION
-            /** @var TempUser $tempUser */
-            $tempUser = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($tempUser);
-            $em->flush();
-
-            $this->addFlash('success','Go check your mailbox !');
-//            $request->getSession()->getFlashBag()->add('notice', 'Go check your inbox !');
-
-
-            //MAILER
-            $to = $tempUser->getEmail();
-            $token = $tempUser->getToken();
-            $message = \Swift_Message::newInstance()
-                ->setSubject('Welcome to bien-etre.be')
-                ->setFrom('no-reply@bien-etre.be')
-                ->setTo($to)
-                ->setBody(
-                    $this->renderView(
-                        ':Front/Security/SignUp:confirm_email.html.twig'
-                        ,array('token' => $token)
-                    ),
-                    'text/html'
-                )
-            ;
-            $this->get('mailer')->send($message);
-
-            return $this->redirectToRoute('home',array(
-                //
-            ));
-
-
+        if($type == 'internaut'){
+            $form = $this->createForm(InternautType::class);
+        }elseif ($type == 'provider'){
+            $form = $this->createForm(ProviderType::class);
         }
 
-        return $this->render(':Front/Security/SignUp:sign_up.html.twig',array(
-            'form'=> $form->createView()
-        ));
+        return $this->render(':Front/Security/Confirm:confirm.html.twig',[
+            'tempUser' => $tempUser,
+            'form' => $form->createView()
+        ]);
 
     }
+
 
     /**
      * @Route("/login", name="login")

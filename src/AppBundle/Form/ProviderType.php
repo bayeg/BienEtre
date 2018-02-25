@@ -14,15 +14,18 @@ class ProviderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('website')
-            ->add('contactEmail')
-            ->add('phone')
-            ->add('vat')
-            ->add('slug')
-            ->add('serviceCategories')
-            ->add('internauts');
-    }/**
+//            ->add('name')
+//            ->add('website')
+//            ->add('contactEmail')
+//            ->add('phone')
+//            ->add('vat')
+//            ->add('slug')
+//            ->add('serviceCategories')
+//            ->add('internauts')
+        ;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

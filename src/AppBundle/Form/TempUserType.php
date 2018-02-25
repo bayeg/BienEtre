@@ -36,8 +36,6 @@ class TempUserType extends AbstractType
             ->add('password', RepeatedType::class,array(
                 'type' => PasswordType::class
             ))
-//            ->add('suscribeDate', DateType::class)
-
             ->add('submit',SubmitType::class)
         ;
     }
