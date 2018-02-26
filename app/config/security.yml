@@ -2,23 +2,33 @@
 # https://symfony.com/doc/current/security.html
 security:
     encoders:
-        AppBundle\Entity\User: bcrypt
-        Symfony\Component\Security\Core\User\User: plaintext
+        AppBundle\Entity\User:
+            algorithm: bcrypt
+            cost: 12
+        AppBundle\Entity\TempUser:
+            algorithm: bcrypt
+            cost: 12
+
+#        Symfony\Component\Security\Core\User\User: plaintext
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         chain_provider:
             chain:
-                providers: [in_memory, our_users]
+                providers: [in_memory, our_db_provider, temp_users]
         in_memory:
             memory:
                 users:
                     admin:
                         password: admin
                         roles: 'ROLE_ADMIN'
-        our_users:
+        our_db_provider:
             entity:
                 class: AppBundle\Entity\User
+                property: email
+        temp_users:
+            entity:
+                class: AppBundle\Entity\TempUser
                 property: email
 
     firewalls:
@@ -31,26 +41,28 @@ security:
         #main est le nom arbitraire du firewall
         main:
             # securiser l'entierete de mon app
-            # pattern: ^/
+            pattern: ^/
             anonymous: ~
-            http_basic:
-                provider: in_memory
+            form_login:
+                login_path: login
+                check_path: login
+            http_basic: ~
+            provider: our_db_provider
               # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            guard:
-              authenticators:
-                - app.security.login_form_authenticator
+#            guard:
+#              authenticators:
+#                - app.security.login_form_authenticator
 
             logout:
               path: /logout
               # activate different ways to authenticate
 
-
-
               # form_login: ~
               # https://symfony.com/doc/current/security/form_login_setup.html
 
     access_control:
-#        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+#- { path: ^/, roles: ROLE_ADMIN }
         - { path: ^/profile, roles: ROLE_USER }
 
 #    access_control:

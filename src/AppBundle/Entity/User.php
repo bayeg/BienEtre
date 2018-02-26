@@ -38,6 +38,8 @@ class User implements UserInterface
      */
     private $email;
 
+    private $plainPassword;
+
     /**
      * @var string
      *
@@ -108,7 +110,16 @@ class User implements UserInterface
      */
     private $commune;
 
+
+
 // ------------------------- Methods -------------------------
+
+    /**
+     * Constructor.
+     */
+    public function __construct()
+    {
+    }
 
     /**
      * Get id
@@ -143,6 +154,29 @@ class User implements UserInterface
     {
         return $this->email;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param mixed $plainPassword
+     */
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
+    }
+//    public function setPlainPassword($plainPassword)
+//    {
+//        $this->plainPassword = $plainPassword;
+//        // to make understand Doctrine that the plainPassword has been changed
+//        // even if not persisted, so listeners are called
+//        $this->password = null;
+//    }
 
     /**
      * Set password
@@ -384,24 +418,7 @@ class User implements UserInterface
         return $this->commune;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPlainPassword()
-    {
-        return $this->plainPassword;
-    }
 
-    /**
-     * @param mixed $plainPassword
-     */
-    public function setPlainPassword($plainPassword)
-    {
-        $this->plainPassword = $plainPassword;
-        // to make understand Doctrine that the plainPassword has been changed
-        // even if not persisted, so listeners are called
-        $this->password = null;
-    }
 
     // ------------------------- Methods : UserInterface -------------------------
 
@@ -416,12 +433,12 @@ class User implements UserInterface
 
     public function getSalt()
     {
-        // TODO: Implement getSalt() method.
+        return null;
     }
 
     public function eraseCredentials()
     {
         // called after login so the plainPassword is not saved anywhere
-        $this->plainPassword = null;
+//        $this->plainPassword = null;
     }
 }

@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 //use Symfony\Component\BrowserKit\Request;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\TempUser;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 
@@ -17,18 +18,22 @@ class TempUserController extends Controller
     /**
      * @Route("/sign-up", name="sign_up")
      */
-    public function signUpAction(Request $request)
+    public function signUpAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
+        //build form
+        $tempUser = new TempUser();
+        $form = $this->createForm(TempUserType::class, $tempUser);
 
-        $form = $this->createForm(TempUserType::class);
-
+        //handle request if POST
         $form->handleRequest($request);
 
-        if($form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
 
-            // USER CREATION
-            /** @var TempUser $tempUser */
-            $tempUser = $form->getData();
+            //encode password
+            $password = $passwordEncoder->encodePassword($tempUser, $tempUser->getPlainPassword());
+            $tempUser->setPassword($password);
+
+            //save tempUser
             $em = $this->getDoctrine()->getManager();
             $em->persist($tempUser);
             $em->flush();
@@ -60,9 +65,24 @@ class TempUserController extends Controller
 
         }
 
+
+//        $form = $this->createForm(TempUserType::class);
+
+//        $form->handleRequest($request);
+
+//        if($form->isValid()){
+
+            // USER CREATION
+//            /** @var TempUser $tempUser */
+//            $tempUser = $form->getData();
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($tempUser);
+//            $em->flush();
+
         return $this->render(':Front/Security/SignUp:sign_up.html.twig',array(
             'form'=> $form->createView()
         ));
 
     }
+
 }

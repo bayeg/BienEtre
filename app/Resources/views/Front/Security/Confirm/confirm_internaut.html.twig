@@ -3,38 +3,146 @@
     {% block content %}
         {% block core_content %}
             <div class="row">
-                <div class="col-sm-4 col-sm-offset-4">
 
-                    <div class="page-title">
-                        <h1>Confirm</h1>
-                    </div><!-- /.page-title -->
+                {{ dump(tempUser) }}
+                {{ dump(user) }}
 
-                    {{ dump(tempUser) }}
+                {#Form Start#}
 
-                    {#Form Start#}
-                    {{ form_start(form)}}
-                    {{ form_errors(form) }}
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
 
-                    {#Type#}
-                    {#<div class="form-group">#}
-                        {#{{ form_errors(form.type) }}#}
-                        {#{{ form_label(form.type, 'Type') }}#}
-                        {#{{ form_widget(form.type, {'attr':{'class':'form-control'}}) }}#}
-                    {#</div><!-- /.form-group -->#}
+                <div class="col-sm-4 col-lg-3">
+                    <div class="sidebar">
+                        <div class="widget">
+                            {#Image#}
+                            {{ form_errors(form.image) }}
+                            <div class="user-photo">
+                                <a href="{{ form_widget(form.image) }}">
+                                    <img src="{{ form_widget(form.image) }}" alt="User Photo">
+                                    <span class="user-photo-action">
+                                        Click here to upload Avatar
+                                    </span>
+                                </a>
+                            </div><!-- /.user-photo -->
+                        </div><!-- /.widget -->
 
 
+                        <div class="widget">
 
+                            <ul class="menu-advanced">
+                                {#<li><a href="listing-submit.html"><i class="fa fa-pencil"></i> Submit Listing</a></li>#}
+                                <li class="active"><a href="#"><i class="fa fa-user"></i> Edit Profile</a></li>
+                                <li><a href="#"><i class="fa fa-key"></i> Password</a></li>
+                                <li><a href="{{ path("logout") }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+                            </ul>
+                        </div><!-- /.widget -->
 
-                    {{ form_rest(form) }}
+                    </div><!-- /.sidebar -->
+                </div><!-- /.col-* -->
 
-                    {#Submit#}
-                    {{ form_widget(form.submit,{'label':'Register','attr':{'class':'btn btn-primary pull-right'}}) }}
+                <div class="col-sm-8 col-lg-9">
+                    <div class="content">
+                        <div class="page-title">
+                            <h1>Edit Profile</h1>
+                        </div><!-- /.page-title -->
 
-                    {{ form_end(form) }}
-                    {#Form End#}
+                        <div class="background-white p20 mb30">
+                            <h3 class="page-title">
+                                Contact Information
+                            </h3>
 
-                </div><!-- /.col-sm-4 -->
+                            <div class="row">
+
+                                {#First Name#}
+                                <div class="form-group col-sm-6">
+                                    {{ form_errors(form.firstName) }}
+                                    {{ form_label(form.firstName, 'First Name') }}
+                                    {{ form_widget(form.firstName, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+
+                                {#Last Name#}
+                                <div class="form-group col-sm-6">
+
+                                    {{ form_errors(form.lastName) }}
+                                    {{ form_label(form.lastName, 'Last Name') }}
+                                    {{ form_widget(form.lastName, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+
+                            </div><!-- /.row -->
+                        </div>
+
+                        <div class="background-white p20 mb30">
+                            <h3 class="page-title">
+                                Address
+                            </h3>
+
+                            <div class="row">
+                                {#Address Street#}
+                                <div class="form-group col-sm-9">
+                                    {{ form_errors(form.addressStreet) }}
+                                    {{ form_label(form.addressStreet, 'Address Street') }}
+                                    {{ form_widget(form.addressStreet, {'attr':{'class':'form-control'}}) }}
+
+                                </div><!-- /.form-group -->
+
+                                {#Address Number#}
+                                <div class="form-group col-sm-3">
+                                    {{ form_errors(form.addressNumber) }}
+                                    {{ form_label(form.addressNumber, 'Address Number') }}
+                                    {{ form_widget(form.addressNumber, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+
+                                {#Post Code#}
+                                <div class="form-group col-sm-3">
+                                    {{ form_errors(form.postCode) }}
+                                    {{ form_label(form.postCode, 'Post Code') }}
+                                    {{ form_widget(form.postCode, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+
+                                {#Locality#}
+                                <div class="form-group col-sm-3">
+                                    {{ form_errors(form.locality) }}
+                                    {{ form_label(form.locality, 'Locality') }}
+                                    {{ form_widget(form.locality, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+
+                                {#Commune#}
+                                <div class="form-group col-sm-3">
+                                    {{ form_errors(form.commune) }}
+                                    {{ form_label(form.commune, 'Commune') }}
+                                    {{ form_widget(form.commune, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+
+                            </div><!-- /.row -->
+                        </div>
+
+                        <div class="background-white p20 mb30">
+                            <h3 class="page-title">
+                                Newsletter
+                            </h3>
+                            <div class="row">
+                                {#Newsletter#}
+                                <div class="form-group col-sm-3">
+                                    {{ form_errors(form.newsletter) }}
+                                    {{ form_label(form.newsletter, 'Newsletter') }}
+                                    {{ form_widget(form.newsletter, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+                            </div>
+                        </div>
+
+                    </div><!-- /.content -->
+                </div><!-- /.col-* -->
+
+                {#Submit#}
+                {{ form_widget(form.submit,{'label':'Update','attr':{'class':'btn btn-primary pull-right'}}) }}
+
+                {{ form_rest(form) }}
+                {{ form_end(form) }}
+                {#Form End#}
+
             </div><!-- /.row -->
+
         {% endblock %}
     {% endblock %}
 

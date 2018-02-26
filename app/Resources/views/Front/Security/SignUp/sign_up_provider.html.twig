@@ -30,23 +30,20 @@
 
                     {#Password#}
                     <div class="form-group">
-                        {{ form_errors(form.password.first) }}
-                        {{ form_label(form.password.first, 'Password') }}
-                        {{ form_widget(form.password.first, {'attr':{'class':'form-control'}}) }}
+                        {{ form_errors(form.plainPassword.first) }}
+                        {{ form_label(form.plainPassword.first, 'Password') }}
+                        {{ form_widget(form.plainPassword.first, {'attr':{'class':'form-control'}}) }}
                     </div><!-- /.form-group -->
 
                     {#Password Retype#}
                     <div class="form-group">
-                        {{ form_errors(form.password.second) }}
-                        {{ form_label(form.password.second, 'Retype Password') }}
-                        {{ form_widget(form.password.second, {'attr':{'class':'form-control'}}) }}
+                        {{ form_errors(form.plainPassword.second) }}
+                        {{ form_label(form.plainPassword.second, 'Retype Password') }}
+                        {{ form_widget(form.plainPassword.second, {'attr':{'class':'form-control'}}) }}
                     </div><!-- /.form-group -->
-
-
 
                     {#Submit#}
                     {{ form_widget(form.submit,{'label':'Register','attr':{'class':'btn btn-primary pull-right'}}) }}
-
 
                     {{ form_rest(form) }}
                     {{ form_end(form) }}

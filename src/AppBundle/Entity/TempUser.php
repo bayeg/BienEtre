@@ -3,15 +3,19 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+
 
 /**
  * TempUser
  *
  * @ORM\Table(name="temp_user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TempUserRepository")
+ * @UniqueEntity(fields="email", message="Email already taken")
  */
-class TempUser
+class TempUser implements UserInterface, \Serializable
 {
 
 // ------------------------- Column parameters -------------------------
@@ -27,18 +31,25 @@ class TempUser
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=100, unique=true)
+     * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Email()
      */
     private $email;
+
+
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=255)
+     * @ORM\Column(name="password", type="string", length=64)
      */
     private $password;
-
-//    private $plainPassword;
 
     /**
      * @var string
@@ -50,7 +61,7 @@ class TempUser
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="registrationDate", type="date")
+     * @ORM\Column(name="registrationDate", type="datetime")
      */
     private $registrationDate;
 
@@ -60,7 +71,6 @@ class TempUser
      * @ORM\Column(name="token", type="string", length=255)
      */
     private $token;
-
 
 
 // ------------------------- Methods -------------------------
@@ -107,6 +117,26 @@ class TempUser
     {
         return $this->email;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param mixed $plainPassword
+     */
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
+//        // to make understand Doctrine that the plainPassword has been changed
+//        // even if not persisted, so listeners are called
+//        $this->password = null;
+    }
+
 
     /**
      * Set password
@@ -204,45 +234,61 @@ class TempUser
         return $this->token;
     }
 
-//    /**
-//     * @return mixed
-//     */
-//    public function getPlainPassword()
-//    {
-//        return $this->plainPassword;
-//    }
-//
-//    /**
-//     * @param mixed $plainPassword
-//     */
-//    public function setPlainPassword($plainPassword)
-//    {
-//        $this->plainPassword = $plainPassword;
-//        // to make understand Doctrine that the plainPassword has been changed
-//        // even if not persisted, so listeners are called
-//        $this->password = null;
-//    }
+
 
 // ------------------------- UserInterface -------------------------
-//
-//    public function getUsername()
-//    {
-//        return $this->email;
-//    }
-//
-//    public function getRoles()
-//    {
-//
-//    }
-//
-//    public function getSalt()
-//    {
-//        // TODO: Implement getSalt() method.
-//    }
-//
-//    public function eraseCredentials()
-//    {
-//        // called after login so the plainPassword is not saved anywhere
+    public function getUsername()
+    {
+        return $this->email;
+    }
+    public function getRoles()
+    {
+        return ['ROLE_USER'];
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
+        // called after login so the plainPassword is not saved anywhere
 //        $this->plainPassword = null;
-//    }
+    }
+
+    /**
+     * String representation of object
+     * @link http://php.net/manual/en/serializable.serialize.php
+     * @return string the string representation of the object or null
+     * @since 5.1.0
+     */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->email,
+            $this->password,
+            // $this->salt,
+        ));
+    }
+
+    /**
+     * Constructs the object
+     * @link http://php.net/manual/en/serializable.unserialize.php
+     * @param string $serialized <p>
+     * The string representation of the object.
+     * </p>
+     * @return void
+     * @since 5.1.0
+     */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->email,
+            $this->password,
+            // $this->salt
+            ) = unserialize($serialized);
+    }
 }

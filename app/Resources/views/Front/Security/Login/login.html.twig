@@ -7,22 +7,47 @@
                                         <h1>Login</h1>
                                     </div><!-- /.page-title -->
 
-
-
                                     {% if error %}
-                                        <div class="alert alert-danger">
-                                            {{ error.messageKey|trans(error.messageData, 'security') }}
-                                        </div>
+                                        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                                     {% endif %}
 
-                                    {{ form_start(form) }}
-                                        {{ form_row(form._username)}}
-                                        {{ form_row(form._password)}}
-                                        {#Affiche le reste des champs. Est utile pour générer le champ invisible _token de symfony.#}
-                                        {{ form_rest(form) }}
-                                        <button type="submit" class="btn btn-primary pull-right">Login</button>
+                                    <form action="{{ path('login') }}" method="post">
+                                        <label for="username">Email</label>
+                                        <input type="text" id="username" name="_username" value="{{ last_username }}" />
 
-                                    {{ form_end(form) }}
+                                        <label for="password">Password</label>
+                                        <input type="password" id="password" name="_password" />
+
+                                        {#
+                                            If you want to control the URL the user
+                                            is redirected to on success (more details below)
+                                            <input type="hidden" name="_target_path" value="/account" />
+                                        #}
+
+                                        <button type="submit">login</button>
+
+
+                                    {#{% if error %}#}
+                                        {#<div class="alert alert-danger">#}
+                                            {#{{ error.messageKey|trans(error.messageData, 'security') }}#}
+                                        {#</div>#}
+                                    {#{% endif %}#}
+
+                                    {#{{ form_start(form) }}#}
+                                        {#{{ form_row(form._username)}}#}
+                                        {#{{ form_row(form._password)}}#}
+                                        {#Affiche le reste des champs. Est utile pour générer le champ invisible _token de symfony.#}
+                                        {#{{ form_rest(form) }}#}
+
+                                    {##}
+    {#If you want to control the URL the user#}
+    {#is redirected to on success (more details below)#}
+    {#<input type="hidden" name="_target_path" value="/account" />#}
+{##}
+
+                                        {#<button type="submit" class="btn btn-primary pull-right">Login</button>#}
+
+                                    {#{{ form_end(form) }}#}
 
                                     {#<form action="{{ path('login') }}" method="post">#}
 

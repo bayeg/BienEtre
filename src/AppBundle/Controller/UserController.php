@@ -11,5 +11,13 @@ namespace AppBundle\Controller;
 
 class UserController
 {
+//    /**
+//     * @Route("profile/{id}/update", name="profile_update")
+//     */
+//
+//    function editAction(Request $request, User $user)
+//    {
+//
+//    }
 
 }

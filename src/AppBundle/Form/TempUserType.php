@@ -33,7 +33,7 @@ class TempUserType extends AbstractType
                 )
             ))
             ->add('email', EmailType::class)
-            ->add('password', RepeatedType::class,array(
+            ->add('plainPassword', RepeatedType::class,array(
                 'type' => PasswordType::class
             ))
             ->add('submit',SubmitType::class)
