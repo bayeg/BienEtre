@@ -28,7 +28,7 @@
                                             {#</div><!-- /.post-image -->#}
 
                                             <div class="post-content">
-                                                <h2><a href="#">{{ cou.name }}<a></h2>
+                                                <h2><a href="#">{{ cou.name }}</a></h2>
                                                 <p>{{ cou.description }}</p>
                                             </div><!-- /.post-content -->
 
@@ -76,15 +76,28 @@
 
                                     <div class="detail-contact">
                                         <div class="detail-contact-email">
-                                            <i class="fa fa-envelope-o"></i> <a
-                                                    href="mailto:#">{{ provider.contactEmail }}</a>
+                                            {% if provider.contactEmail is  not null %}
+                                            <i class="fa fa-envelope-o"></i>
+                                                <a href="mailto:{{ provider.contactEmail }}">
+                                                {{ provider.contactEmail }}
+                                            </a>
+                                            {% endif %}
                                         </div>
                                         <div class="detail-contact-phone">
-                                            <i class="fa fa-mobile-phone"></i> <a
-                                                    href="tel:#">{{ provider.phone }}</a>
+                                            {% if provider.phone is  not null %}
+                                            <i class="fa fa-mobile-phone"></i>
+                                                <a href="tel:{{ provider.phone }}">
+                                                {{ provider.phone }}
+                                            </a>
+                                            {% endif %}
                                         </div>
                                         <div class="detail-contact-website">
-                                            <i class="fa fa-globe"></i> <a href="#">{{ provider.website }}</a>
+                                            {% if provider.website is  not null %}
+                                            <i class="fa fa-globe"></i>
+                                            <a href="#">
+                                                {{ provider.website }}
+                                            </a>
+                                            {% endif %}
                                         </div>
                                         <div class="detail-contact-address">
                                             <i class="fa fa-map-o"></i>

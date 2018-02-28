@@ -18,6 +18,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends Controller
 {
+    //////////////OUI !!!!!! METTRE DS USER SOUS createAction !!!!!!!!!
     /**
      * @Route("/confirm/{token}", name="confirm")
      */
@@ -36,59 +37,46 @@ class SecurityController extends Controller
         $registrationDate = $tempUser->getRegistrationDate();
 
         if ($type === 'internaut') {
-
             $user = new Internaut();
-            $user->setEmail($email);
-            $user->setPassword($password);
-            $user->setRegistrationDate($registrationDate);
-            $user->setLoginAttempts(0);
-            $user->setBanned(false);
-            $user->setRegistrationConfirmed(true);
-
-
+            $user->setMyUserType($type);
             $form = $this->createForm(InternautType::class, $user);
-
-            $form->handleRequest($request);
-
-            if ($form->isSubmitted() && $form->isValid()) {
-                $user = $form->getData();
-
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($user);
-                $em->flush();
-
-                //A MODIFIER
-                return $this->render(':Front/Contact:contact.html.twig');
-            }
-
-            return $this->render(':Front/Security/Confirm:confirm_internaut.html.twig', [
-                ////tempUser et User TO REMOVE
-                'tempUser' => $tempUser,
-                'user' => $user,
-                'form' => $form->createView()
-            ]);
-
-        } elseif ($type === 'provider') {
+            $template = ':Front/Security/Confirm:confirm_internaut.html.twig';
+        }elseif ($type === 'provider'){
             $user = new Provider();
-            $form = $this->createForm(ProviderType::class);
-            return $this->render(':Front/Security/Confirm:confirm_provider.html.twig', [
-                ////tempUser et User TO REMOVE
-                'tempUser' => $tempUser,
-                'user' => $user,
-                'form' => $form->createView()
-            ]);
-
+            $user->setMyUserType($type);
+            $form = $this->createForm(ProviderType::class, $user);
+            $template = ':Front/Security/Confirm:confirm_provider.html.twig';
+        } else {
+            return $this->render(':Front/Home:home.html.twig');
         }
-//        else {
-//            return $this->render(':Front/Home:home.html.twig');
-//        }
 
+        $user->setEmail($email);
+        $user->setPassword($password);
+        $user->setRegistrationDate($registrationDate);
+        $user->setLoginAttempts(0);
+        $user->setBanned(false);
+        $user->setRegistrationConfirmed(true);
 
+        $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            $user = $form->getData();
 
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($user);
+            $em->remove($tempUser);
+
+            $em->flush();
+
+            return $this->redirectToRoute('login');
+        }
+
+        return $this->render($view = $template, [
+            'form' => $form->createView()
+        ]);
 
     }
-
 
     /**
      * @Route("/login", name="login")

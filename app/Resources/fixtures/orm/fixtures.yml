@@ -61,6 +61,7 @@ AppBundle\Entity\Internaut:
         lastName: <lastName()>
         firstName: <firstName()>
         newsletter: <boolean()>
+        myUserType: 'internaut'
 
 AppBundle\Entity\Locality:
       locality_{1..100}:
@@ -116,6 +117,7 @@ AppBundle\Entity\Provider:
         slug: <slug()>
         serviceCategories: ['@service_category_*']
         internauts: ['@internaut_*']
+        myUserType: 'provider'
 
 AppBundle\Entity\ServiceCategory: #   massage, fitness, yoga, balnéothérapie,...
       service_category_{1..4}:

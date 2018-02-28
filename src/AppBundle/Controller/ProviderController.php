@@ -18,7 +18,7 @@ class ProviderController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $providers = $em->getRepository("AppBundle:Provider")
-            ->findAll();
+            ->findAllNotBannedOrderedByName();
 
         /**
          * @var $paginator \Knp\Component\Pager\Paginator
@@ -30,13 +30,30 @@ class ProviderController extends Controller
             $request->query->getInt('limit',8)
         );
 
-
         return $this->render(':Front/Provider/List:provider_list.html.twig', [
             "providers" => $result,
         ]);
     }
 
-
+//<?php
+//// Depuis un contrôleur
+//    public function listAction()
+//    {
+//        $listAdverts = $this
+//            ->getDoctrine()
+//            ->getManager()
+//            ->getRepository('OCPlatformBundle:Advert')
+//            ->getAdvertWithApplications()
+//        ;
+//
+//        foreach ($listAdverts as $advert) {
+//            // Ne déclenche pas de requête : les candidatures sont déjà chargées !
+//            // Vous pourriez faire une boucle dessus pour les afficher toutes
+//            $advert->getApplications();
+//        }
+//
+//        // …
+//    }
 
 
     /**
@@ -46,10 +63,8 @@ class ProviderController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $provider = $em->getRepository("AppBundle:Provider")
-            ->findOneBy(array(
-                    "slug" => $slug
-                )
-            );
+            ->findOneBySlug($slug)
+            ;
 
         return $this->render(':Front/Provider/Detail:provider_detail.html.twig', [
             "provider" => $provider

@@ -4,9 +4,6 @@
         {% block core_content %}
             <div class="row">
 
-                {{ dump(tempUser) }}
-                {{ dump(user) }}
-
                 {#Form Start#}
 
                 {{ form_start(form) }}
@@ -26,7 +23,6 @@
                                 </a>
                             </div><!-- /.user-photo -->
                         </div><!-- /.widget -->
-
 
                         <div class="widget">
 
@@ -94,21 +90,21 @@
                                 </div><!-- /.form-group -->
 
                                 {#Post Code#}
-                                <div class="form-group col-sm-3">
+                                <div class="form-group col-sm-4">
                                     {{ form_errors(form.postCode) }}
                                     {{ form_label(form.postCode, 'Post Code') }}
                                     {{ form_widget(form.postCode, {'attr':{'class':'form-control'}}) }}
                                 </div><!-- /.form-group -->
 
                                 {#Locality#}
-                                <div class="form-group col-sm-3">
+                                <div class="form-group col-sm-4">
                                     {{ form_errors(form.locality) }}
                                     {{ form_label(form.locality, 'Locality') }}
                                     {{ form_widget(form.locality, {'attr':{'class':'form-control'}}) }}
                                 </div><!-- /.form-group -->
 
                                 {#Commune#}
-                                <div class="form-group col-sm-3">
+                                <div class="form-group col-sm-4">
                                     {{ form_errors(form.commune) }}
                                     {{ form_label(form.commune, 'Commune') }}
                                     {{ form_widget(form.commune, {'attr':{'class':'form-control'}}) }}

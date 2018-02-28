@@ -45,6 +45,15 @@ class Internaut extends User
      */
     private $newsletter;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="my_user_type", type="string")
+     */
+    private $myUserType;
+
+
+
 // ------------------------- Relationship parameters -------------------------
 
     /**
@@ -331,6 +340,23 @@ class Internaut extends User
     {
         return $this->positions;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getMyUserType()
+    {
+        return $this->myUserType;
+    }
+
+    /**
+     * @param mixed $myUserType
+     */
+    public function setMyUserType($myUserType)
+    {
+        $this->myUserType = $myUserType;
+    }
+
 
     public function __toString()
     {
