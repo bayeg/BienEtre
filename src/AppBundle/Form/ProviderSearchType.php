@@ -3,6 +3,8 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Image;
+use AppBundle\Repository\PostCodeRepository;
+use AppBundle\Repository\ServiceCategoryRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -25,14 +27,23 @@ class ProviderSearchType extends AbstractType
             ->add('name', SearchType::class,[
                 'required' => false
             ])
-            ->add('postCode', SearchType::class,[
-                'required' => false
+            ->add('postCode', EntityType::class,[
+                'class' => 'AppBundle\Entity\PostCode',
+                'choice_label' => 'postCode',
+                'placeholder' => 'Search by Post Code',
+                'required' => false,
+                'query_builder' => function(PostCodeRepository $repo) {
+                return $repo->createNumericOrderQueryBuilder();
+            }
             ])
             ->add('serviceCategories', EntityType::class, [
                 'class' => 'AppBundle\Entity\ServiceCategory',
                 'choice_label' => 'name',
-                'placeholder' => '',
-                'required' => false
+                'placeholder' => 'Search by Category',
+                'required' => false,
+                'query_builder' => function(ServiceCategoryRepository $repo) {
+                    return $repo->createAlphabeticalOrderQueryBuilder();
+                }
             ])
 //            ->add('reset',ResetType::class)
             ->add('search',SubmitType::class)

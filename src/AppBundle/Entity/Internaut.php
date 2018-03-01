@@ -97,6 +97,7 @@ class Internaut extends User
         $this->abuses = new \Doctrine\Common\Collections\ArrayCollection();
         $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
         $this->positions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->myUserType = 'internaut';
     }
 
     /**

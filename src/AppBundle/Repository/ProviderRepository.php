@@ -21,6 +21,8 @@ class ProviderRepository extends EntityRepository
             $qb
                 ->where('provider.banned = :banned')
                 ->setParameter('banned',false)
+                ->leftJoin('provider.photos', 'photos')
+                ->addSelect('photos')
                 ->orderBy('provider.name', 'ASC')
             ;
 
@@ -37,6 +39,17 @@ class ProviderRepository extends EntityRepository
             $qb
                 ->where('provider.slug = :slug')
                 ->setParameter('slug',$slug)
+                ->leftJoin('provider.serviceCategories', 'categories')
+                ->addSelect('categories')
+                ->leftJoin('provider.courses', 'courses')
+                ->addSelect('courses')
+                ->leftJoin('provider.promotions', 'promotions')
+                ->addSelect('promotions')
+                ->leftJoin('provider.photos', 'photos')
+                ->addSelect('photos')
+                ->leftJoin('provider.logos', 'logos')
+                ->addSelect('logos')
+
             ;
 
             return $qb
@@ -46,7 +59,6 @@ class ProviderRepository extends EntityRepository
     }
 
 
-
     public function findProvider($name, $postCode, $categorie){
 
         $qb = $this->createQueryBuilder('p');
@@ -54,15 +66,19 @@ class ProviderRepository extends EntityRepository
         if($name != '')
         {
             $qb->andWhere('p.name LIKE :name')
-                ->setParameter('name','%'.$name.'%');
+                ->setParameter('name','%'.$name.'%')
+                ->leftJoin('p.photos','photos')
+                ->addSelect('photos')
+            ;
         }
         if($postCode != '')
         {
             $qb
                 ->leftJoin('p.postCode','pc')
                 ->addSelect('pc')
-                ->andWhere('pc.postCode = :postCode')
-                ->setParameter('postCode',$postCode);
+                ->andWhere('pc.id = :postCode')
+                ->setParameter('postCode',$postCode)
+            ;
         }
         if($categorie != '')
         {
@@ -73,6 +89,11 @@ class ProviderRepository extends EntityRepository
                 ->setParameter('serviceCategories', $categorie)
             ;
         }
+
+        $qb
+            ->where('p.banned = :banned')
+            ->setParameter('banned',false)
+            ->orderBy('p.name', 'ASC');
 
         return $qb
             ->getQuery()

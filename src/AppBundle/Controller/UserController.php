@@ -17,23 +17,26 @@ class UserController extends Controller
      */
     function editAction(Request $request)
     {
-        $id = $this->getUser()->getId();
+//        $id = $this->getUser()->getId();
+//
+//        $em = $this->getDoctrine()->getManager();
+//        $user = $em->getRepository("AppBundle:Internaut")
+//            ->findOneById($id);
+//
+//        ;
 
-        $em = $this->getDoctrine()->getManager();
-        $user = $em->getRepository("AppBundle:Internaut")
-            ->findOneBy([
-                "id" => $id
-            ]);
 //        $user->addRole('ROLE_ADMIN');
 
-        $type = $this->getUser()->getMyUserType();
+        $user = $this->getUser();
+
+        $type = $user->getMyUserType();
 
         if ($type === 'internaut') {
             $form = $this->createForm(InternautType::class, $user);
-            $template = ':Front/Security/Confirm:confirm_internaut.html.twig';
+            $template = ':Front/Profile:profile_internaut.html.twig';
         }elseif ($type === 'provider'){
             $form = $this->createForm(ProviderType::class, $user);
-            $template = ':Front/Security/Confirm:confirm_provider.html.twig';
+            $template = ':Front/Profile:profile_provider.html.twig';
         } else {
             return $this->render(':Front/Home:home.html.twig');
         }
@@ -43,14 +46,18 @@ class UserController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             $user = $form->getData();
+            $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
+
+            $this->addFlash('success', 'Profile updated !');
 
             return $this->redirectToRoute('home');
         }
 
         return $this->render($view = $template, [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'user' => $user
         ]);
 
     }

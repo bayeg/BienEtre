@@ -23,7 +23,7 @@ class ProviderSearchController extends Controller
     /**
      * @Route("/provider-result", name="provider_result")
      */
-    public function providerResultAction(Request $request)
+    public function providerSearchResultAction(Request $request)
     {
 
         $n = $request->query->get('name');
@@ -50,6 +50,5 @@ class ProviderSearchController extends Controller
         ]);
 
     }
-
 
 }

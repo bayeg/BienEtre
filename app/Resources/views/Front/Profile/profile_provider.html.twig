@@ -13,26 +13,18 @@
                     <div class="sidebar">
                         <div class="widget">
                             {#Image#}
-                            {{ form_errors(form.image) }}
-                            <div class="user-photo">
-                                <a href="{{ form_widget(form.image) }}">
-                                    <img src="{{ form_widget(form.image) }}" alt="User Photo">
-                                    <span class="user-photo-action">
-                                        Click here to upload Avatar
-                                    </span>
-                                </a>
-                            </div><!-- /.user-photo -->
+                            {#{{ form_errors(form.logos) }}#}
+                            {#<div class="user-photo">#}
+                                {#<a href="{{ form_widget(form.logos) }}">#}
+                                    {#<img src="{{ form_widget(form.logos) }}" alt="User Photo">#}
+                                    {#<span class="user-photo-action">#}
+                                        {#Click here to upload Avatar#}
+                                    {#</span>#}
+                                {#</a>#}
+                            {#</div><!-- /.user-photo -->#}
                         </div><!-- /.widget -->
 
-                        <div class="widget">
-
-                            <ul class="menu-advanced">
-                                {#<li><a href="listing-submit.html"><i class="fa fa-pencil"></i> Submit Listing</a></li>#}
-                                <li class="active"><a href="#"><i class="fa fa-user"></i> Edit Profile</a></li>
-                                <li><a href="#"><i class="fa fa-key"></i> Password</a></li>
-                                <li><a href="{{ path("logout") }}"><i class="fa fa-sign-out"></i> Logout</a></li>
-                            </ul>
-                        </div><!-- /.widget -->
+                        {% include ":Front/Profile:profile_sidebar_menu.html.twig" %}
 
                     </div><!-- /.sidebar -->
                 </div><!-- /.col-* -->
@@ -43,6 +35,7 @@
                             <h1>Edit Profile</h1>
                         </div><!-- /.page-title -->
 
+                        {#CONTACT#}
                         <div class="background-white p20 mb30">
                             <h3 class="page-title">
                                 Contact Information
@@ -50,24 +43,45 @@
 
                             <div class="row">
 
-                                {#First Name#}
+                                {#Name#}
                                 <div class="form-group col-sm-6">
-                                    {{ form_errors(form.firstName) }}
-                                    {{ form_label(form.firstName, 'First Name') }}
-                                    {{ form_widget(form.firstName, {'attr':{'class':'form-control'}}) }}
+                                    {{ form_errors(form.name) }}
+                                    {{ form_label(form.name, 'Company Name') }}
+                                    {{ form_widget(form.name, {'attr':{'class':'form-control'}}) }}
                                 </div><!-- /.form-group -->
 
-                                {#Last Name#}
+                                {#VAT#}
                                 <div class="form-group col-sm-6">
+                                    {{ form_errors(form.vat) }}
+                                    {{ form_label(form.vat, 'VAT') }}
+                                    {{ form_widget(form.vat, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
 
-                                    {{ form_errors(form.lastName) }}
-                                    {{ form_label(form.lastName, 'Last Name') }}
-                                    {{ form_widget(form.lastName, {'attr':{'class':'form-control'}}) }}
+                                {#Phone#}
+                                <div class="form-group col-sm-6">
+                                    {{ form_errors(form.phone) }}
+                                    {{ form_label(form.phone, 'Phone') }}
+                                    {{ form_widget(form.phone, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+
+                                {#Contact Email#}
+                                <div class="form-group col-sm-6">
+                                    {{ form_errors(form.contactEmail) }}
+                                    {{ form_label(form.contactEmail, 'Contact Email') }}
+                                    {{ form_widget(form.contactEmail, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+
+                                {#Website#}
+                                <div class="form-group col-sm-6">
+                                    {{ form_errors(form.website) }}
+                                    {{ form_label(form.website, 'Website') }}
+                                    {{ form_widget(form.website, {'attr':{'class':'form-control'}}) }}
                                 </div><!-- /.form-group -->
 
                             </div><!-- /.row -->
                         </div>
 
+                        {#ADDRESS#}
                         <div class="background-white p20 mb30">
                             <h3 class="page-title">
                                 Address
@@ -113,18 +127,26 @@
                             </div><!-- /.row -->
                         </div>
 
+                        {#COURSES#}
                         <div class="background-white p20 mb30">
                             <h3 class="page-title">
-                                Newsletter
+                                Courses
+                                <a href="{{ path('course_new') }}" class="btn btn-primary pull-right">New</a>
                             </h3>
+
                             <div class="row">
-                                {#Newsletter#}
-                                <div class="form-group col-sm-3">
-                                    {{ form_errors(form.newsletter) }}
-                                    {{ form_label(form.newsletter, 'Newsletter') }}
-                                    {{ form_widget(form.newsletter, {'attr':{'class':'form-control'}}) }}
-                                </div><!-- /.form-group -->
-                            </div>
+                                {% for c in user.courses %}
+                                <div class="col-sm-12">
+                                        {{ c.name }}
+                                        <a href="{{ path('course_update', {'id': c.id}) }}" class="btn btn-warning pull-right">Update</a>
+
+
+                                </div><!-- /.-->
+                                {% endfor %}
+                                <div>
+
+                                </div>
+                            </div><!-- /.row -->
                         </div>
 
                     </div><!-- /.content -->
@@ -141,5 +163,3 @@
 
         {% endblock %}
     {% endblock %}
-
-

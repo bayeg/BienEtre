@@ -24,19 +24,25 @@ class InternautType extends AbstractType
             ->add('firstName',TextType::class)
             ->add('lastName', TextType::class)
             ->add('addressStreet', TextType::class,[
-                'required' => false
+//                'required' => false
             ])
             ->add('addressNumber', TextType::class,[
-                'required' => false
+//                'required' => false
             ])
             ->add('postCode', EntityType::class,[
                 'class' => 'AppBundle:PostCode',
+//                'required' => false,
+                'placeholder' => 'Select your Post Code'
             ])
             ->add('locality', EntityType::class,[
-                'class' => 'AppBundle:Locality'
+                'class' => 'AppBundle:Locality',
+//                'required' => false,
+                'placeholder' => 'Select your Locality'
             ])
             ->add('commune', EntityType::class,[
-                'class' => 'AppBundle:Commune'
+                'class' => 'AppBundle:Commune',
+//                'required' => false,
+                'placeholder' => 'Select your Commune'
             ])
 
             ->add('newsletter',ChoiceType::class,[

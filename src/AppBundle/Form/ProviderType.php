@@ -48,7 +48,9 @@ class ProviderType extends AbstractType
 
 //            ->add('photos')
 //            ->add('serviceCategories')
-//            ->add('courses')
+//            ->add('courses', EntityType::class, [
+//                'class' => 'AppBundle:Course'
+//            ])
 //            ->add('promotions')
 //            ->add('comments')
 //            ->add('internauts')

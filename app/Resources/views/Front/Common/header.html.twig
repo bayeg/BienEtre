@@ -16,7 +16,6 @@
                             {% if is_granted('ROLE_USER') %}
                             <div class="dropdown">
 
-
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     <span class="header-nav-user-name">{{ (app.user.email) }}</span> <i
@@ -25,7 +24,7 @@
 
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <li><a href="{{ path("profile_update") }}">Edit Profile</a></li>
-                                    <li><a href="listing-submit.html">Submit Listing</a></li>
+                                    {#<li><a href="listing-submit.html">My products</a></li>#}
                                     <li><a href="change-password.html">Change Password</a></li>
                                     <li><a href="{{ path("logout") }}">Logout</a></li>
                                 </ul>

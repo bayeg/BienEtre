@@ -15,7 +15,7 @@ class ServiceCategoryController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $serviceCategories = $em->getRepository("AppBundle:ServiceCategory")
-            ->findAll();
+            ->findAllValidOrderedByName();
 
         /**
          * @var $paginator \Knp\Component\Pager\Paginator
@@ -41,10 +41,7 @@ class ServiceCategoryController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $serviceCategory = $em->getRepository("AppBundle:ServiceCategory")
-//            ->findOneBy(array(
-//                "slug" => $slug
-//                ));
-        ->myFindOne($slug);
+            ->findOneBySlug($slug);
 
 
         return $this->render('Front/ServiceCategory/Detail/main_service_category_detail.html.twig', [

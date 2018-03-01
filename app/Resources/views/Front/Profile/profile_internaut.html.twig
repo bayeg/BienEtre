@@ -13,26 +13,18 @@
                     <div class="sidebar">
                         <div class="widget">
                             {#Image#}
-                            {#{{ form_errors(form.logos) }}#}
-                            {#<div class="user-photo">#}
-                                {#<a href="{{ form_widget(form.logos) }}">#}
-                                    {#<img src="{{ form_widget(form.logos) }}" alt="User Photo">#}
-                                    {#<span class="user-photo-action">#}
-                                        {#Click here to upload Avatar#}
-                                    {#</span>#}
-                                {#</a>#}
-                            {#</div><!-- /.user-photo -->#}
+                            {{ form_errors(form.image) }}
+                            <div class="user-photo">
+                                <a href="{{ form_widget(form.image) }}">
+                                    <img src="{{ form_widget(form.image) }}" alt="User Photo">
+                                    <span class="user-photo-action">
+                                        Click here to upload Avatar
+                                    </span>
+                                </a>
+                            </div><!-- /.user-photo -->
                         </div><!-- /.widget -->
 
-                        <div class="widget">
-
-                            <ul class="menu-advanced">
-                                {#<li><a href="listing-submit.html"><i class="fa fa-pencil"></i> Submit Listing</a></li>#}
-                                <li class="active"><a href="#"><i class="fa fa-user"></i> Edit Profile</a></li>
-                                <li><a href="#"><i class="fa fa-key"></i> Password</a></li>
-                                <li><a href="{{ path("logout") }}"><i class="fa fa-sign-out"></i> Logout</a></li>
-                            </ul>
-                        </div><!-- /.widget -->
+                        {% include ":Front/Profile:profile_sidebar_menu.html.twig" %}
 
                     </div><!-- /.sidebar -->
                 </div><!-- /.col-* -->
@@ -50,39 +42,19 @@
 
                             <div class="row">
 
-                                {#Name#}
+                                {#First Name#}
                                 <div class="form-group col-sm-6">
-                                    {{ form_errors(form.name) }}
-                                    {{ form_label(form.name, 'Company Name') }}
-                                    {{ form_widget(form.name, {'attr':{'class':'form-control'}}) }}
+                                    {{ form_errors(form.firstName) }}
+                                    {{ form_label(form.firstName, 'First Name') }}
+                                    {{ form_widget(form.firstName, {'attr':{'class':'form-control'}}) }}
                                 </div><!-- /.form-group -->
 
-                                {#VAT#}
+                                {#Last Name#}
                                 <div class="form-group col-sm-6">
-                                    {{ form_errors(form.vat) }}
-                                    {{ form_label(form.vat, 'VAT') }}
-                                    {{ form_widget(form.vat, {'attr':{'class':'form-control'}}) }}
-                                </div><!-- /.form-group -->
 
-                                {#Phone#}
-                                <div class="form-group col-sm-6">
-                                    {{ form_errors(form.phone) }}
-                                    {{ form_label(form.phone, 'Phone') }}
-                                    {{ form_widget(form.phone, {'attr':{'class':'form-control'}}) }}
-                                </div><!-- /.form-group -->
-
-                                {#Contact Email#}
-                                <div class="form-group col-sm-6">
-                                    {{ form_errors(form.contactEmail) }}
-                                    {{ form_label(form.contactEmail, 'Contact Email') }}
-                                    {{ form_widget(form.contactEmail, {'attr':{'class':'form-control'}}) }}
-                                </div><!-- /.form-group -->
-
-                                {#Website#}
-                                <div class="form-group col-sm-6">
-                                    {{ form_errors(form.website) }}
-                                    {{ form_label(form.website, 'Website') }}
-                                    {{ form_widget(form.website, {'attr':{'class':'form-control'}}) }}
+                                    {{ form_errors(form.lastName) }}
+                                    {{ form_label(form.lastName, 'Last Name') }}
+                                    {{ form_widget(form.lastName, {'attr':{'class':'form-control'}}) }}
                                 </div><!-- /.form-group -->
 
                             </div><!-- /.row -->
@@ -133,6 +105,19 @@
                             </div><!-- /.row -->
                         </div>
 
+                        <div class="background-white p20 mb30">
+                            <h3 class="page-title">
+                                Newsletter
+                            </h3>
+                            <div class="row">
+                                {#Newsletter#}
+                                <div class="form-group col-sm-3">
+                                    {{ form_errors(form.newsletter) }}
+                                    {{ form_label(form.newsletter, 'Newsletter') }}
+                                    {{ form_widget(form.newsletter, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+                            </div>
+                        </div>
 
                     </div><!-- /.content -->
                 </div><!-- /.col-* -->
@@ -148,3 +133,5 @@
 
         {% endblock %}
     {% endblock %}
+
+

@@ -10,4 +10,14 @@ namespace AppBundle\Repository;
  */
 class PostCodeRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function createNumericOrderQueryBuilder(){
+        $qb = $this->createQueryBuilder('postCode');
+
+        $qb
+            ->orderBy('postCode.postCode', 'ASC');
+
+        return $qb
+            ;
+    }
+
 }

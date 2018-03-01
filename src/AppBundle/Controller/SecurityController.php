@@ -2,81 +2,76 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Internaut;
-use AppBundle\Entity\Provider;
-use AppBundle\Entity\User;
-use AppBundle\Form\InternautType;
-use AppBundle\Form\LoginForm;
-use AppBundle\Form\ProviderType;
-use AppBundle\Form\TempUserType;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 //use Symfony\Component\BrowserKit\Request;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\TempUser;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends Controller
 {
-    //////////////OUI !!!!!! METTRE DS USER SOUS createAction !!!!!!!!!
-    /**
-     * @Route("/confirm/{token}", name="confirm")
-     */
-    public function confirmAction(Request $request, $token)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $tempUser = $em->getRepository("AppBundle:TempUser")
-            ->findOneBy([
-                "token" => $token
-            ]);
-
-        $type = $tempUser->getType();
-
-        $email = $tempUser->getEmail();
-        $password = $tempUser->getPassword();
-        $registrationDate = $tempUser->getRegistrationDate();
-
-        if ($type === 'internaut') {
-            $user = new Internaut();
-            $user->setMyUserType($type);
-            $form = $this->createForm(InternautType::class, $user);
-            $template = ':Front/Security/Confirm:confirm_internaut.html.twig';
-        }elseif ($type === 'provider'){
-            $user = new Provider();
-            $user->setMyUserType($type);
-            $form = $this->createForm(ProviderType::class, $user);
-            $template = ':Front/Security/Confirm:confirm_provider.html.twig';
-        } else {
-            return $this->render(':Front/Home:home.html.twig');
-        }
-
-        $user->setEmail($email);
-        $user->setPassword($password);
-        $user->setRegistrationDate($registrationDate);
-        $user->setLoginAttempts(0);
-        $user->setBanned(false);
-        $user->setRegistrationConfirmed(true);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $user = $form->getData();
-
-            $em = $this->getDoctrine()->getManager();
-
-            $em->persist($user);
-            $em->remove($tempUser);
-
-            $em->flush();
-
-            return $this->redirectToRoute('login');
-        }
-
-        return $this->render($view = $template, [
-            'form' => $form->createView()
-        ]);
-
-    }
+//    //////////////OUI !!!!!! METTRE DS USER SOUS createAction !!!!!!!!!
+//    /**
+//     * @Route("/confirm/{token}", name="confirm")
+//     */
+//    public function confirmAction(Request $request, $token)
+//    {
+//        $em = $this->getDoctrine()->getManager();
+//        $tempUser = $em->getRepository("AppBundle:TempUser")
+////            ->fkOneBy(
+////               k
+////                "token" => $token
+////            ]
+//            ->findOneByToken($token);
+//
+//        $type = $tempUser->getType();
+//
+//        $email = $tempUser->getEmail();
+//        $password = $tempUser->getPassword();
+//        $registrationDate = $tempUser->getRegistrationDate();
+//
+//        if ($type === 'internaut') {
+//            $user = new Internaut();
+//            $user->setMyUserType($type);
+//            $form = $this->createForm(InternautType::class, $user);
+//            $template = ':Front/Security/Profile:profile_internaut.html.twig';
+//        }elseif ($type === 'provider'){
+//            $user = new Provider();
+//            $user->setMyUserType($type);
+//            $form = $this->createForm(ProviderType::class, $user);
+//            $template = ':Front/Security/Profile:profile_provider.html.twig';
+//        } else {
+//            return $this->render(':Front/Home:home.html.twig');
+//        }
+//
+//        $user->setEmail($email);
+//        $user->setPassword($password);
+//        $user->setRegistrationDate($registrationDate);
+//        $user->setLoginAttempts(0);
+//        $user->setBanned(false);
+//        $user->setRegistrationConfirmed(true);
+//
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $user = $form->getData();
+//
+//            $em = $this->getDoctrine()->getManager();
+//
+//            $em->persist($user);
+//            $em->remove($tempUser);
+//
+//            $em->flush();
+//
+//            return $this->redirectToRoute('login');
+//        }
+//
+//        return $this->render($view = $template, [
+//            'form' => $form->createView()
+//        ]);
+//
+//    }
 
     /**
      * @Route("/login", name="login")

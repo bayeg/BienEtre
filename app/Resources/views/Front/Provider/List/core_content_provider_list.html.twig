@@ -20,9 +20,11 @@
                             </div><!-- /.card-rating -->
 
                             <div class="card-simple-actions">
-                                <a href="#" class="fa fa-star-o"></a>
-                                <a href="#" class="fa fa-search"></a>
-                                <a href="#" class="fa fa-heart-o"></a>
+
+           {#///////SUPPRIMER SI STAR ET HEART INUTILE ////////////////////////////////#}
+                                <a href="{{ path("provider_detail", {"slug" : p.slug}) }}" class="fa fa-star-o"></a>
+                                <a href="{{ path("provider_detail", {"slug" : p.slug}) }}" class="fa fa-search"></a>
+                                <a href="{{ path("provider_detail", {"slug" : p.slug}) }}" class="fa fa-heart-o"></a>
                             </div><!-- /.card-simple-actions -->
 
                         </div><!-- /.card-simple-content -->

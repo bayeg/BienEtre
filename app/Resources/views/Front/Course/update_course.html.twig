@@ -1,0 +1,184 @@
+{% extends ":Front:front_layout.html.twig" %}
+
+    {% block content %}
+        {% block core_content %}
+            <div class="row">
+
+                {#Form Start#}
+
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+
+                <div class="col-sm-4 col-lg-3">
+                    <div class="sidebar">
+                        <div class="widget">
+                            {#Image#}
+                            {#{{ form_errors(form.logos) }}#}
+                            {#<div class="user-photo">#}
+                                {#<a href="{{ form_widget(form.logos) }}">#}
+                                    {#<img src="{{ form_widget(form.logos) }}" alt="User Photo">#}
+                                    {#<span class="user-photo-action">#}
+                                        {#Click here to upload Avatar#}
+                                    {#</span>#}
+                                {#</a>#}
+                            {#</div><!-- /.user-photo -->#}
+                        </div><!-- /.widget -->
+
+                        {% include ":Front/Profile:profile_sidebar_menu.html.twig" %}
+
+                    </div><!-- /.sidebar -->
+                </div><!-- /.col-* -->
+
+                <div class="col-sm-8 col-lg-9">
+                    <div class="content">
+                        <div class="page-title">
+                            <h1>Update Course</h1>
+                        </div><!-- /.page-title -->
+
+                        {#CONTACT#}
+                        <div class="background-white p20 mb30">
+                            {#<h3 class="page-title">#}
+                                {#Contact Information#}
+                            {#</h3>#}
+
+                            <div class="row">
+
+                                {#Name#}
+                                <div class="form-group col-sm-12">
+                                    {{ form_errors(form.name) }}
+                                    {{ form_label(form.name, 'Course Name') }}
+                                    {{ form_widget(form.name, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+
+                                {#Description#}
+                                <div class="form-group col-sm-12">
+                                    {{ form_errors(form.description) }}
+                                    {{ form_label(form.description, 'Description') }}
+                                    {{ form_widget(form.description, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+
+                                {#Tariff#}
+                                <div class="form-group col-sm-6">
+                                    {{ form_errors(form.tariff) }}
+                                    {{ form_label(form.tariff, 'Tariff') }}
+                                    {{ form_widget(form.tariff, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+
+                                {#Info#}
+                                <div class="form-group col-sm-6">
+                                    {{ form_errors(form.info) }}
+                                    {{ form_label(form.info, 'Info') }}
+                                    {{ form_widget(form.info, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+
+                                <div class="form-group col-sm-12">
+                                    {#Start Date of Course#}
+                                    <div class="col-sm-6">
+                                    {{ form_errors(form.start) }}
+                                    {{ form_label(form.start, 'Start Date of Course') }}
+                                    {{ form_widget(form.start, {'attr':{'class':'form-control'}}) }}
+                                    </div>
+                                    {#End Date of Course#}
+                                    <div class="col-sm-6">
+                                    {{ form_errors(form.end) }}
+                                    {{ form_label(form.end, 'End Date of Course') }}
+                                    {{ form_widget(form.end, {'attr':{'class':'form-control'}}) }}
+                                    </div>
+                                </div><!-- /.form-group -->
+
+                                <div class="form-group col-sm-12">
+                                    {#Start Date of Display#}
+                                    <div class="col-sm-6">
+                                        {{ form_errors(form.showStart) }}
+                                        {{ form_label(form.showStart, 'Start Date of Display') }}
+                                        {{ form_widget(form.showStart, {'attr':{'class':'form-control'}}) }}
+                                    </div>
+                                    {#End Date of Display#}
+                                    <div class="col-sm-6">
+                                        {{ form_errors(form.showEnd) }}
+                                        {{ form_label(form.showEnd, 'End Date of Display') }}
+                                        {{ form_widget(form.showEnd, {'attr':{'class':'form-control'}}) }}
+                                    </div>
+                                </div><!-- /.form-group -->
+
+                            </div><!-- /.row -->
+                        </div>
+
+                        {#ADDRESS#}
+                        {#<div class="background-white p20 mb30">#}
+                            {#<h3 class="page-title">#}
+                                {#Address#}
+                            {#</h3>#}
+
+                            {#<div class="row">#}
+                                {#Address Street#}
+                                {#<div class="form-group col-sm-9">#}
+                                    {#{{ form_errors(form.addressStreet) }}#}
+                                    {#{{ form_label(form.addressStreet, 'Address Street') }}#}
+                                    {#{{ form_widget(form.addressStreet, {'attr':{'class':'form-control'}}) }}#}
+
+                                {#</div><!-- /.form-group -->#}
+
+                                {#Address Number#}
+                                {#<div class="form-group col-sm-3">#}
+                                    {#{{ form_errors(form.addressNumber) }}#}
+                                    {#{{ form_label(form.addressNumber, 'Address Number') }}#}
+                                    {#{{ form_widget(form.addressNumber, {'attr':{'class':'form-control'}}) }}#}
+                                {#</div><!-- /.form-group -->#}
+
+                                {#Post Code#}
+                                {#<div class="form-group col-sm-4">#}
+                                    {#{{ form_errors(form.postCode) }}#}
+                                    {#{{ form_label(form.postCode, 'Post Code') }}#}
+                                    {#{{ form_widget(form.postCode, {'attr':{'class':'form-control'}}) }}#}
+                                {#</div><!-- /.form-group -->#}
+
+                                {#Locality#}
+                                {#<div class="form-group col-sm-4">#}
+                                    {#{{ form_errors(form.locality) }}#}
+                                    {#{{ form_label(form.locality, 'Locality') }}#}
+                                    {#{{ form_widget(form.locality, {'attr':{'class':'form-control'}}) }}#}
+                                {#</div><!-- /.form-group -->#}
+
+                                {#Commune#}
+                                {#<div class="form-group col-sm-4">#}
+                                    {#{{ form_errors(form.commune) }}#}
+                                    {#{{ form_label(form.commune, 'Commune') }}#}
+                                    {#{{ form_widget(form.commune, {'attr':{'class':'form-control'}}) }}#}
+                                {#</div><!-- /.form-group -->#}
+
+                            {#</div><!-- /.row -->#}
+                        {#</div>#}
+
+                        {#COURSES#}
+                        {#<div class="background-white p20 mb30">#}
+                            {#<h3 class="page-title">#}
+                                {#Courses#}
+                            {#</h3>#}
+
+                            {#<div class="row">#}
+                                {#Address Street#}
+                                {#<div class="form-group col-sm-9">#}
+                                    {#{{ form_errors(form.addressStreet) }}#}
+                                    {#{{ form_label(form.addressStreet, 'Address Street') }}#}
+                                    {#{{ form_widget(form.addressStreet, {'attr':{'class':'form-control'}}) }}#}
+
+                                {#</div><!-- /.form-group -->#}
+
+                            </div><!-- /.row -->
+                        </div>
+
+                    </div><!-- /.content -->
+                </div><!-- /.col-* -->
+
+                {#Submit#}
+                {{ form_widget(form.submit,{'label':'Save','attr':{'class':'btn btn-primary pull-right'}}) }}
+
+                {{ form_rest(form) }}
+                {{ form_end(form) }}
+                {#Form End#}
+
+            </div><!-- /.row -->
+
+        {% endblock %}
+    {% endblock %}

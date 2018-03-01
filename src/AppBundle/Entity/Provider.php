@@ -67,6 +67,14 @@ class Provider extends User
      */
     private $slug;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="my_user_type", type="string")
+     */
+    private $myUserType;
+
+
 // ------------------------- Relationship parameters -------------------------
 
     /**
@@ -126,6 +134,7 @@ class Provider extends User
         $this->promotions = new \Doctrine\Common\Collections\ArrayCollection();
         $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
         $this->internauts = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->myUserType = 'provider';
     }
 
     /**
@@ -280,6 +289,22 @@ class Provider extends User
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMyUserType(): string
+    {
+        return $this->myUserType;
+    }
+
+    /**
+     * @param string $myUserType
+     */
+    public function setMyUserType(string $myUserType)
+    {
+        $this->myUserType = $myUserType;
     }
 
     /**
@@ -519,6 +544,8 @@ class Provider extends User
     {
         return $this->internauts;
     }
+
+
 
     public function __toString()
     {
