@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Image
@@ -37,6 +38,9 @@ class Image
      * @ORM\Column(name="url", type="string", length=255)
      */
     private $url;
+
+
+
 
 // ------------------------- Relationship parameters -------------------------
 
@@ -160,8 +164,13 @@ class Image
         return $this->photoProvider;
     }
 
+
     public function __toString()
     {
         return $this->getUrl();
     }
+
+// ------------------------- Custom Methods -------------------------
+
+
 }

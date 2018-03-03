@@ -10,6 +10,7 @@
 
             <div class="header-content">
                 <div class="header-top">
+
                     {% block header_top %}
 
                         <div class="header-nav-user">
@@ -24,8 +25,6 @@
 
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <li><a href="{{ path("profile_update") }}">Edit Profile</a></li>
-                                    {#<li><a href="listing-submit.html">My products</a></li>#}
-                                    <li><a href="change-password.html">Change Password</a></li>
                                     <li><a href="{{ path("logout") }}">Logout</a></li>
                                 </ul>
                             </div><!-- /.dropdown -->
@@ -37,25 +36,8 @@
                             {% endif %}
                         </div><!-- /.header-nav-user -->
 
-
-
-
-                        {#<ul class="header-nav-secondary nav nav-pills">#}
-                            {#{% if is_granted('ROLE_USER') %}#}
-
-                                {#TO DO : METTRE UN LIEN VERS UPDATE/ID pour EMAIL#}
-
-                                {#<li> {{ (app.user.email) }}</li>#}
-                                {#<li><a href="{{ path("logout") }}">Logout</a></li>#}
-                            {#{% else %}#}
-                                {#<li><a href="{{ path("login") }}">Login</a></li>#}
-                                {#<li><a href="{{ path("sign_up") }}">Sign Up</a></li>#}
-                            {#{% endif %}#}
-                        {#</ul>#}
-
-
-
                     {% endblock %}
+
                 </div><!-- /.header-top -->
 
                 <div class="header-bottom">

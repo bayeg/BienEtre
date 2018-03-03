@@ -24,11 +24,11 @@ class TempUserController extends Controller
      */
     public function signUpAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
-        //build form
+        //create form
         $tempUser = new TempUser();
         $form = $this->createForm(TempUserType::class, $tempUser);
 
-        //handle request if POST
+        //handle request if post
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -43,9 +43,8 @@ class TempUserController extends Controller
             $em->flush();
 
             $this->addFlash('success','Go check your mailbox !');
-//            $request->getSession()->getFlashBag()->add('notice', 'Go check your inbox !');
 
-            //MAILER
+            //mailer
             $to = $tempUser->getEmail();
             $token = $tempUser->getToken();
             $message = \Swift_Message::newInstance()
@@ -63,26 +62,12 @@ class TempUserController extends Controller
             ;
             $this->get('mailer')->send($message);
 
-            return $this->redirectToRoute('home',array(
-                //
-            ));
+            //render template if post
+            return $this->redirectToRoute('home');
 
         }
 
-
-//        $form = $this->createForm(TempUserType::class);
-
-//        $form->handleRequest($request);
-
-//        if($form->isValid()){
-
-            // USER CREATION
-//            /** @var TempUser $tempUser */
-//            $tempUser = $form->getData();
-//            $em = $this->getDoctrine()->getManager();
-//            $em->persist($tempUser);
-//            $em->flush();
-
+        //render template if no post
         return $this->render(':Front/Security/SignUp:sign_up.html.twig',array(
             'form'=> $form->createView()
         ));
@@ -94,28 +79,24 @@ class TempUserController extends Controller
      */
     public function confirmAction(Request $request, $token)
     {
+        //get repo
         $em = $this->getDoctrine()->getManager();
         $tempUser = $em->getRepository("AppBundle:TempUser")
             ->findOneByToken($token);
 
         $type = $tempUser->getType();
-
         $email = $tempUser->getEmail();
         $password = $tempUser->getPassword();
         $registrationDate = $tempUser->getRegistrationDate();
 
         if ($type === 'internaut') {
             $user = new Internaut();
-//            $user->setMyUserType($type);
             $form = $this->createForm(InternautType::class, $user);
-            $template = ':Front/Security/Profile:profile_internaut.html.twig';
+            $template = ':Front/Profile:profile_internaut.html.twig';
         }elseif ($type === 'provider'){
             $user = new Provider();
-//            $user->setMyUserType($type);
             $form = $this->createForm(ProviderType::class, $user);
-            $template = ':Front/Security/Profile:profile_provider.html.twig';
-        } else {
-            return $this->render(':Front/Home:home.html.twig');
+            $template = ':Front/Profile:profile_provider.html.twig';
         }
 
         $user->setEmail($email);
@@ -125,23 +106,28 @@ class TempUserController extends Controller
         $user->setBanned(false);
         $user->setRegistrationConfirmed(true);
 
+        //handle request if post
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            //create user
             $user = $form->getData();
-
             $em = $this->getDoctrine()->getManager();
-
             $em->persist($user);
+
+            //delete tempUser
             $em->remove($tempUser);
 
             $em->flush();
 
+            //render template if post
             return $this->redirectToRoute('login');
         }
 
+        //render template if no post
         return $this->render($view = $template, [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'user' => $user
         ]);
 
     }

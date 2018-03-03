@@ -417,7 +417,6 @@ class User implements UserInterface
     }
 
 
-
     // ------------------------- Methods : UserInterface -------------------------
 
     public function getUsername()
@@ -426,7 +425,6 @@ class User implements UserInterface
     }
     public function getRoles()
     {
-        //////////METTRE EN COMMENTAIRE POUR VOIR LE VENDOR
         return ['ROLE_USER'];
     }
 

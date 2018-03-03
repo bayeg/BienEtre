@@ -12,9 +12,7 @@ class AboutController extends Controller
      */
     public function aboutAction()
     {
-        return $this->render(':Front/About:about.html.twig', array(
-            // ...
-        ));
+        return $this->render(':Front/About:about.html.twig');
     }
 
 }

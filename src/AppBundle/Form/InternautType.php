@@ -2,6 +2,9 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Repository\CommuneRepository;
+use AppBundle\Repository\LocalityRepository;
+use AppBundle\Repository\PostCodeRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -19,45 +22,43 @@ class InternautType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('image', FileType::class)
 
             ->add('firstName',TextType::class)
             ->add('lastName', TextType::class)
             ->add('addressStreet', TextType::class,[
-//                'required' => false
             ])
             ->add('addressNumber', TextType::class,[
-//                'required' => false
             ])
             ->add('postCode', EntityType::class,[
                 'class' => 'AppBundle:PostCode',
-//                'required' => false,
-                'placeholder' => 'Select your Post Code'
+                'placeholder' => 'Select your Post Code',
+                'query_builder' => function (PostCodeRepository $er) {
+                    return $er->createQueryBuilder('pc')
+                        ->orderBy('pc.postCode', 'ASC');
+                },
             ])
             ->add('locality', EntityType::class,[
                 'class' => 'AppBundle:Locality',
-//                'required' => false,
-                'placeholder' => 'Select your Locality'
+                'placeholder' => 'Select your Locality',
+                'query_builder' => function (LocalityRepository $er) {
+                    return $er->createQueryBuilder('l')
+                        ->orderBy('l.locality', 'ASC');
+                },
             ])
             ->add('commune', EntityType::class,[
                 'class' => 'AppBundle:Commune',
-//                'required' => false,
-                'placeholder' => 'Select your Commune'
+                'placeholder' => 'Select your Commune',
+                'query_builder' => function (CommuneRepository $er) {
+                    return $er->createQueryBuilder('c')
+                        ->orderBy('c.commune', 'ASC');
+                },
             ])
-
             ->add('newsletter',ChoiceType::class,[
                 'choices' => [
                     'Yes' => true,
                     'No' => false
                 ]
             ])
-
-
-//            ->add('providers')
-//            ->add('abuses')
-//            ->add('comments')
-//            ->add('positions')
-
             ->add('submit', SubmitType::class)
         ;
     }

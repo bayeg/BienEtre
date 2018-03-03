@@ -9,41 +9,37 @@ use Symfony\Component\HttpFoundation\Request;
 class ServiceCategoryController extends Controller
 {
     /**
-     * @Route("/category", name="service_category_list")
+     * @Route("/categories", name="service_category_list")
      */
     public function serviceCategoryListAction(Request $request)
     {
+        //get repo
         $em = $this->getDoctrine()->getManager();
         $serviceCategories = $em->getRepository("AppBundle:ServiceCategory")
             ->findAllValidOrderedByName();
 
-        /**
-         * @var $paginator \Knp\Component\Pager\Paginator
-         */
-        $paginator  = $this->get('knp_paginator');
-        $result = $paginator->paginate(
-            $serviceCategories,
-            $request->query->getInt('page',1),
-            $request->query->getInt('limit',3)
-        );
+        //pagination service
+        $kpnGenerator = $this->get('app.knp_paginator_generator');
+        $serviceCategories = $kpnGenerator->generate($serviceCategories, 1, 3, $request);
 
+        //render template
         return $this->render('Front/ServiceCategory/List/main_service_category_list.html.twig', [
-            "serviceCategories" => $result,
+            "serviceCategories" => $serviceCategories,
         ]);
-
 
     }
 
     /**
-     * @Route("/category/{slug}", name="service_category_detail")
+     * @Route("/categories/{slug}", name="service_category_detail")
      */
     public function serviceCategoryDetailAction($slug)
     {
+        //get repo
         $em = $this->getDoctrine()->getManager();
         $serviceCategory = $em->getRepository("AppBundle:ServiceCategory")
             ->findOneBySlug($slug);
 
-
+        //render template
         return $this->render('Front/ServiceCategory/Detail/main_service_category_detail.html.twig', [
             "serviceCategory" => $serviceCategory
         ]);

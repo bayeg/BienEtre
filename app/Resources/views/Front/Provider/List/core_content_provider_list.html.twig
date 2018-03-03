@@ -11,34 +11,23 @@
                         <div class="card-simple-content">
                             <h2><a href="{{ path("provider_detail", {"slug" : p.slug}) }}">{{ p.name }}</a></h2>
 
-                            <div class="card-simple-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div><!-- /.card-rating -->
-
                             <div class="card-simple-actions">
-
-           {#///////SUPPRIMER SI STAR ET HEART INUTILE ////////////////////////////////#}
-                                <a href="{{ path("provider_detail", {"slug" : p.slug}) }}" class="fa fa-star-o"></a>
                                 <a href="{{ path("provider_detail", {"slug" : p.slug}) }}" class="fa fa-search"></a>
-                                <a href="{{ path("provider_detail", {"slug" : p.slug}) }}" class="fa fa-heart-o"></a>
                             </div><!-- /.card-simple-actions -->
 
                         </div><!-- /.card-simple-content -->
 
-                        {#<div class="card-simple-label">{{p.phone}}</div>#}
+                        {% for sc in p.serviceCategories %}
 
-                        <div class="card-simple-price">{{ p.website }}</div>
+                            <div class="card-simple-price">{{ sc.name }}</div>
+
+                        {% endfor %}
 
                     </div><!-- /.card-simple-background -->
                 </div><!-- /.card-simple -->
             </div><!-- /.col-* -->
 
             {% endfor %}
-
 
         </div><!-- /.row -->
     </div><!-- /.cards-simple-wrapper -->

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     {% block meta %}
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     {% endblock %}
+
     {% block stylesheets %}
         <link href="http://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/libraries/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"
@@ -20,17 +22,22 @@
         <link href="{{ asset('assets/css/superlist.css') }}" rel="stylesheet" type="text/css">
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/favicon.png') }}">
     {% endblock %}
+
     <title>{% block title %}Bien-être{% endblock %}</title>
+
 </head>
 
 <body>
+
 {% for msg in app.session.flashBag.get('success') %}
     <div class="alert alert-success">
         {{ msg }}
     </div>
 {% endfor %}
+
 {% block body %}
     <div class="page-wrapper">
+
         <header class="header">
             {% block header %}
                 {% include ":Front/Common:header.html.twig" %}
@@ -39,18 +46,19 @@
 
         <div class="main">
             {% block main %}
-
             {% endblock %}
         </div><!-- /.main -->
-
 
         {% block footer %}
             {% include ":Front/Common:footer.html.twig" %}
         {% endblock %}
+
         {% block javascripts %}
             {% include ":Front/Common:javascipts.html.twig" %}
         {% endblock %}
+
     </div><!-- /.page-wrapper -->
 {% endblock %}
+
 </body>
 </html>

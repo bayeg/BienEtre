@@ -1,0 +1,80 @@
+{#Form Start#}
+
+{{ form_start(form) }}
+{{ form_errors(form) }}
+
+{#CONTACT#}
+<div class="background-white p20 mb30">
+
+    <div class="row">
+
+        {#Name#}
+        <div class="form-group col-sm-12">
+            {{ form_errors(form.name) }}
+            {{ form_label(form.name, 'Course Name') }}
+            {{ form_widget(form.name, {'attr':{'class':'form-control'}}) }}
+        </div><!-- /.form-group -->
+
+        {#Description#}
+        <div class="form-group col-sm-12">
+            {{ form_errors(form.description) }}
+            {{ form_label(form.description, 'Description') }}
+            {{ form_widget(form.description, {'attr':{'class':'form-control'}}) }}
+        </div><!-- /.form-group -->
+
+        {#Tariff#}
+        <div class="form-group col-sm-6">
+            {{ form_errors(form.tariff) }}
+            {{ form_label(form.tariff, 'Tariff') }}
+            {{ form_widget(form.tariff, {'attr':{'class':'form-control'}}) }}
+        </div><!-- /.form-group -->
+
+        {#Info#}
+        <div class="form-group col-sm-6">
+            {{ form_errors(form.info) }}
+            {{ form_label(form.info, 'Info') }}
+            {{ form_widget(form.info, {'attr':{'class':'form-control'}}) }}
+        </div><!-- /.form-group -->
+
+        <div class="form-group col-sm-12">
+            {#Start Date of Course#}
+            <div class="col-sm-6">
+                {{ form_errors(form.start) }}
+                {{ form_label(form.start, 'Start Date of Course') }}
+                {{ form_widget(form.start, {'attr':{'class':'form-control'}}) }}
+            </div>
+            {#End Date of Course#}
+            <div class="col-sm-6">
+                {{ form_errors(form.end) }}
+                {{ form_label(form.end, 'End Date of Course') }}
+                {{ form_widget(form.end, {'attr':{'class':'form-control'}}) }}
+            </div>
+        </div><!-- /.form-group -->
+
+        <div class="form-group col-sm-12">
+            {#Start Date of Display#}
+            <div class="col-sm-6">
+                {{ form_errors(form.showStart) }}
+                {{ form_label(form.showStart, 'Start Date of Display') }}
+                {{ form_widget(form.showStart, {'attr':{'class':'form-control'}}) }}
+            </div>
+            {#End Date of Display#}
+            <div class="col-sm-6">
+                {{ form_errors(form.showEnd) }}
+                {{ form_label(form.showEnd, 'End Date of Display') }}
+                {{ form_widget(form.showEnd, {'attr':{'class':'form-control'}}) }}
+            </div>
+        </div><!-- /.form-group -->
+    </div><!-- /.row -->
+</div>
+</div><!-- /.row -->
+</div>
+
+{#Submit#}
+<button type="submit" class="btn btn-primary pull-right" formnovalidate>{{ buttonText }}</button>
+
+{#{{ form_widget(form.submit,{'label':'\'{{buttonText }}'\','attr':{'class':'btn btn-primary pull-right'}}) }}#}
+
+{{ form_rest(form) }}
+{{ form_end(form) }}
+{#Form End#}

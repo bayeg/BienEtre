@@ -1,0 +1,32 @@
+{% extends ":Front:front_layout.html.twig" %}
+
+    {% block content %}
+        {% block core_content %}
+            <div class="row">
+
+                <div class="col-sm-4 col-lg-3">
+                    <div class="sidebar">
+
+                        {{ include(':Front/Profile:profile_sidebar_menu.html.twig')  }}
+
+                    </div><!-- /.sidebar -->
+                </div><!-- /.col-* -->
+
+                <div class="col-sm-8 col-lg-9">
+                    <div class="content">
+                        <div class="page-title">
+                            <h1>New Course</h1>
+                        </div><!-- /.page-title -->
+
+                        {{ include(':Front/Course:_form.html.twig',
+                            {'buttonText':'Create'}
+                            )
+                        }}
+
+                    </div><!-- /.content -->
+                </div><!-- /.col-* -->
+
+            </div><!-- /.row -->
+
+        {% endblock %}
+    {% endblock %}

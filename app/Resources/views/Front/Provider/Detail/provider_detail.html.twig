@@ -22,10 +22,6 @@
                                     {% for cou in provider.courses %}
 
                                         <div class="post post-boxed">
-                                            {#<div class="post-image">#}
-                                            {#<img src="assets/img/tmp/product-11.jpg" alt="A Clockwork Origin">#}
-                                            {#<a class="read-more" href="blog-detail-right-sidebar.html">View</a>#}
-                                            {#</div><!-- /.post-image -->#}
 
                                             <div class="post-content">
                                                 <h2><a href="#">{{ cou.name }}</a></h2>
@@ -33,23 +29,13 @@
                                             </div><!-- /.post-content -->
 
                                             <div class="post-meta clearfix">
-                                                {#<div class="post-meta-author">By <a href="blog-detail.html">Eric Yorick</a></div><!-- /.post-meta-author -->#}
+
                                                 <div class="post-meta-date"><i>From {{ cou.start|date("d/m/Y") }}
                                                         to {{ cou.end|date("d/m/Y") }}</i></div>
-                                                <!-- /.post-meta-date -->
                                                 <div class="post-meta-categories">
                                                     <i class="fa fa-tags"></i>
-                                                    {#<a href="#">#}
                                                     {{ cou.tariff }} €
-                                                    {#</a>#}
                                                 </div>
-                                                <!-- /.post-meta-categories -->
-                                                {#<div class="post-meta-comments"><i class="fa fa-comments"></i> <a#}
-                                                {#href="blog-detail.html">3 comments</a></div>#}
-                                                <!-- /.post-meta-comments -->
-                                                {#<div class="post-meta-more"><a href="#">Read More <i#}
-                                                                {#class="fa fa-chevron-right"></i></a></div>#}
-                                                <!-- /.post-meta-more -->
                                             </div><!-- /.post-meta -->
                                         </div><!-- /.post -->
                                     {% else %}
@@ -70,33 +56,33 @@
                                 <div class="detail-vcard">
                                     <div class="detail-logo">
                                         {% if provider.logos[0].url is defined %}
-                                        <img src="{{ asset(provider.logos[0].url) }}">
+                                            <img src="{{ asset(provider.logos[0].url) }}">
                                         {% endif %}
                                     </div><!-- /.detail-logo -->
 
                                     <div class="detail-contact">
                                         <div class="detail-contact-email">
                                             {% if provider.contactEmail is  not null %}
-                                            <i class="fa fa-envelope-o"></i>
+                                                <i class="fa fa-envelope-o"></i>
                                                 <a href="mailto:{{ provider.contactEmail }}">
-                                                {{ provider.contactEmail }}
-                                            </a>
+                                                    {{ provider.contactEmail }}
+                                                </a>
                                             {% endif %}
                                         </div>
                                         <div class="detail-contact-phone">
                                             {% if provider.phone is  not null %}
-                                            <i class="fa fa-mobile-phone"></i>
+                                                <i class="fa fa-mobile-phone"></i>
                                                 <a href="tel:{{ provider.phone }}">
-                                                {{ provider.phone }}
-                                            </a>
+                                                    {{ provider.phone }}
+                                                </a>
                                             {% endif %}
                                         </div>
                                         <div class="detail-contact-website">
                                             {% if provider.website is  not null %}
-                                            <i class="fa fa-globe"></i>
-                                            <a href="#">
-                                                {{ provider.website }}
-                                            </a>
+                                                <i class="fa fa-globe"></i>
+                                                <a href="#">
+                                                    {{ provider.website }}
+                                                </a>
                                             {% endif %}
                                         </div>
                                         <div class="detail-contact-address">
@@ -111,9 +97,6 @@
                                 <div class="background-white p20 reasons">
                                     {% for prom in provider.promotions %}
                                         <div class="reason">
-                                            {#<div class="reason-icon">#}
-                                            {#<i class="fa fa-trophy"></i>#}
-                                            {#</div><!-- /.reason-icon -->#}
                                             <div class="reason-content">
                                                 <h4>{{ prom.name }}</h4>
                                                 <p>{{ prom.description }}</p><br>

@@ -7,6 +7,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    images_directory: '%kernel.project_dir%/../web/uploads/images'
 
 framework:
     #esi: ~
@@ -94,14 +95,6 @@ doctrine:
 #                        enabled: true
 
 
-# Swiftmailer Configuration
-#swiftmailer:
-#    transport: '%mailer_transport%'
-#    host: '%mailer_host%'
-#    username: '%mailer_user%'
-#    password: '%mailer_password%'
-#    spool: { type: memory }
-
 # Swiftmailer Configuration with Mailtrap
 swiftmailer:
   spool:     { type: memory }
@@ -180,5 +173,7 @@ easy_admin:
             class: AppBundle\Entity\ServiceCategory
         User:
             class: AppBundle\Entity\User
+            list:
+                fields: ['id', 'email', 'registrationDate', 'banned', 'registrationConfirmed', 'myUserType']
         TempUser:
             class: AppBundle\Entity\TempUser

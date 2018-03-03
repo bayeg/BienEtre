@@ -9,28 +9,23 @@ use AppBundle\Form\ProviderType;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\File;
+use AppBundle\Service\FileUploader;
 
 class UserController extends Controller
 {
     /**
      * @Route("profile/update", name="profile_update")
      */
-    function editAction(Request $request)
+    function editAction(Request $request, FileUploader $fileUploader)
     {
-//        $id = $this->getUser()->getId();
-//
-//        $em = $this->getDoctrine()->getManager();
-//        $user = $em->getRepository("AppBundle:Internaut")
-//            ->findOneById($id);
-//
-//        ;
-
-//        $user->addRole('ROLE_ADMIN');
-
+        //get repo
         $user = $this->getUser();
-
         $type = $user->getMyUserType();
 
+        $em = $this->getDoctrine()->getManager();
+
+        //create form
         if ($type === 'internaut') {
             $form = $this->createForm(InternautType::class, $user);
             $template = ':Front/Profile:profile_internaut.html.twig';
@@ -41,20 +36,28 @@ class UserController extends Controller
             return $this->render(':Front/Home:home.html.twig');
         }
 
+        //handle request
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
             $user = $form->getData();
-            $em = $this->getDoctrine()->getManager();
+
+            //handle image
+            $file = $user->getImage();
+            $fileName = $fileUploader->upload($file);
+            $user->setImage($fileName);
+
+            //create user
             $em->persist($user);
             $em->flush();
 
+            //render template if post
             $this->addFlash('success', 'Profile updated !');
-
             return $this->redirectToRoute('home');
         }
 
+        //render template if no post
         return $this->render($view = $template, [
             'form' => $form->createView(),
             'user' => $user

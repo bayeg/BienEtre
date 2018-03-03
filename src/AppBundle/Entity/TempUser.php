@@ -132,9 +132,6 @@ class TempUser implements UserInterface, \Serializable
     public function setPlainPassword($password)
     {
         $this->plainPassword = $password;
-//        // to make understand Doctrine that the plainPassword has been changed
-//        // even if not persisted, so listeners are called
-//        $this->password = null;
     }
 
 

@@ -11,16 +11,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class CourseController extends Controller
 {
-//    public function listAction($id){
-//        $em = $this->getDoctrine()->getManager();
-//        $courses = $em->getRepository("AppBundle:Course")
-//            ->findByProvider($id);
-//
-//        return $this->render(':Front/Profile/List:profile_provider.html.twig', [
-//            "courses" => $courses,
-//        ]);
-//
-//    }
 
     /**
  * @Route("/courses/new", name="course_new")
@@ -28,8 +18,10 @@ class CourseController extends Controller
  */
     public function newAction(Request $request){
 
+        //create form
         $form = $this->createForm(CourseType::class);
 
+        //handle request
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -47,19 +39,22 @@ class CourseController extends Controller
             return $this->redirectToRoute('profile_update');
         }
 
-        return $this->render(':Front/Course:new_course.html.twig', [
+        //render template
+        return $this->render(':Front/Course:new.html.twig', [
             'form' => $form->createView()
         ]);
     }
 
     /**
-     * @Route("/courses/{id}/update", name="course_update")
-     *
-     */
+ * @Route("/courses/{id}/update", name="course_update")
+ *
+ */
     public function updateAction(Request $request, Course $course){
 
+        //create form
         $form = $this->createForm(CourseType::class, $course);
 
+        //handle request
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -77,9 +72,33 @@ class CourseController extends Controller
             return $this->redirectToRoute('profile_update');
         }
 
-        return $this->render(':Front/Course:update_course.html.twig', [
+        //render template
+        return $this->render(':Front/Course:update.html.twig', [
             'form' => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/courses/{id}/delete", name="course_delete")
+     *
+     */
+    public function deleteAction($id){
+
+        //get repo
+        $em = $this->getDoctrine()->getManager();
+        $course = $em->getRepository("AppBundle:Course")
+            ->find($id)
+        ;
+
+        //handle request
+        $em->remove($course);
+        $em->flush();
+
+        //render template
+        $this->addFlash('success', 'Course deleted !');
+
+        return $this->redirectToRoute('profile_update');
+
     }
 
 }

@@ -57,14 +57,15 @@ class Internaut extends User
 // ------------------------- Relationship parameters -------------------------
 
     /**
-     * @var Image
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Image")
+     * @var string
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Image", cascade={"persist"})
      */
     private $image;
 
     /**
      *@var ArrayCollection
      *@ORM\ManyToMany(targetEntity="AppBundle\Entity\Provider", mappedBy="internauts")
+     * @ORM\JoinTable(name="favorites")
      */
     private $providers;
 

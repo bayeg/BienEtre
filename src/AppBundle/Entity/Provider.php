@@ -79,13 +79,13 @@ class Provider extends User
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Image", mappedBy="logoProvider")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Image", mappedBy="logoProvider", cascade={"persist"})
      */
     private $logos;
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Image", mappedBy="photoProvider")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Image", mappedBy="photoProvider", cascade={"persist"})
      */
     private $photos;
 

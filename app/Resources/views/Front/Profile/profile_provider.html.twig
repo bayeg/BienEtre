@@ -11,18 +11,6 @@
 
                 <div class="col-sm-4 col-lg-3">
                     <div class="sidebar">
-                        <div class="widget">
-                            {#Image#}
-                            {#{{ form_errors(form.logos) }}#}
-                            {#<div class="user-photo">#}
-                                {#<a href="{{ form_widget(form.logos) }}">#}
-                                    {#<img src="{{ form_widget(form.logos) }}" alt="User Photo">#}
-                                    {#<span class="user-photo-action">#}
-                                        {#Click here to upload Avatar#}
-                                    {#</span>#}
-                                {#</a>#}
-                            {#</div><!-- /.user-photo -->#}
-                        </div><!-- /.widget -->
 
                         {% include ":Front/Profile:profile_sidebar_menu.html.twig" %}
 
@@ -127,6 +115,7 @@
                             </div><!-- /.row -->
                         </div>
 
+
                         {#COURSES#}
                         <div class="background-white p20 mb30">
                             <h3 class="page-title">
@@ -135,18 +124,57 @@
                             </h3>
 
                             <div class="row">
+                                {#Courses#}
                                 {% for c in user.courses %}
-                                <div class="col-sm-12">
-                                        {{ c.name }}
-                                        <a href="{{ path('course_update', {'id': c.id}) }}" class="btn btn-warning pull-right">Update</a>
-
-
-                                </div><!-- /.-->
+                                    <div class="form-group col-sm-12">
+                                        <div class="col-sm-12">
+                                            {{ c.name }}
+                                            <a href="{{ path('course_delete', {'id': c.id}) }}"
+                                               class="btn btn-danger pull-right">Delete</a>
+                                            <a href="{{ path('course_update', {'id': c.id}) }}"
+                                               class="btn btn-warning pull-right">Update</a>
+                                        </div><!-- /.-->
+                                    </div><!-- /.form-group -->
                                 {% endfor %}
-                                <div>
-
-                                </div>
                             </div><!-- /.row -->
+                        </div>
+
+                        {#PROMO#}
+                        <div class="background-white p20 mb30">
+                            <h3 class="page-title">
+                                Promotions
+                                <a href="{{ path('promotion_new') }}" class="btn btn-primary pull-right">New</a>
+                            </h3>
+
+                            <div class="row">
+                                {#Courses#}
+                                {% for p in user.promotions %}
+                                    <div class="form-group col-sm-12">
+                                        <div class="col-sm-12">
+                                            {{ p.name }}
+                                            <a href="{{ path('promotion_delete', {'id': p.id}) }}"
+                                               class="btn btn-danger pull-right">Delete</a>
+                                            <a href="{{ path('promotion_update', {'id': p.id}) }}"
+                                               class="btn btn-warning pull-right">Update</a>
+                                        </div><!-- /.-->
+                                    </div><!-- /.form-group -->
+                                {% endfor %}
+                            </div><!-- /.row -->
+                        </div>
+
+                        {#SERVICE CATEGORIES#}
+                        <div class="background-white p20 mb30">
+                            <h3 class="page-title">
+                                Service Categories
+                            </h3>
+
+                            <div class="row">
+                                <div class="form-group col-sm-12">
+                                    {{ form_errors(form.serviceCategories) }}
+                                    {{ form_widget(form.serviceCategories, {'attr':{'class':'form-control'}}) }}
+                                </div><!-- /.form-group -->
+                            </div><!-- /.row -->
+
                         </div>
 
                     </div><!-- /.content -->
@@ -154,7 +182,6 @@
 
                 {#Submit#}
                 {{ form_widget(form.submit,{'label':'Update','attr':{'class':'btn btn-primary pull-right'}}) }}
-
                 {{ form_rest(form) }}
                 {{ form_end(form) }}
                 {#Form End#}

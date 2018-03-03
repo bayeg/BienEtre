@@ -1,5 +1,4 @@
 <?php
-
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Image;
@@ -15,7 +14,6 @@ use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-
 class ProviderSearchType extends AbstractType
 {
     /**
@@ -33,8 +31,8 @@ class ProviderSearchType extends AbstractType
                 'placeholder' => 'Search by Post Code',
                 'required' => false,
                 'query_builder' => function(PostCodeRepository $repo) {
-                return $repo->createNumericOrderQueryBuilder();
-            }
+                    return $repo->createNumericOrderQueryBuilder();
+                }
             ])
             ->add('serviceCategories', EntityType::class, [
                 'class' => 'AppBundle\Entity\ServiceCategory',
@@ -45,13 +43,12 @@ class ProviderSearchType extends AbstractType
                     return $repo->createAlphabeticalOrderQueryBuilder();
                 }
             ])
-//            ->add('reset',ResetType::class)
             ->add('search',SubmitType::class)
+
             ->setMethod('GET')
-            ->setAction('provider-result');
+            ->setAction('providers-result');
         ;
     }
-
     /**
      * {@inheritdoc}
      */
@@ -61,7 +58,6 @@ class ProviderSearchType extends AbstractType
             'data_class' => 'AppBundle\Entity\Provider'
         ));
     }
-
     /**
      * {@inheritdoc}
      */
@@ -69,6 +65,4 @@ class ProviderSearchType extends AbstractType
     {
         return '';
     }
-
-
 }

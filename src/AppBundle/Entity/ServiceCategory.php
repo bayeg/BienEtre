@@ -63,7 +63,7 @@ class ServiceCategory
 
     /**
      * @var Image
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Image")
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Image", cascade={"persist"})
      */
     private $serviceImage;
 

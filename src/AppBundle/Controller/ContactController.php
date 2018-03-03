@@ -12,9 +12,7 @@ class ContactController extends Controller
      */
     public function contactAction()
     {
-        return $this->render(':Front/Contact:contact.html.twig', array(
-            // ...
-        ));
+        return $this->render(':Front/Contact:contact.html.twig');
     }
 
 }
