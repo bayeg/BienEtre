@@ -40,7 +40,7 @@ class TempUser implements UserInterface, \Serializable
 
     /**
      * @Assert\NotBlank()
-     * @Assert\Length(max=4096)
+     * @Assert\Length(min=7, max=4096)
      */
     private $plainPassword;
 
@@ -53,7 +53,7 @@ class TempUser implements UserInterface, \Serializable
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="type", type="string", length=255)
      */
     private $type;

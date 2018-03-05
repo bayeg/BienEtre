@@ -10,7 +10,7 @@
                     </div><!-- /.page-title -->
 
                     {#Form Start#}
-                    {{ form_start(form)}}
+                    {{ form_start(form, {attr: {novalidate: 'novalidate'}})}}
                     {{ form_errors(form) }}
 
                     {#Type#}

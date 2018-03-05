@@ -47,7 +47,6 @@ AppBundle\Entity\Image:
 AppBundle\Entity\Internaut:
     internaut_{1..10}:
         email: <email()>
-        plainPassword: test
         password: <password()>
         addressNumber: <numberBetween(1, 100)>
         addressStreet: <streetName()>
@@ -85,7 +84,6 @@ AppBundle\Entity\PostCode:
 
 AppBundle\Entity\Promotion:
     promotion_{1..50}:
-#        name: <text(25)>
         name: <numerify("Promotion####")>
         description: <text(225)>
         pdf: <text(225)>
@@ -99,7 +97,6 @@ AppBundle\Entity\Promotion:
 AppBundle\Entity\Provider:
       provider_{1..50}:
         email: <email()>
-        plainPassword: test
         password: <password()>
         addressNumber: <numberBetween(1, 100)>
         addressStreet: <streetName()>
@@ -122,7 +119,6 @@ AppBundle\Entity\Provider:
 
 AppBundle\Entity\ServiceCategory: #   massage, fitness, yoga, balnéothérapie,...
       service_category_{1..10}:
-#          name: <text(25)>
           name: <numerify("Category####")>
           description: <text(500)>
           featured: <boolean()>
